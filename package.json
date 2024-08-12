@@ -1,0 +1,21 @@
+{
+  "name": "proyect-mindfullife",
+  "version": "1.0.0",
+  "description": "Desarrollo de Plataforma Integral de Bienestar Emocional y Atención Plena\r Duber Gutierrez\r Harold Esneider Barrientos Gonzales\r Miguel Angel Isaza Gomez",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/public/navbar.css">
+    <style>
+        /* Estilo general para la barra de navegación */
+        nav {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+            Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background: #396afc;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to top, #2948ff, #396afc);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to top, #2948ff, #396afc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            height: 70px; /* Altura de la barra de navegación */
+            width: 100%; /* Ocupa todo el ancho de la pantalla */
+            display: flex; /* Utiliza flexbox para el diseño */
+            align-items: center; /* Centra los elementos verticalmente */
+            justify-content: center; /* Centra los elementos horizontalmente */
+            font-weight: bold;
+            border-radius: 2px;
+        }
+
+        /* Estilo para la lista de navegación */
+        nav ul {
+            list-style-type: none; /* Eliminar los puntos de la lista */
+            margin: 0; /* Eliminar márgenes */
+            padding: 0; /* Eliminar relleno */
+            display: flex; /* Mostrar los elementos de la lista en línea */
+        }
+
+        /* Estilo para los elementos de la lista */
+        nav ul li {
+            margin: 0 20px; /* Espaciado entre los elementos de la lista */
+            position: relative; /* Necesario para el posicionamiento del submenú */
+        }
+
+        /* Estilo para los enlaces */
+        nav ul li a {
+            font-style: bold;
+            color: #fff; /* Color del texto del enlace (blanco) */
+            text-decoration: none; /* Eliminar subrayado */
+            font-size: 18px; /* Tamaño de la fuente */
+            padding: 20px; /* Espaciado interno del enlace */
+            display: block; /* Hacer que el enlace ocupe todo el área del elemento de la lista */
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Estilo para el estado hover de los enlaces */
+        nav ul li a:hover {
+            color: #000000; /* Color del texto cuando se pasa el ratón sobre el enlace (negro) */
+        }
+
+        /* Estilo para el submenú */
+        .dropdown-menu {
+            display: none; /* Ocultar el submenú por defecto */
+            position: absolute; /* Posicionar el submenú absolutamente respecto al elemento padre */
+            top: 100%; /* Colocar el submenú justo debajo del elemento padre */
+            left: 0;
+            background-color: #f9f9f9; /* Color de fondo del submenú */
+            min-width: 160px; /* Ancho mínimo del submenú */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Sombra del submenú */
+            z-index: 1; /* Asegura que el submenú se muestre sobre otros elementos */
+        }
+
+        /* Estilo para los elementos del submenú */
+        .dropdown-menu a {
+            color: #333; /* Color del texto en el submenú */
+            padding: 12px 16px; /* Espaciado interno en el submenú */
+            text-decoration: none; /* Eliminar subrayado */
+            display: block; /* Hacer que los enlaces ocupen toda el área del elemento del submenú */
+            font-size: 16px; /* Tamaño de la fuente en el submenú */
+        }
+
+        /* Estilo para el estado hover de los enlaces del submenú */
+        .dropdown-menu a:hover {
+            background-color: #ddd; /* Color de fondo cuando se pasa el ratón sobre los enlaces del submenú */
+            color: #2d8cf0;
+        }
+
+        /* Mostrar el submenú al pasar el ratón sobre el elemento de la lista */
+        nav ul li:hover .dropdown-menu {
+            display: block; /* Mostrar el submenú */
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="/">Inicio</a></li>
+            <li class="dropdown">
+                <a href="#">Servicios</a>
+                <div class="dropdown-menu">
+                    <a href="/ejercicio1">Estado de Ánimo</a>
+                    <a href="/exercise2">Ejercicios de Autocuidado</a>
+                    <a href="/exercise3">Ejercicio 3</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Recursos</a>
+                <div class="dropdown-menu">
+                    <a href="/articulos">Artículos</a>
+                    <a href="/videos">Videos</a>
+                    <a href="/guias">Guías</a>
+                </div>
+            </li>
+            <li><a href="/noticias">Noticias</a></li>
+            <li><a href="/testimonios">Testimonios</a></li>
+            <li><a href="/login">Login</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

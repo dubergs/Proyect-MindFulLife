@@ -1,0 +1,38 @@
+/* Estilo general para la barra de navegación */
+nav {
+    background-color: #4CAF50; /* Color de fondo de la barra de navegación (verde) */
+    height: 100px; /* Altura de la barra de navegación */
+    width: 100%; /* Ocupa todo el ancho de la pantalla */
+    display: flex; /* Utiliza flexbox para el diseño */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+/* Estilo para la lista de navegación */
+nav ul {
+    list-style-type: none; /* Eliminar los puntos de la lista */
+    margin: 0; /* Eliminar márgenes */
+    padding: 0; /* Eliminar relleno */
+    display: flex; /* Mostrar los elementos de la lista en línea */
+}
+
+/* Estilo para los elementos de la lista */
+nav ul li {
+    margin: 0 20px; /* Espaciado entre los elementos de la lista */
+}
+
+/* Estilo para los enlaces */
+nav ul li a {
+    color: #fff; /* Color del texto del enlace (blanco) */
+    text-decoration: none; /* Eliminar subrayado */
+    font-size: 18px; /* Tamaño de la fuente */
+    padding: 20px; /* Espaciado interno del enlace */
+    display: block; /* Hacer que el enlace ocupe todo el área del elemento de la lista */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el cambio de color de fondo y texto */
+}
+
+/* Estilo para el estado hover de los enlaces */
+nav ul li a:hover {
+    background-color: #45a049; /* Color de fondo cuando se pasa el ratón sobre el enlace (verde más oscuro) */
+    color: #f9f9f9; /* Color del texto cuando se pasa el ratón sobre el enlace (gris claro) */
+}

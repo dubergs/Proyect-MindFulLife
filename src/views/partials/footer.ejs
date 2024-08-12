@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <style>
+        /* Estilo general del footer */
+        footer {
+            background-color: #333; /* Color de fondo del footer */
+            color: #fff; /* Color del texto */
+            padding: 20px 0; /* Espaciado interno del footer */
+            font-family: Arial, sans-serif; /* Fuente del texto */
+        }
+
+        .footer-container {
+            display: flex; /* Utiliza flexbox para el diseño */
+            justify-content: space-around; /* Espacia las secciones del footer */
+            max-width: 1200px; /* Ancho máximo del footer */
+            margin: 0 auto; /* Centra el footer horizontalmente */
+        }
+
+        .footer-section {
+            width: 30%; /* Ancho de las secciones del footer */
+        }
+
+        .footer-section h2 {
+            border-bottom: 2px solid #fff; /* Línea debajo del título */
+            padding-bottom: 10px; /* Espaciado debajo del título */
+            margin-bottom: 10px; /* Espaciado debajo del título */
+        }
+
+        .footer-section p, .footer-section a {
+            font-size: 14px; /* Tamaño de la fuente */
+        }
+
+        .footer-section a {
+            color: #fff; /* Color del texto del enlace */
+            text-decoration: none; /* Eliminar subrayado */
+            transition: color 0.3s; /* Transición suave para el color */
+        }
+
+        .footer-section a:hover {
+            color: #2d8cf0; /* Color del texto del enlace al pasar el ratón */
+        }
+
+        .footer-bottom {
+            text-align: center; /* Centra el texto */
+            padding: 10px 0; /* Espaciado interno del pie de página */
+            background-color: #222; /* Color de fondo del pie de página */
+        }
+
+        .footer-bottom p {
+            margin: 0; /* Eliminar margen */
+            font-size: 14px; /* Tamaño de la fuente */
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenido del sitio web aquí -->
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>Sobre Nosotros</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia, eros a cursus ultricies, erat justo blandit urna, sit amet suscipit libero lacus nec lorem.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Enlaces Rápidos</h2>
+                <ul>
+                    <li><a href="/">Inicio</a></li>
+                    <li><a href="/about">Sobre Nosotros</a></li>
+                    <li><a href="/contact">Contacto</a></li>
+                    <li><a href="/login">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact">
+                <h2>Contacto</h2>
+                <p>Email: contacto@tusitio.com</p>
+                <p>Teléfono: +123 456 7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MindFulLife. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
