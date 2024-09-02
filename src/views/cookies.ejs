@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditación y Ejercicios</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        h1 {
+            margin-top: 120px;
+            text-align: center;
+            color: var(--title-color);
+        }
+
+        .introduction {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .exercises {
+            padding: 20px;
+            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .exercises h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--first-color);
+        }
+
+        .exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .exercise-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.333% - 40px);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .exercise-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .contenido1 {
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title1 {
+            text-align: center;
+            color: var(--first-color);
+        }
+
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+
+        .modal h2 {
+            color: var(--first-color);
+            text-align: center;
+        }
+
+        .modal p {
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navigation') %>
+    <header>
+        <h1>Políticas de Cookies de MindFulLife</h1>
+    </header>
+
+    <section class="introduction">
+        <p>Última actualización: [10/09/2024]</p>
+    </section>
+
+    <section class="exercises">
+        <div class="contenido">
+            <div class="contenido1">
+                <h3 class="title1">¿Qué son las cookies?</h3> <br>
+                <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio web o utilizas una aplicación. Estos archivos permiten que el sitio web o la aplicación reconozca tu dispositivo en futuras visitas y mejore tu experiencia de usuario al recordar tus preferencias y actividades anteriores.</p>
+            </div>
+            
+            <div class="contenido1">
+                <h3 class="title1">¿Cuáles son tus opciones respecto a las cookies?</h3> <br>
+                <p>Tienes la opción de aceptar o rechazar las cookies. La mayoría de los navegadores web aceptan cookies automáticamente, pero puedes modificar la configuración de tu navegador para rechazar cookies si lo prefieres. Sin embargo, al deshabilitar cookies, es posible que algunas partes de nuestra aplicación no funcionen correctamente.</p>
+            </div>
+
+            <div class="contenido1">
+                <h3 class="title1">Cookies de Terceros</h3> <br>
+                <p>En MindFulLife, podemos permitir a terceros que utilicen cookies en nuestra aplicación para llevar a cabo análisis de rendimiento y para mostrar anuncios personalizados. Estas cookies son administradas por proveedores externos y están sujetas a las políticas de privacidad de esos terceros.</p>
+            </div>
+
+            <div class="contenido1">
+                <h3 class="title1">Aceptación de los Términos</h3> <br>
+                <p>Al acceder y utilizar la aplicación MindFulLife, aceptas y acuerdas cumplir con estos Términos y Condiciones. Si no estás de acuerdo con alguna parte de estos términos, te recomendamos no utilizar nuestra aplicación.</p>
+            </div>
+
+            <div class="contenido1">
+                <h3 class="title1">Terminación</h3> <br>
+                <p>Podemos suspender o terminar tu acceso a la aplicación en cualquier momento, sin previo aviso, si creemos que has violado estos Términos y Condiciones.</p>
+            </div>
+
+            <div class="contenido1">
+                <h3 class="title1">Actualización de las Políticas de Cookies</h3> <br>
+                <p>Podemos actualizar nuestras políticas de cookies en cualquier momento. Te recomendamos revisar esta página periódicamente para mantenerte informado sobre cómo utilizamos las cookies.</p>
+            </div>
+    
+</body>
+</html>

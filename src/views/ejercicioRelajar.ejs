@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+h1 {
+    margin-top: 120px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+p{
+    width: 60%;
+    font-size: 20px;
+    color: black;
+}
+
+.img1{
+    width: 450px;
+    height: 300px;
+    position:static;
+    margin-left: 830px;
+    margin-top: -380px;
+    justify-content: center;
+}
+
+.img2{
+    width: 440px;
+    height: 290px;
+    position:static;
+    margin-left: 830px;
+    margin-top: -400px;
+
+}
+
+.img3{
+    width: 450px;
+    height: 300px;
+    position:static;
+    margin-left: 830px;
+    margin-top: -84px;
+
+}
+
+.contenido {
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.subcontenido {
+    width: 60%;
+    background-color: white;
+    display: block;
+}
+
+.submenu ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.submenu li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.submenu a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.submenu a:hover {
+    text-decoration: underline #6ca0dc;
+}
+
+
+.beneficios {
+    width: 450px;
+    color: black;
+    margin-left: 450px;
+}
+
+.tbeneficio {
+    margin-top: -115px;
+    margin-left: 450px;
+}
+
+.tbeneficio1 {
+    margin-top: -132px;
+    margin-left: 450px;
+}
+
+.resumen {
+    font-size: 18px;
+    width: 60%;
+    margin-top: 50px;
+}
+
+.pasos1 {
+    margin-top: 20px;
+}
+
+.subpasos {
+    color: black;
+}
+
+
+.link {
+    margin-left: 650px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+</style>
+<body>
+    <%- include('partials/navigation') %>
+    <h1>Tecnicas de Relajación</h1>
+    <nav class="submenu">
+        <ul>
+            <li><a href="#tecnica1">Respiración</a></li>
+            <li><a href="#tecnica2">Meditación</a></li>
+            <li><a href="#tecnica3">Relajación Muscular</a></li>
+        </ul>
+    </nav>
+    <div class="contenido" id="tecnica1">
+        <h2>Respiración</h2>
+        <p>La respiración diafragmática, también conocida como respiración abdominal, implica el uso del diafragma para ayudar a respirar más profundamente. Esta técnica ayuda a mejorar la oxigenación y a relajar el cuerpo. Aquí tienes los pasos para realizarla:</p> <br>
+        <div class="subcontenido">
+        <h3 class="pasos">Pasos:</h3>
+        <ul class="subpasos">
+            <li>1. Encuentra una Posición Cómoda</li>
+            <li>2. Coloca una Mano en el Pecho y Otra en el Abdomen</li>
+            <li>3. Inhala Profundamente por la Nariz</li>
+            <li>4. Exhala Lentamente por la Boca</li>
+            <li>5. Repite</li>
+        </ul>
+        <h3 class="tbeneficio">Beneficios:</h3>
+        <ul class="beneficios">
+            <li>● Reduce el estrés y la ansiedad.</li>
+            <li>● Mejora la capacidad pulmonar.</li>
+            <li>● Promueve una sensación de calma y relajación.</li>
+        </ul>
+    </div>
+    <p class="resumen">Esta técnica de respiración es útil para gestionar el estrés, mejorar la salud mental y promover una sensación de bienestar general. Puedes incorporarlas en tu rutina diaria para obtener los mejores resultados.</p>
+    <a href="" class="link">Ver Video</a>
+        <img src="/images/respirar.png" alt="hola" class="img1">
+    </div> <br> <br>
+
+    <div class="contenido" id="tecnica2">
+        <h2>Meditación</h2>
+        <p>La meditación es una práctica que ayuda a enfocar la mente, reducir el estrés y promover un estado de calma y claridad mental. Hay muchas formas de meditación, pero aquí te doy una descripción de una técnica básica y algunos de sus beneficios.</p>
+        <div class="subcontenido">
+            <h3 class="pasos1">Pasos:</h3>
+            <ul class="subpasos">
+                <li>1. Encuentra un Lugar Tranquilo</li>
+                <li>2. Cierra los Ojos</li>
+                <li>3. Concéntrate en la Respiración</li>
+                <li>4. Observa tus Pensamientos</li>
+                <li>5. Escanea tu Cuerpo</li>
+                <li>6. Continúa durante unos Minutos</li>
+            </ul>
+            <h3 class="tbeneficio1">Beneficios:</h3>
+            <ul class="beneficios">
+                <li>● Reducción del Estrés</li>
+                <li>● Mejora de la Concentración</li>
+                <li>● Mayor Autoconciencia</li>
+                <li>● Mejora del Bienestar Emocional</li>
+                <li>● Fomento de la Empatía y la Compasión</li>
+            </ul>
+        </div>
+        <p class="resumen">La meditación es una herramienta poderosa para mejorar la salud mental y el bienestar general. Con la práctica regular, puedes experimentar una mayor calma, claridad mental y una conexión más profunda contigo mismo.</p>
+    <a href="" class="link">Ver Video</a>
+        <img src="/images/meditacion.png" alt="hola" class="img2">
+    </div>
+
+    <div class="contenido" id="tecnica3">
+        <h2>Relajación Muscular</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas sequi culpa sapiente delectus vitae ullam, assumenda omnis? Voluptatum facilis totam deserunt. Dolorem impedit ipsam accusantium, inventore ipsum dolore unde possimus!</p>
+        <img src="/images/relajacion.png" alt="hola" class="img3">
+    </div>
+</body>
+</html>

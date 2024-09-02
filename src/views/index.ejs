@@ -5,49 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MindFulLife</title>
     <link rel="stylesheet" href="/style.css">
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
 </head>
 <body>
     <%- include('partials/navigation') %>
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Welcome to <span>MindFulLife</span></h1>
-            <p>Your journey starts here. Explore our services and get in touch with us.</p>
-            <a href="#" class="btn-primary">Learn More</a>
+    <section id="home" class="intro">
+        <div class="intro-content">
+            <h1><b>Tu Bienestar es Nuestra Prioridad</b></h1>
+            <p>Explora recursos y servicios diseñados para apoyarte en tu camino hacia el bienestar mental y emocional.</p>
+            <a href="#resources" class="btn-primary"><b>Explorar Recursos</b></a>
         </div>
-    </header>
-    
+    </section>
 
-    <section class="features">
-        <h2 class="subtitle">Noticias Recientes</h2>
-        <div class="container">
-            <div class="feature">
-                <img src="images/ansiedad.png" alt="MindFulLife" class="feature-image">
-                <h2>Ansiedad</h2>
-                <p>El trastorno de ansiedad generalizada se caracteriza por una ansiedad y una preocupación persistentes y excesivas por actividades o eventos, incluso asuntos comunes de rutina. La preocupación es desproporcionada con respecto a la situación actual, es difícil de controlar y afecta la forma en que te sientes físicamente.</p>
+    <!-- Banner de Cookies -->
+    <div id="cookie-banner" class="cookie-banner">
+        <div class="cookie-icon">
+            <img src="/images/galletas.gif" alt="Ícono de Cookies">
+        </div>
+        <div class="cookie-message">
+            <p>Utilizamos cookies para mejorar tu experiencia en nuestro sitio web. Al continuar navegando, aceptas nuestra <a href="/cookies">Política de Cookies.</a></p>
+        </div>
+        <button id="accept-cookies" class="accept-btn">Aceptar</button>
+    </div>
+
+    <!-- Sección Sobre Nosotros -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2>¿Quiénes Somos?</h2>
+            <p>En MindFulLife, creemos firmemente que el bienestar mental es fundamental para llevar una vida plena y equilibrada. Nacimos de la necesidad de proporcionar herramientas accesibles y efectivas que ayuden a las personas a manejar el estrés, la ansiedad, y otros desafíos relacionados con la salud mental en su vida diaria.</p>
+            <a href="/contact" class="btn-secondary">Conoce al Equipo</a>
+        </div>
+    </section>
+
+    <!-- Sección de Servicios -->
+    <section id="services" class="services">
+        <h2>Servicios Disponibles</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <img src="/images/estado-animico.gif" alt="Asesoramiento Individual">
+                <h3>Estado de Animo</h3>
+                <p>Sesiones personalizadas para tratar tus preocupaciones individuales.</p>
+                <a href="/estadoAnimo">Ver </a>
             </div>
-            <div class="feature">
-                <img src="images/ansiedad.png" alt="MindFulLife" class="feature-image">
-                <h2>Depresion</h2>
-                <p>La depresión es una enfermedad que se caracteriza por una tristeza persistente y por la pérdida de interés en las actividades con las que normalmente se disfruta, así como por la incapacidad para llevar a cabo las actividades cotidianas, durante al menos dos semanas.</p>
+            <div class="service-card">
+                <img src="/images/mancuernas.gif" alt="Grupos de Apoyo">
+                <h3>Ejercicios</h3>
+                <p>Únete a nuestros grupos de apoyo y comparte tus experiencias con otros.</p>
+                <a href="/ejercicios">Ver Ejercicios</a>
             </div>
-            <div class="feature">
-                <img src="images/ansiedad.png" alt="MindFulLife" class="feature-image">
-                <h2>Esquizofrenia</h2>
-                <p>¿Qué es la esquizofrenia? La esquizofrenia es una enfermedad mental grave que afecta la forma en que una persona piensa, siente y se comporta. Las personas con esquizofrenia pueden parecer como si hubieran perdido el contacto con la realidad, lo que puede ser angustioso para ellas, sus familiares y amigos.</p>
+            <div class="service-card">
+                <img src="/images/terapia.gif" alt="Terapia en Línea">
+                <h3>Terapia en Línea</h3>
+                <p>Accede a sesiones de terapia en línea, desde la comodidad de tu hogar.</p>
+                <a href="#">Más Información</a>
             </div>
         </div>
     </section>
 
-    <section class="contact">
-        <div class="container">
-            <h2>Contact Us</h2>
-            <p>If you have any questions, feel free to reach out to us.</p>
-            <a href="#" class="btn-secondary">Get in Touch</a>
+    <!-- Sección de Recursos -->
+    <section id="resources" class="resources">
+        <h2>Recursos para Ti</h2>
+        <div class="resource-grid">
+            <div class="resource-card">
+                <img src="/images/libros.gif" alt="Artículos y Guías">
+                <h3>Artículos y Guías</h3>
+                <p>Lee nuestros artículos sobre técnicas de autocuidado y bienestar mental.</p>
+                <a href="#">Leer Más</a>
+            </div>
+            <div class="resource-card">
+                <img src="/images/videotutorial.gif" alt="Videos Educativos">
+                <h3>Videos Educativos</h3>
+                <p>Descubre videos que explican cómo manejar el estrés y la ansiedad.</p>
+                <a href="#">Ver Videos</a>
+            </div>
+            <div class="resource-card">
+                <img src="/images/durabilidad.gif" alt="Enlaces Útiles">
+                <h3>Enlaces Útiles</h3>
+                <p>Accede a organizaciones y servicios adicionales para soporte mental.</p>
+                <a href="#">Explorar Enlaces</a>
+            </div>
         </div>
+    </section>
+
+    <!-- Sección de Nuestros Colaboradores -->
+    <section id="partners" class="partners">
+        <h2>Nuestros Colaboradores</h2>
+        <div class="partner-logos">
+            <img src="/images/saludtotal.png" alt="Colaborador 1">
+            <img src="/images/comfenalco.jpg" alt="Colaborador 2">
+            <img src="/images/sura.png" alt="Colaborador 3">
+            <img src="/images/savia.jpg" alt="Colaborador 3">
+            <img src="/images/nuevaeps.png" alt="Colaborador 3">
+            <!-- Agrega más logos según sea necesario -->
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="contact">
+        <h2>Contáctanos</h2>
+        <p>¿Tienes preguntas o necesitas ayuda? Estamos aquí para escucharte.</p>
+        <form>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Mensaje:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
     </section>
     
     <%- include('partials/footer') %>
     
 </body>
+<script>
+    // script.js
+document.addEventListener('DOMContentLoaded', function () {
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesButton = document.getElementById('accept-cookies');
+
+    // Siempre muestra el banner de cookies
+    cookieBanner.style.display = 'block';
+
+    acceptCookiesButton.addEventListener('click', function () {
+        // Oculta el banner de cookies al hacer clic en el botón
+        cookieBanner.style.display = 'none';
+    });
+});
+
+</script>
 </html>

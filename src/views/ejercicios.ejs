@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Meditación</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    /* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    margin-top: 70px;
+    padding: 0;
+}
+
+.header h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-top: -20px;
+}
+
+/* Sección de Ejercicios */
+.exercises {
+    margin-top: -10px;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.exercises h4 {
+    margin-top: -40px;
+    margin-bottom: 30px;
+}
+
+.exercises h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.exercise-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.exercise-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.exercise-card:hover {
+    transform: translateY(-10px);
+
+}
+
+.exercise-card img {
+    width: 60%;
+    border-radius: 10px 10px 0 0;
+}
+
+.exercise-card h3 {
+    margin: 20px 0 10px;
+    color: var(--title-color);
+}
+
+.exercise-card p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: var(--first-color);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--title-color);
+}
+
+/* Sección de Beneficios */
+.benefits {
+    margin-top: -120px;
+    background-color: #f9f9f9;
+    color: black;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.benefits h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+}
+
+.benefit-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.benefit-card {
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    margin-top: -100px;
+}
+
+
+
+.benefit-card h3 {
+    margin-bottom: 10px;
+    color: var(--title-color);
+}
+
+
+
+
+</style>
+<body>
+    <%- include('partials/navigation') %>
+    <!-- Sección de Ejercicios -->
+    <section class="exercises">
+        <h2>Explora Nuestros Ejercicios de Bienestar Emocional</h2>
+        <h4>Encuentra tu paz interior con nuestras guías de meditación.</h4>
+        <div class="exercise-grid">
+            <div class="exercise-card">
+                <img src="/images/meditacion.gif" alt="Meditación Guiada">
+                <h3>Meditación Plena</h3>
+                <p>La meditación de atención plena consiste en enfocarse en el momento presente, observando los pensamientos y emociones sin juzgarlos. </p>
+                <a href="/meditacion" class="btn">Iniciar</a>
+            </div>
+            <div class="exercise-card">
+                <img src="/images/respiracion.gif" alt="Respiración Consciente">
+                <h3>Respiración Profunda</h3>
+                <p>La respiración profunda, como la respiración diafragmática, ayuda a reducir el estrés y la ansiedad.</p>
+                <a href="/respiracion" class="btn">Iniciar</a>
+            </div>
+            <div class="exercise-card">
+                <img src="/images/quehaceres.gif" alt="Escaneo Corporal">
+                <h3>Practica de Gratitud</h3>
+                <p>Hacer una lista diaria de cosas por las que estás agradecido puede mejorar tu estado de ánimo y fomentar una mentalidad positiva.</p>
+                <a href="#" class="btn">Iniciar</a>
+            </div>
+            <div class="exercise-card">
+                <img src="/images/evolucion.gif" alt="Visualización Positiva">
+                <h3>Visualización Positiva</h3>
+                <p>La visualización positiva implica imaginar situaciones tranquilas para reducir el estrés y mejorar el bienestar de tu salud.</p>
+                <a href="#" class="btn">Iniciar</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="exercises">
+        <div class="exercise-grid">
+            <div class="exercise-card">
+                <img src="/images/levantamiento-de-pesas.gif" alt="Meditación Guiada">
+                <h3>Ejercicio Físico</h3>
+                <p>El ejercicio, como correr, caminar, nadar o practicar yoga, libera endorfinas, las hormonas que mejoran el estado de ánimo.</p>
+                <a href="#" class="btn">Iniciar</a>
+            </div>
+            <div class="exercise-card">
+                <img src="/images/amigo.gif" alt="Respiración Consciente">
+                <h3>Conexión Social</h3>
+                <p>Mantener relaciones sociales es crucial para la salud mental. Pasar tiempo con amigos, familiares o participar en reuniones. </p>
+                <a href="#" class="btn">Iniciar</a>
+            </div>
+            <div class="exercise-card">
+                <img src="/images/notas.gif" alt="Escaneo Corporal">
+                <h3>Escritura Terapéutica</h3>
+                <p>Escribir sobre tus pensamientos y emociones puede ayudarte a procesar sentimientos difíciles y ganar claridad. </p>
+                <a href="#" class="btn">Iniciar</a>
+            </div>
+            <div class="exercise-card">
+                <img src="/images/relajado.gif" alt="Visualización Positiva">
+                <h3>Relajación Muscular</h3>
+                <p>Este ejercicio implica tensar y luego relajar cada grupo muscular del cuerpo, comenzando por los pies y subiendo hasta la cabeza.</p>
+                <a href="#" class="btn">Iniciar</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Beneficios -->
+    <section class="benefits">
+        <h2>Beneficios del Ejercicio</h2>
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <h3>Reducción del Estrés</h3>
+                <p>El ejercicio físico ayuda a reducir los niveles de cortisol, la hormona del estrés, y aumenta la producción de endorfinas, que son los neurotransmisores responsables de la sensación de bienestar.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Mejora del Sueño</h3>
+                <p>El ejercicio ayuda a regular los patrones de sueño, lo que es crucial para la salud mental. Un buen descanso nocturno es esencial para la recuperación del cuerpo y la mente.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Mejora del Estado de Ánimo</h3>
+                <p>El ejercicio regular puede combatir la depresión y mejorar el estado de ánimo gracias a la liberación de endorfinas, también conocidas como las "hormonas de la felicidad".</p>
+            </div>
+            <div class="benefit-card">
+                <img src="/src/public/images/libro.png" alt="">
+                <h3>Aumento de la Autoestima y la Confianza</h3>
+                <p>La práctica regular de ejercicio puede mejorar la imagen corporal, aumentar la autoestima y generar una mayor confianza en uno mismo.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+<%- include('partials/footer') %>
+</html>

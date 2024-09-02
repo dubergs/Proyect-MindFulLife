@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encuesta - MindfulLife</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .form-wrapper {
+            height: 80vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            width: 100%;
+            max-height: 100%;
+            overflow-y: auto; /* Activar desplazamiento vertical */
+        }
+
+        h2 {
+            color: #0277bd;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 22px;
+        }
+
+        label {
+            font-size: 15px;
+            color: #0277bd;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #0288d1;
+            background-color: #e3f2fd;
+            font-size: 15px;
+            color: #01579b;
+            appearance: none;
+            cursor: pointer;
+        }
+
+        select:hover {
+            background-color: #bbdefb;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #01579b;
+        }
+
+        .select-container {
+            position: relative;
+        }
+
+        .select-container::after {
+            content: '\25BC';
+            font-size: 16px;
+            color: #01579b;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        input[type="submit"] {
+            background-color: #0288d1;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #01579b;
+        }
+
+        /* Estilo de barra de desplazamiento personalizado */
+        .form-container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .form-container::-webkit-scrollbar-track {
+            background: #e3f2fd;
+        }
+
+        .form-container::-webkit-scrollbar-thumb {
+            background-color: #0288d1;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-wrapper">
+    <div class="form-container">
+        <h2>Encuesta de Bienestar</h2>
+        <form action="/submit-survey" method="POST">
+            <div class="question">
+                <label for="q1">¿Con qué frecuencia sientes ansiedad o nerviosismo?</label>
+                <div class="select-container">
+                    <select id="q1" name="anxiety_frequency">
+                        <option value="nunca">Nunca</option>
+                        <option value="raramente">Raramente</option>
+                        <option value="a_veces">A veces</option>
+                        <option value="frecuentemente">Frecuentemente</option>
+                        <option value="siempre">Siempre</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q2">¿Has experimentado cambios significativos en tu estado de ánimo en el último mes?</label>
+                <div class="select-container">
+                    <select id="q2" name="mood_changes">
+                        <option value="no">No</option>
+                        <option value="levemente">Levemente</option>
+                        <option value="moderadamente">Moderadamente</option>
+                        <option value="bastante">Bastante</option>
+                        <option value="extremadamente">Extremadamente</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q3">¿Has tenido pensamientos negativos o autocríticos sobre ti mismo/a?</label>
+                <div class="select-container">
+                    <select id="q3" name="negative_thoughts">
+                        <option value="no">No</option>
+                        <option value="ocasionalmente">Ocasionalmente</option>
+                        <option value="a_menudo">A menudo</option>
+                        <option value="constantemente">Constantemente</option>
+                        <option value="no_seguro">No estoy seguro/a</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q4">¿Cuántas horas duermes en promedio cada noche?</label>
+                <div class="select-container">
+                    <select id="q4" name="sleep_hours">
+                        <option value="menos_5_horas">Menos de 5 horas</option>
+                        <option value="5_7_horas">5-7 horas</option>
+                        <option value="7_9_horas">7-9 horas</option>
+                        <option value="mas_9_horas">Más de 9 horas</option>
+                        <option value="varia_mucho">Varía mucho</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q5">¿Has experimentado dificultades para concentrarte o tomar decisiones?</label>
+                <div class="select-container">
+                    <select id="q5" name="concentration_difficulties">
+                        <option value="no">No</option>
+                        <option value="a_veces">A veces</option>
+                        <option value="frecuentemente">Frecuentemente</option>
+                        <option value="siempre">Siempre</option>
+                        <option value="no_seguro">No estoy seguro/a</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q6">¿Has sentido tristeza o desesperanza en los últimos días?</label>
+                <div class="select-container">
+                    <select id="q6" name="feeling_hopeless">
+                        <option value="no">No</option>
+                        <option value="ocasionalmente">Ocasionalmente</option>
+                        <option value="a_menudo">A menudo</option>
+                        <option value="constantemente">Constantemente</option>
+                        <option value="no_seguro">No estoy seguro/a</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q7">¿Has tenido problemas para controlar tus emociones?</label>
+                <div class="select-container">
+                    <select id="q7" name="emotional_control">
+                        <option value="no">No</option>
+                        <option value="a_veces">A veces</option>
+                        <option value="frecuentemente">Frecuentemente</option>
+                        <option value="siempre">Siempre</option>
+                        <option value="no_seguro">No estoy seguro/a</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q8">¿Has notado cambios en tu apetito o peso recientemente?</label>
+                <div class="select-container">
+                    <select id="q8" name="appetite_changes">
+                        <option value="no">No</option>
+                        <option value="perdido_peso">Sí, he perdido peso</option>
+                        <option value="ganado_peso">Sí, he ganado peso</option>
+                        <option value="variaciones_frecuentes">Variaciones frecuentes</option>
+                        <option value="no_seguro">No estoy seguro/a</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q9">¿Has tenido pensamientos suicidas?</label>
+                <div class="select-container">
+                    <select id="q9" name="suicidal_thoughts">
+                        <option value="no">No</option>
+                        <option value="ocasionalmente">Ocasionalmente</option>
+                        <option value="frecuentemente">Frecuentemente</option>
+                        <option value="siempre">Siempre</option>
+                        <option value="no_seguro">No estoy seguro/a</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="question">
+                <label for="q10">¿Has buscado ayuda profesional para tu salud mental en el pasado?</label>
+                <div class="select-container">
+                    <select id="q10" name="professional_help">
+                        <option value="no">No</option>
+                        <option value="una_vez">Sí, una vez</option>
+                        <option value="varias_veces">Sí, varias veces</option>
+                        <option value="en_tratamiento">Actualmente estoy en tratamiento</option>
+                        <option value="no_seguro">No estoy seguro/a</option>
+                    </select>
+                </div>
+            </div>
+
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

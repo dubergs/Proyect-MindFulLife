@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros</title>
+    <link rel="stylesheet" href="/src/public/about.css">
+    <style>
+        body{
+            margin-top: 110px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            margin-left: 40%;
+            color: black;
+        }
+
+        /* Centro el contenedor principal */
+        .container {
+            display: flex;
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente si hay altura definida */
+            padding: 20px;
+        }
+
+        .accordion-wrapper {
+            width: 40%;
+            max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+            margin: 0 auto;
+            margin-left: 10px;
+        }
+
+        .accordion {
+            background-color: #eee;
+            border: none;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            background-color: white;
+            color: black;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 15px;
+            text-align: left;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            border-bottom: 1px solid #ddd; /* Línea de separación entre botones */
+        }
+
+        .accordion-button:hover {
+            background-color: rgb(239, 237, 237);
+        }
+
+        .accordion-content {
+            padding: 0 15px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content a {
+            padding: 5px;
+            color: black;
+            text-decoration: none;
+        }
+
+        .active .accordion-content {
+            max-height: 1000px; /* A large value to ensure it is always visible */
+        }
+
+        .active .accordion-button {
+            border-bottom: none; /* Remove the bottom border for the active button */
+        }
+
+        span {
+            margin-right: 10px;
+            color: black;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+    <%- include('partials/navigation') %>
+    <h1>Trastornos Mentales</h1>
+    <div class="container">
+        <div class="accordion-wrapper">
+            <div class="accordion">
+                <button class="accordion-button"><span>+</span>¿Quiénes somos?</button>
+                <div class="accordion-content">
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+            </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-button"><span>+</span>Nuestros Servicios</button>
+                <div class="accordion-content">
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-button"><span>+</span>Nuestro Equipo</button>
+                <div class="accordion-content">
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-button"><span>+</span>Contáctanos</button>
+                <div class="accordion-content">
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-wrapper">
+            <div class="accordion">
+                <button class="accordion-button"><span>+</span>¿Quiénes somos?</button>
+                <div class="accordion-content">
+                   <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                   <a href=""><p>Trastorno Depresivo Persistente</p></a>
+                   <a href=""><p>Trastorno Bipolar</p></a>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-button"><span>+</span>Nuestros Servicios</button>
+                <div class="accordion-content">
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-button"><span>+</span>Nuestro Equipo</button>
+                <div class="accordion-content">
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <button class="accordion-button"><span>+</span>Contáctanos</button>
+                <div class="accordion-content">
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+
+    <script>
+        // Script para manejar el comportamiento del acordeón
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                // Toggle active class on the parent accordion
+                const accordion = button.parentElement;
+                accordion.classList.toggle('active');
+
+                // Close other accordions
+                document.querySelectorAll('.accordion').forEach(item => {
+                    if (item !== accordion) {
+                        item.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

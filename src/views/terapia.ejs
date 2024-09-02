@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro de Terapias en Línea</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .post {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .post h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .post p {
+            margin: 10px 0;
+        }
+
+        .post .meta {
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        .comment-section {
+            background-color: #e9ecef;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .comment {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .comment h3 {
+            margin-top: 0;
+            font-size: 1.2rem;
+            color: #4CAF50;
+        }
+
+        .comment p {
+            margin: 10px 0;
+        }
+
+        .comment .meta {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .new-comment {
+            margin-top: 20px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .new-comment h2 {
+            margin-top: 0;
+        }
+
+        .new-comment textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+        }
+
+        .new-comment button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .new-comment button:hover {
+            background-color: #45a049;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Foro de Terapias en Línea para la Salud Mental</h1>
+    </header>
+
+    <div class="container">
+        <div class="post">
+            <h2>¿Cómo te ha ayudado la Terapia Cognitivo-Conductual?</h2>
+            <p>
+                He encontrado que la Terapia Cognitivo-Conductual (TCC) es increíblemente útil para manejar mi ansiedad. Me ha enseñado a identificar y desafiar pensamientos negativos y a reemplazarlos con pensamientos más realistas.
+            </p>
+            <div class="meta">Publicado por Usuario123 el 1 de Septiembre de 2024</div>
+        </div>
+
+        <div class="post">
+            <h2>Experiencias con la Meditación Guiada</h2>
+            <p>
+                La meditación guiada ha sido una herramienta valiosa para mí. Me ayuda a relajarme antes de dormir y a manejar el estrés del día a día. La guía paso a paso hace que sea más fácil mantenerme concentrado.
+            </p>
+            <div class="meta">Publicado por Usuario456 el 2 de Septiembre de 2024</div>
+        </div>
+
+        <div class="comment-section">
+            <h2>Comentarios</h2>
+
+            <div class="comment">
+                <h3>Re: ¿Cómo te ha ayudado la Terapia Cognitivo-Conductual?</h3>
+                <p>
+                    Estoy de acuerdo, la TCC me ha cambiado la vida. La habilidad para cambiar mi forma de pensar ha tenido un impacto positivo en mi vida diaria.
+                </p>
+                <div class="meta">Comentario de Usuario789 el 2 de Septiembre de 2024</div>
+            </div>
+
+            <div class="comment">
+                <h3>Re: Experiencias con la Meditación Guiada</h3>
+                <p>
+                    Me encantaría saber más sobre las aplicaciones que usas para la meditación guiada. Estoy buscando algo que sea fácil de usar y que ofrezca buenas sesiones guiadas.
+                </p>
+                <div class="meta">Comentario de Usuario321 el 3 de Septiembre de 2024</div>
+            </div>
+        </div>
+
+        <div class="new-comment">
+            <h2>Deja tu Comentario</h2>
+            <textarea placeholder="Escribe tu comentario aquí..."></textarea>
+            <button>Enviar Comentario</button>
+        </div>
+    </div>
+
+</body>
+</html>

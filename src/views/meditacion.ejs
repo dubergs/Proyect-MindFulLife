@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditación y Ejercicios</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        h1 {
+            margin-top: 120px;
+            text-align: center;
+            color: black;
+        }
+
+        .introduction {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .exercises {
+            padding: 20px;
+            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .exercises h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--first-color);
+        }
+
+        .exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .exercise-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.333% - 40px);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .exercise-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .exercise-item p {
+            color: black;
+        }
+
+        .contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .contenido1 {
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title1 {
+            text-align: center;
+            color: var(--title-color);
+        }
+
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+
+        .modal h2 {
+            color: var(--first-color);
+            text-align: center;
+        }
+
+        .modal p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .contenido1 ul {
+            font-size: 20px;
+        }
+
+        .contenido1 p {
+            font-size: 20px;
+        }
+
+        .modal a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 240px;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navigation') %>
+    <header>
+        <h1>Meditación y Bienestar</h1>
+    </header>
+
+    <section class="introduction">
+        <p>La meditación es una práctica que nos ayuda a encontrar paz y equilibrio. Aquí te ofrecemos ejercicios sencillos para empezar tu viaje de meditación.</p>
+    </section>
+
+    <section class="exercises">
+        <div class="contenido">
+            <div class="contenido1">
+                <h3 class="title1">¿Qué es?</h3> <br>
+                <p>La meditación es una técnica que permite entrenar la mente para enfocarse, relajarse, y alcanzar un estado de conciencia plena o mindfulness. Se trata de un proceso en el cual la persona se centra en un objeto, pensamiento, o actividad para lograr un estado mental claro y emocionalmente calmado.</p>
+            </div>
+            <div class="contenido1">
+                <h3 class="title1">Beneficios de la Meditación</h3> <br>
+                <ul>
+                    <li>◈ Reducción del Estrés</li>
+                    <li>◈ Mejora de la Concentración</li>
+                    <li>◈ Mejora del Sueño</li>
+                    <li>◈ Mejor Gestión Emocional</li>
+                    <li>◈ Beneficios Físicos</li>
+                </ul>
+            </div>
+            <div class="contenido1">
+                <h3 class="title1">Como Empezar</h3> <br>
+                <ul>
+                    <li>➥ Encuentra un Espacio Tranquilo</li>
+                    <li>➥ Comienza con Pocos Minutos</li>
+                    <li>➥ Enfócate en la Respiración</li>
+                    <li>➥ Sé Paciente</li>
+                </ul>
+            </div>
+        </div>
+        <h2>Ejercicios de Meditación</h2>
+        <div class="exercise-grid">
+            <div class="exercise-item" onclick="openModal('modal1')">
+                <img src="/images/meditacion.png" alt="Ilustración 1">
+                <p>Ejercicio de respiración profunda.</p>
+            </div>
+            <div class="exercise-item" onclick="openModal('modal2')">
+                <img src="/images/escaneo.png" alt="Ilustración 2">
+                <p>Escaneo corporal.</p>
+            </div>
+            <div class="exercise-item" onclick="openModal('modal3')">
+                <img src="/images/visualizacion.png" alt="Ilustración 3">
+                <p>Visualización guiada.</p>
+            </div>
+            <div class="exercise-item" onclick="openModal('modal4')">
+                <img src="/images/aceptacion.png" alt="Ilustración 4">
+                <p>Mantras y afirmaciones.</p>
+            </div>
+            <div class="exercise-item" onclick="openModal('modal5')">
+                <img src="/images/sendero.png" alt="Ilustración 5">
+                <p>Meditación caminando.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventanas Modales -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Ejercicio de Respiración Profunda</h2> <br>
+            <ul>
+                <li><b>✤ Encuenta una posicion cómoda: </b>Siéntate o acuéstate en una posición cómoda. Asegúrate de que tu espalda esté recta y tus hombros relajados.
+                </li> <br>
+
+                <li><b>✤ Inhala profundamente: </b>Coloca una mano sobre tu abdomen y la otra sobre tu pecho, Inhala lentamente por la nariz, contando hasta cuatro.</li> <br>
+
+                <li><b>✤ Mantén el aire: </b>Mantén el aire en tus pulmones durante un conteo de cuatro segundos, para que el oxigeno se distribuya en tu cuerpo.</li> <br>
+
+                <li><b>✤ Exhala lentamente: </b>Exhala suavemente por la boca, contando nuevamente hasta cuatro, a medida que exhalas, siente cómo tu abdomen se contrae</li> <br>
+
+                <li><b>✤ Repite el proceso</b></li>
+            </ul> <br> <br>
+            <a href="">Ver video</a>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Escaneo Corporal</h2> <br>
+            <ul>
+                <li><b>✤ Encuenta una posicion cómoda: </b>Siéntate con la espalda recta y los pies apoyados en el suelo, cierra los ojos y relaja los brazos.</li> <br>
+
+                <li><b>✤ Respira profundamente: </b>Comienza con algunas respiraciones profundas para centrarte y relajar tu cuerpo.</li> <br>
+
+                <li><b>✤ Comienza el escaneo desde los pies: </b>Lleva tu atención a los dedos de los pies, observa cualquier sensación que sientas en esta área: puede ser calor, frío, presión, hormigueo, o incluso nada.</li> <br>
+
+                <li><b>✤ Muévete hacia arriba por el cuerpo: </b>Desplaza tu atención lentamente hacia los pies, luego a los tobillos, y continúa subiendo a lo largo de tu cuerpo. <br> <br>En cada parte del cuerpo, tómate unos momentos para notar cualquier tensión, incomodidad o sensación agradable. Si sientes tensión, imagina que se disuelve con cada exhalación.</li> <br>
+
+                <li><b>✤ Observa sin juzgar: </b>Mantén una actitud de curiosidad y aceptación hacia cualquier sensación que experimentes, no juzgues ni te frustres si tu mente se distrae.</li> <br>
+
+                <li><b>✤ Relájate en cada área: </b>Si encuentras alguna área de tensión, concéntrate en esa parte durante unos momentos, intenta relajarla conscientemente.</li> <br>
+
+                <li><b>✤ Finaliza el escaneo: </b>Una vez que hayas recorrido todo el cuerpo, tómate un momento para sentir tu cuerpo como un todo.</li> <br>
+
+                <li><b>✤ Vuelve lentamente a la realidad</b></li>
+            </ul> <br> <br>
+            <a href="">Ver video</a>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Visualización Guiada</h2> <br>
+            <ul>
+                <li><b>✤ Encuentra un lugar tranquilo: </b>Siéntate o acuéstate en un lugar donde no serás interrumpido, asegúrate de estar en una posición cómoda.</li> <br>
+
+                <li><b>✤ Relaja tu cuerpo: </b>Cierra los ojos y comienza con la respiraciones lenta y profundas para relajar tu cuerpo y mente.</li> <br>
+
+                <li><b>✤ Elige un escenario de visualización: </b>Imagina un lugar que te traiga paz y felicidad. Puede ser un lugar real que conoces, como una playa, un bosque, o un jardín, o un lugar imaginario.</li> <br>
+
+                <li><b>✤ Sumérgete en la experiencia: </b>Mientras te visualizas en este lugar, explóralo con la mente. Observa cómo te sientes estando allí. ¿Qué ves a tu alrededor? ¿Qué sonidos escuchas? ¿Hay una brisa suave? ¿Cómo huele el aire? ¿Cómo se siente el suelo bajo tus pies?</li> <br>
+
+                <li><b>✤ Permanece en la visualización: </b>Mantén esta imagen en tu mente durante el tiempo que desees, generalmente entre 5 y 20 minutos.</li> <br>
+
+                <li><b>✤ Finaliza suavemente </b></li>
+            </ul> <br> <br>
+            <a href="">Ver video</a>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>Mantras y Afirmaciones</h2> <br>
+            <ul>
+                <li><b>✤ Elige una manta cómoda: </b>Selecciona una manta suave y confortable que te haga sentir cálido y seguro, puede ser una manta de tamaño estándar o una manta pesada.</li> <br>
+
+                <li><b>✤ Encuentra un lugar tranquilo: </b>Busca un lugar en tu casa donde puedas sentarte o acostarte cómodamente sin interrupciones, puede ser en tu cama o en el sofá.</li> <br>
+
+                <li><b>✤ Envuelve tu cuerpo con la manta: </b>Siéntate o acuéstate y envuelve tu cuerpo con la manta, asegurándote de que cubra bien tus hombros, torso y piernas. La idea es crear una sensación de ser abrazado.</li> <br>
+
+                <li><b>✤ Relájate y respira profundamente: </b>Una vez que estés cubierto con la manta, cierra los ojos y comienza a respirar profundamente.</li> <br>
+
+                <li><b>✤ Recita afirmaciones positivas: </b>Mientras te relajas bajo la manta, comienza a repetir en voz baja afirmaciones positivas como: <br><br>"Estoy en paz y seguro."<br>"Me acepto y me amo tal como soy."<br>"Soy fuerte y capaz."<br>"Todo estará bien."</li> <br>
+
+                <li><b>✤ Concéntrate en las sensaciones de la manta: </b>Mientras recitas tus afirmaciones, concéntrate en las sensaciones físicas que la manta proporciona. Nota cómo la manta te envuelve y te sostiene.</li> <br>
+
+                <li><b>✤ Permanece en este estado por unos minutos: </b>Mantén esta práctica durante 10 a 20 minutos, o el tiempo que te resulte cómodo.</li> <br>
+
+                <li><b>✤ Finaliza suavemente</b></li>
+            </ul> <br> <br>
+            <a href="">Ver video</a>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Meditación Caminando</h2> <br>
+            <ul>
+                <li><b>✤ Elige un lugar tranquilo: </b>Busca un lugar donde puedas caminar sin interrupciones. Puede ser un parque, un jardín, un sendero.</li> <br>
+
+                <li><b>✤ Adopta una postura relajada: </b>Antes de comenzar a caminar, párate derecho con los pies separados al ancho de las caderas. Relaja los hombros, deja caer los brazos y cierra los ojos por un momento para centrarte.</li> <br>
+
+                <li><b>✤ Concéntrate en tu respiración: </b>Toma unas cuantas respiraciones profundas para calmar la mente y preparar el cuerpo para la meditación</li> <br>
+
+                <li><b>✤ Comienza a caminar lentamente: </b>Abre los ojos y comienza a caminar a un ritmo lento y constante. En la meditación caminando, la velocidad no es importante.</li> <br>
+
+                <li><b>✤ Presta atención a los movimientos: </b>A medida que caminas, dirige tu atención a los movimientos de tu cuerpo. Siente cómo tus pies tocan el suelo, nota cada pequeño detalle del proceso de caminar.</li> <br>
+
+                <li><b>✤ Coordina la respiración con los pasos: </b>Puedes sincronizar tu respiración con tus pasos si te resulta cómodo, esto puede ayudarte a mantener un ritmo constante y a profundizar la concentración.</li> <br>
+
+                <li><b>✤ Explora las sensaciones: </b>Mientras caminas, puedes también observar otras sensaciones, como la brisa en tu piel, los sonidos a tu alrededor, etc.</li> <br>
+
+                <li><b>✤ Camina en silencio: </b>Durante la meditación caminando, es importante mantener el silencio. Esto no solo significa evitar hablar, sino también observar el silencio mental.</li> <br>
+
+                <li><b>✤ Finaliza la práctica</b></li>
+            </ul> <br> <br>
+            <a href="">Ver video</a>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+</body>
+<%- include('partials/footer') %>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+h1 {
+    margin-top: 120px;
+    text-align: center;
+    color: var(--title-color);
+}
+
+h2 {
+    font-size: 30px;
+    color: var(--first-color);
+}
+
+
+.img1{
+    width: 450px;
+    height: 300px;
+    position:static;
+    margin-left: 830px;
+    margin-top: -380px;
+    justify-content: center;
+}
+
+.img2{
+    width: 440px;
+    height: 290px;
+    position:static;
+    margin-left: 830px;
+    margin-top: -400px;
+
+}
+
+.img3{
+    width: 450px;
+    height: 300px;
+    position:static;
+    margin-left: 830px;
+    margin-top: -84px;
+
+}
+
+.contenido {
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contenido p {
+    color: black;
+}
+
+.contenido1 {
+    width: 90%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+}
+
+.subcontenido {
+    width: 60%;
+    background-color: white;
+    display: block;
+}
+
+.submenu ul {
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0;
+}
+
+.submenu li {
+    display: inline;
+    margin: 0 10px;
+}
+
+.submenu a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.submenu a:hover {
+    text-decoration: underline #6ca0dc;
+}
+
+
+.resumen {
+    font-size: 18px;
+    width: 60%;
+    margin-top: 50px;
+}
+
+.pasos1 {
+    margin-left: 10px;
+}
+
+.subpasos {
+    color: black;
+}
+
+
+.link {
+    margin-left: 650px;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.h2uno {
+    margin-right: 30px;
+}
+
+.beneficios {
+    color: black;
+}
+
+ul {
+    font-size: 17px;
+}
+
+
+.exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .exercise-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.333% - 40px);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .exercise-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .exercise-item p {
+            color: black;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+
+        .modal h2 {
+            color: var(--first-color);
+            text-align: center;
+        }
+
+        .modal p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .exercise1 {
+            max-width: 80%;
+            display: flex;
+            margin-left: 160px;
+        }
+
+
+        .title1 {
+            text-align: center;
+        }
+
+        .tbeneficio {
+            color: var(--title-color);
+        }
+
+        .modal a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 240px;
+        }
+
+</style>
+<body>
+    <%- include('partials/navigation') %>
+    <h1>Respiración Profunda</h1>
+
+    <div class="contenido" id="tecnica1">
+        <h2>¿Qué es?</h2>
+        <p>La respiración profunda es un tipo de respiración diafragmática en la que se utiliza el diafragma, un músculo en forma de cúpula situado bajo los pulmones, para inhalar y exhalar profundamente. Este tipo de respiración permite que más oxígeno entre a los pulmones, lo que a su vez puede mejorar la oxigenación del cuerpo y la mente.</p> <br>
+        <div class="subcontenido">
+        <h3 class="tbeneficio">Pasos:</h3>
+        <ul class="subpasos">
+            <li>1. Encuentra una Posición Cómoda</li>
+            <li>2. Coloca una Mano en el Pecho y Otra en el Abdomen</li>
+            <li>3. Inhala Profundamente por la Nariz</li>
+            <li>4. Exhala Lentamente por la Boca</li>
+            <li>5. Repite</li>
+        </ul> <br>
+        <h3 class="tbeneficio">Beneficios:</h3>
+        <ul class="beneficios">
+            <li>● Reducción del Estrés y la Ansiedad</li>
+            <li>● Mejora de la Concentración y la Claridad Mental</li>
+            <li>● Promueve la Relajación y el Sueño</li>
+            <li>● Mejora la Función Pulmonar</li>
+            <li>● Reducción de la Presión Arterial</li>
+        </ul>
+    </div>
+    <p class="resumen">La respiración profunda es una herramienta poderosa para mejorar el bienestar físico y mental. Integrarla en tu rutina diaria puede ofrecer beneficios significativos para tu salud general.</p>
+        <img src="/images/respirar.png" alt="hola" class="img1">
+    </div> <br> <br>
+
+    <div class="contenido1" id="tecnica2">
+        <h2 class="h2uno">Técnicas de Respiración Profunda</h2>
+        <div class="subcontenido">
+            <h3 class="tbeneficio">Respiración 4-7-8:</h3> <br>
+            <ul class="subpasos">
+                <li>↬ Inhalar por la nariz contando hasta 4.</li>
+                <li>↬ Retener la respiración contando hasta 7.</li>
+                <li>↬ Exhalar por la boca contando hasta 8.</li>
+            </ul> <br>
+            <h3 class="tbeneficio">Respiración Diafragmática:</h3> <br>
+            <ul class="beneficios">
+                <li>↬ Inhalar profundamente a través de la nariz, permitiendo <br> que el abdomen se expanda.</li>
+                <li>↬ Exhalar lentamente por la boca, dejando que el abdomen <br> vuelva a su posición original</li>
+            </ul>
+        </div>
+
+        <div class="subcontenido">
+            <h3 class="tbeneficio">Respiración Alternada por las Fosas Nasales:</h3> <br>
+            <ul class="subpasos">
+                <li>↬ Inhalar por una fosa nasal mientras la otra está cerrada.</li>
+                <li>↬ Cambiar la fosa nasal y exhalar por la otra, luego repetir el proceso.</li>
+            </ul> <br> <br>
+            <h3 class="tbeneficio">Respiración de Caja:</h3> <br>
+            <ul class="beneficios">
+                <li>↬ Inhalar por 4 segundos, mantener la respiración por 4 segundos, exhalar por 4 segundos y pausar nuevamente por 4 segundos antes de repetir.</li>
+
+            </ul>
+        </div>
+    </div>
+
+    <h2 class="title1">Ejercicios de Respiración Profunda</h2>
+    <div class="exercise-grid">
+        <div class="exercise-item" onclick="openModal('modal1')">
+            <img src="/images/meditacion.png" alt="Ilustración 1">
+            <p>Respiración Kapalabhati.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal2')">
+            <img src="/images/escaneo.png" alt="Ilustración 2">
+            <p>Respiración de la Abeja.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal3')">
+            <img src="/images/visualizacion.png" alt="Ilustración 3">
+            <p>Respiración Samavritti.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal4')">
+            <img src="/images/aceptacion.png" alt="Ilustración 4">
+            <p>Respiración de Suspiro.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal5')">
+            <img src="/images/sendero.png" alt="Ilustración 5">
+            <p>Respiración de Coherencia Cardíaca.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Ventanas Modales -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span> 
+        <h2>Respiración Kapalabhati</h2> <br>
+        <ul>
+            <li>✤ Siéntate en una posición cómoda con la espalda recta.
+            </li> <br>
+
+            <li>✤ Inhala profundamente por la nariz.</li> <br>
+
+            <li>✤ Exhala rápida y poderosamente por la nariz, contrayendo el abdomen. La inhalación será automática.</li> <br>
+
+            <li>✤ Realiza 20 exhalaciones rápidas, luego toma una respiración profunda y exhala lentamente.
+            </li> <br>
+
+            <li>✤ Descansa y repite 2-3 veces.</li>
+        </ul> <br> <br>
+        <a href="">Ver video</a>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>Respiración de la Abeja</h2> <br>
+        <ul>
+            <li>✤ Siéntate con la espalda recta en una posición cómoda.</li> <br>
+
+            <li>✤ Cierra los ojos y tapa tus oídos con los pulgares.</li> <br>
+
+            <li>✤ Coloca los otros dedos sobre tus ojos o en la parte superior de la cabeza.</li> <br>
+
+            <li>✤ Inhala profundamente por la nariz.</li> <br>
+
+            <li>✤ Mientras exhalas, haz un zumbido suave, como el sonido de una abeja, manteniendo la boca cerrada.</li> <br>
+
+            <li>✤ Repite el ejercicio 5-10 veces.</li> <br>
+        </ul> <br> <br>
+        <a href="">Ver video</a>
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <h2>Respiración Samavritti</h2> <br>
+        <ul>
+            <li>✤ Siéntate en una posición cómoda con la espalda recta.</li> <br>
+
+            <li>✤ Inhala por la nariz contando mentalmente hasta 4.</li> <br>
+
+            <li>✤ Exhala por la nariz contando hasta 4.</li> <br>
+
+            <li>✤ Mantén la inhalación y la exhalación igual en duración y suave en ritmo.</li> <br>
+
+            <li>✤ Aumenta gradualmente la cuenta hasta 6 u 8 si te sientes cómodo.</li> <br>
+
+            <li>✤ Practica durante 5-10 minutos.</li>
+        </ul> <br> <br>
+        <a href="">Ver video</a>
+    </div>
+</div>
+
+<div id="modal4" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <h2>Respiración de Suspiro</h2> <br>
+        <ul>
+            <li>✤ Siéntate o acuéstate en una posición cómoda.</li> <br>
+
+            <li>✤ Inhala profundamente por la nariz, llenando tus pulmones al máximo.</li> <br>
+
+            <li>✤ Mantén la respiración durante 1-2 segundos.</li> <br>
+
+            <li>✤ Exhala rápidamente y completamente por la boca, como un suspiro.</li> <br>
+
+            <li>✤ Repite 5-10 veces, permitiendo que tu cuerpo se relaje con cada exhalación.</li> <br>
+        </ul> <br> <br>
+        <a href="">Ver video</a>
+    </div>
+</div>
+
+<div id="modal5" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal5')">&times;</span>
+        <h2>Respiración de Coherencia Cardíaca</h2> <br>
+        <ul>
+            <li>✤ Siéntate cómodamente con la espalda recta.</li> <br>
+
+            <li>✤ Inhala por la nariz durante 5 segundos.</li> <br>
+
+            <li>✤ Exhala por la boca durante 5 segundos.</li> <br>
+
+            <li>✤ Concéntrate en mantener una respiración suave y constante.</li> <br>
+
+            <li>✤ Practica durante 5 minutos, idealmente 2-3 veces al día.</li> <br>
+        </ul> <br> <br>
+        <a href="">Ver video</a>
+    </div>
+</div>
+    </div> <br>
+    <%- include('partials/footer') %>
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditación y Ejercicios</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        h1 {
+            margin-top: 120px;
+            text-align: center;
+            color: var(--title-color);
+        }
+
+        .introduction {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .exercises {
+            padding: 20px;
+            background-color: #fff;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 15px;
+        }
+
+        .exercises h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--first-color);
+        }
+
+        .exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .exercise-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: calc(33.333% - 40px);
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .exercise-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .contenido1 {
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title1 {
+            text-align: center;
+            color: var(--first-color);
+        }
+
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+
+        .modal h2 {
+            color: var(--first-color);
+            text-align: center;
+        }
+
+        .modal p {
+            text-align: center;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navigation') %>
+    <header>
+        <h1>Políticas de Privacidad de MindFulLife</h1>
+    </header>
+
+    <section class="introduction">
+        <p>Última actualización: [10/09/2024]</p>
+    </section>
+
+    <section class="exercises">
+        <div class="contenido">
+            <div class="contenido1">
+                <h3 class="title1">Introducción</h3> <br>
+                <p>En MindFulLife, valoramos tu privacidad y estamos comprometidos a proteger la información personal que nos proporcionas. Esta política de privacidad describe cómo recopilamos, utilizamos y compartimos tu información cuando usas nuestra aplicación y servicios.</p>
+            </div>
+            <div class="contenido1">
+                <h3 class="title1">Seguridad de la Información</h3> <br>
+                <p>Implementamos medidas de seguridad técnicas y organizativas adecuadas para proteger tu información personal contra el acceso no autorizado, la pérdida o la destrucción.</p>
+            </div>
+            <div class="contenido1">
+                <h3 class="title1">Retención de Datos</h3> <br>
+                <p>Conservamos tu información personal solo durante el tiempo necesario para cumplir con los fines para los que fue recopilada, o según lo exija la ley.</p>
+            </div>
+            <div class="contenido1">
+                <h3 class="title1">Información que Recopilamos</h3> <br>
+                <ul>
+                    <li><b>▸ Información de Registro: </b>Al registrarte en nuestra aplicación, recopilamos información como tu nombre, correo electrónico, fecha de nacimiento y género.</li> <br>
+
+                    <li><b>▸ Datos de Uso: </b>Recopilamos información sobre cómo usas nuestra aplicación, incluyendo las evaluaciones completadas, el seguimiento del estado de ánimo, y las rutinas de autocuidado que configuras </b></li> <br>
+
+                    <li><b>▸ Información de Dispositivo: </b>Recopilamos datos técnicos sobre el dispositivo que utilizas para acceder a nuestra aplicación, como la dirección IP, el tipo de dispositivo y el sistema operativo.</li> <br>
+                </ul>
+            </div>
+
+            <div class="contenido1">
+                <h3 class="title1">Uso de la Información</h3> <br>
+                <ul>
+                    <li><b>▸ Proveer y mejorar nuestros servicios: </b>Utilizamos tus datos para personalizar tu experiencia en la aplicación y mejorar la calidad de nuestros servicios.</li> <br>
+
+                    <li><b>▸ Comunicación: </b>Podemos usar tu información de contacto para enviarte actualizaciones, recordatorios y otros mensajes relacionados con nuestros servicios.</b></li> <br>
+
+                    <li><b>▸ Investigación y análisis: </b>Usamos datos agregados para entender mejor las necesidades de nuestros usuarios y mejorar nuestra oferta de productos y servicios.</li> <br>
+                </ul>
+            </div>
+
+            <div class="contenido1">
+                <h3 class="title1">Compartición de la Información</h3> <br>
+                <ul>
+                    <li>MindFulLife no vende, alquila ni comparte tu información personal con terceros sin tu consentimiento, salvo en las siguientes circunstancias:</li> <br>
+
+                    <li><b>▸ Proveedores de servicios: </b>Podemos compartir tu información con proveedores de servicios que nos ayudan a operar nuestra aplicación, como servicios de almacenamiento en la nube.</b></li> <br>
+
+                    <li><b>▸ Cumplimiento legal: </b>Podremos divulgar tu información si es requerido por ley o en respuesta a una solicitud legal válida.</li> <br>
+                </ul>
+            </div>
+        </div>
+    
+</body>
+</html>

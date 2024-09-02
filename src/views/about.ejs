@@ -1,136 +1,206 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros</title>
-    <link rel="stylesheet" href="/src/public/about.css">
-    <style>
-        * {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-        }
-
-        /* Centro el contenedor principal */
-        .container {
-            display: flex;
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center; /* Centra verticalmente si hay altura definida */
-            min-height: 80vh; /* Asegura que el contenedor tenga una altura mínima */
-            padding: 20px;
-        }
-
-        .accordion-wrapper {
-            width: 100%;
-            max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
-            margin: 0 auto;
-        }
-
-        .accordion {
-            background-color: #eee;
-            border: none;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .accordion-button {
-            background-color: white;
-            color: black;
-            font-weight: bold;
-            cursor: pointer;
-            padding: 15px;
-            text-align: left;
-            border: none;
-            outline: none;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-            width: 100%;
-            border-bottom: 1px solid #ddd; /* Línea de separación entre botones */
-        }
-
-        .accordion-button:hover {
-            background-color: rgb(239, 237, 237);
-        }
-
-        .accordion-content {
-            padding: 0 15px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .accordion-content p {
-            margin: 15px 0;
-        }
-
-        .active .accordion-content {
-            max-height: 1000px; /* A large value to ensure it is always visible */
-        }
-
-        .active .accordion-button {
-            border-bottom: none; /* Remove the bottom border for the active button */
-        }
-
-        span {
-            margin-right: 10px;
-            color: black;
-            font-weight: bold;
-        }
-
-    </style>
+    <title>Quiénes Somos</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+        color: #333;
+    }
+
+    h1 {
+        margin-top: 120px;
+        text-align: center;
+        color: var(--title-color);
+    }
+
+    h2 {
+        text-align: center;
+        color: var(--first-color);
+    }
+
+    .nombre {
+        color: var(--title-color);
+        text-align: center;
+    }
+
+    .texto {
+        color: black;
+    }
+
+    .section {
+        padding: 40px 20px;
+        margin-bottom: 30px;
+        background-color: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        font-size: 18px;
+    }
+
+    .section2 {
+        padding: 40px 20px;
+        margin-bottom: 30px;
+        background-color: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        display: flex;
+    }
+
+    .section p {
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    .team-section {
+        padding: 40px 20px;
+        background-color: #fff;
+        max-width: 1200px;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+    }
+
+    .team-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .team {
+        padding: 40px 20px;
+        margin-bottom: 30px;
+        background-color: #fff;
+        max-width: 40%;
+        margin: 0 auto;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        display: flex;
+        margin-top: 0px;
+    }
+
+    .team-member {
+        background-color: #f9f9f9;
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 170px;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .team-member img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+
+    .team-member h3 {
+        margin: 10px 0;
+        color: #333;
+    }
+
+    .team-member p {
+        color: #666;
+    }
+
+    .mision {
+        max-width: 40%;
+        margin-left: 5%;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .vision {
+        max-width: 40%;
+        margin-left: 10%;
+        text-align: center;
+        font-size: 18px;
+    }
+
+</style>
+
 <body>
     <%- include('partials/navigation') %>
-    <div class="container">
-        <div class="accordion-wrapper">
-            <div class="accordion">
-                <button class="accordion-button"><span>+</span>¿Quiénes somos?</button>
-                <div class="accordion-content">
-                    <p>Somos una empresa dedicada a mejorar el bienestar de nuestros usuarios...</p>
-                </div>
-            </div>
+    <header>
+        <h1>Sobre Nosotros</h1>
+    </header> <br>
 
-            <div class="accordion">
-                <button class="accordion-button"><span>+</span>Nuestros Servicios</button>
-                <div class="accordion-content">
-                    <p>Ofrecemos una gama de servicios diseñados para ayudarte a alcanzar tus metas...</p>
-                </div>
-            </div>
+    <section class="section" id="quienes-somos">
+        <h2>Quiénes Somos</h2> <br>
+        <p class="texto">En MindFulLife, creemos firmemente que el bienestar mental es fundamental para llevar una vida plena y equilibrada. Nacimos de la necesidad de proporcionar herramientas accesibles y efectivas que ayuden a las personas a manejar el estrés, la ansiedad, y otros desafíos relacionados con la salud mental en su vida diaria. <br> <br>
 
-            <div class="accordion">
-                <button class="accordion-button"><span>+</span>Nuestro Equipo</button>
-                <div class="accordion-content">
-                    <p>Conoce a los profesionales que trabajan para ofrecerte la mejor experiencia...</p>
-                </div>
-            </div>
+            Nuestro equipo está compuesto por profesionales apasionados en la psicología, el desarrollo personal y la tecnología, que trabajan juntos para crear soluciones innovadoras. Nos dedicamos a ofrecer un espacio seguro y confidencial donde nuestros usuarios puedan explorar sus emociones, seguir su progreso mental y aprender estrategias prácticas para mejorar su bienestar. <br> <br>
+            
+            MindFulLife no es solo una aplicación; es un compañero en tu camino hacia una mejor calidad de vida. Ya sea a través de nuestras evaluaciones personalizadas, herramientas de seguimiento del estado de ánimo, ejercicios de autocuidado o recursos educativos, estamos aquí para apoyarte en cada paso de tu viaje hacia la salud mental. <br> <br>
+            
+            Nuestra misión es empoderar a las personas a tomar el control de su salud mental, proporcionando un acceso fácil a recursos y técnicas probadas que pueden marcar una diferencia real en su vida cotidiana. Con MindFulLife, tu bienestar está al alcance de tus manos.</p>
+    </section> <br> <br>
 
-            <div class="accordion">
-                <button class="accordion-button"><span>+</span>Contáctanos</button>
-                <div class="accordion-content">
-                    <p>Estamos aquí para ayudarte. Puedes contactarnos a través de los siguientes canales...</p>
-                </div>
+    <section class="section2" id="mision">
+        <div class="mision">
+        <h2>Nuestra Misión</h2> <br>
+        <p class="texto">En MindFulLife, nuestra misión es proporcionar una plataforma integral que empodere a las personas para tomar el control de su salud mental. A través de herramientas innovadoras, recursos educativos y prácticas basadas en evidencia, buscamos mejorar el bienestar emocional de nuestros usuarios, ayudándolos a desarrollar la resiliencia, gestionar el estrés y cultivar una vida más equilibrada y satisfactoria.</p>
+    </div>
+    <div class="vision">
+        <h2>Nuestra Visión</h2> <br>
+        <p class="texto">Nuestra visión es ser líderes globales en el apoyo a la salud mental digital, ofreciendo soluciones accesibles y efectivas que transformen la manera en que las personas cuidan su bienestar mental. Aspiramos a crear una comunidad en la que el cuidado de la salud mental sea parte esencial de la vida diaria, contribuyendo a una sociedad más consciente, saludable y equilibrada.</p>
+    </div>
+    </section> <br>
+
+    <section class="team-section" id="equipo">
+        <h2>Conoce a Nuestro Equipo</h2> <br>
+        <h3 class="nombre">Nuestro Profesionales</h3> <br>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="path/to/image1.jpg" alt="Miembro del equipo 1">
+                <h3 class="nombre">Nombre del Miembro 1</h3>
+                <p>Rol/Posición</p>
             </div>
+            <div class="team-member">
+                <img src="path/to/image2.jpg" alt="Miembro del equipo 2">
+                <h3 class="nombre">Nombre del Miembro 2</h3>
+                <p>Rol/Posición</p>
+            </div>
+            <div class="team-member">
+                <img src="path/to/image3.jpg" alt="Miembro del equipo 3">
+                <h3 class="nombre">Nombre del Miembro 3</h3>
+                <p>Rol/Posición</p>
+        </div>
+    </div> <br>
+        <h3 class="nombre">Nuestros Desarrolladores</h3> <br>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="/images/Duber.jpg" alt="Miembro del equipo 1">
+                <h3 class="nombre">Duber Gutiérrez S.</h3>
+                <p>Back-End Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="/images/Miguel.jpg" alt="Miembro del equipo 2">
+                <h3 class="nombre">Miguel Angel Isaza G.</h3>
+                <p>Front-End Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="/images/Harold.jpg" alt="Miembro del equipo 3">
+                <h3 class="nombre">Harold S. Barrientos G.</h3>
+                <p>Professional Designer</p>
         </div>
     </div>
+    </section>
 
-    <%- include('partials/footer') %>
-
-    <script>
-        // Script para manejar el comportamiento del acordeón
-        document.querySelectorAll('.accordion-button').forEach(button => {
-            button.addEventListener('click', () => {
-                // Toggle active class on the parent accordion
-                const accordion = button.parentElement;
-                accordion.classList.toggle('active');
-
-                // Close other accordions
-                document.querySelectorAll('.accordion').forEach(item => {
-                    if (item !== accordion) {
-                        item.classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
+<%- include('partials/footer') %>
 </html>

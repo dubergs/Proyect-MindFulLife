@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noticias y Técnicas de Relajación</title>
+    <style>
+
+        .news-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 30px;
+            border-radius: 30px;
+        }
+        .news-item {
+            background-color: #ffffff;
+            width: 320px;
+            height: 350px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .news-item img {
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+        }
+        .news-item .news-content {
+            padding: 15px;
+            height: 50%;
+            border-radius: 0 0 20px 20px;
+        }
+        .news-title a {
+            text-decoration: none;
+            color: var(--first-color);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .news-title a:hover {
+            text-decoration: underline;
+        }
+        .news-description {
+            margin-top: 10px;
+            color: #616161;
+        }
+        .edit-profile {
+            background-color: var(--first-color);
+            color: #ffffff;
+            border: none;
+            padding: 12px 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            border-radius: 10px;
+            font-size: 16px;
+        }
+        .relaxation-techniques {
+            background: linear-gradient(to bottom, #b2ebf2, #e0f7fa);
+            padding: 60px 20px;
+            text-align: center;
+            color: var(--first-color);
+            border-radius: 50% 50% 0 0 / 15% 15% 0 0;
+        }
+        .technique-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .technique-item {
+            background-color: #ffffff;
+            width: 280px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .technique-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .technique-item h3 {
+            color: var(--first-color);
+            margin: 0;
+            font-size: 18px;
+        }
+        .technique-item p {
+            color: #616161;
+            margin-top: 10px;
+        }
+        .book-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            margin-top: 40px;
+        }
+        .book-item {
+            display: flex;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            width: 85%;
+            max-width: 800px;
+        }
+        .book-item img {
+            width: 120px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .book-item .book-details {
+            text-align: left;
+        }
+        .book-item h3 {
+            color: var(--first-color);
+            margin: 0;
+            font-size: 22px;
+        }
+        .book-item p {
+            color: #616161;
+            margin: 5px 0;
+        }
+        #more-books {
+            display: none;
+        }
+        #show-more {
+            margin-top: 20px;
+            background-color: var(--first-color);
+            color: white;
+            border: none;
+            padding: 10px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #show-more:active {
+            background-color: var(--title-color);
+        }
+        .mental-health-section {
+            padding: 60px 20px;
+            text-align: left;
+            background-color: #80deea;
+            border-radius: 0 0 50% 50% / 15% 15% 0 0;
+            color: var(--first-color);
+        }
+        .mental-health-section h2 {
+            font-size: 30px;
+            color: var(--first-color);
+            margin-bottom: 20px;
+        }
+        .mental-health-section .info-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .mental-health-section .info-item h3 {
+            color: var(--first-color);
+            margin: 0;
+            font-size: 22px;
+        }
+        .mental-health-section .info-item p {
+            color: #616161;
+            margin: 0;
+        }
+
+        .button {
+          margin-bottom: 20px;
+        }
+
+        h1 {
+            margin-top: 110px;
+            text-align: center;
+            color: var(--title-color);
+        }
+
+        h2 {
+            color: var(--title-color);
+        }
+    </style>
+</head>
+<body>
+  <%- include('partials/navigation') %>
+  <h1>Noticias Internacionales</h1>
+    <div class="news-container">
+        <div class="news-item">
+            <img src="" alt="">
+            <div class="news-content">
+                <div class="news-title"><a href="https://example.com/noticia1" target="_blank">Nuevas Técnicas para Combatir el Estrés en el Trabajo</a></div>
+                <p class="news-description">Descubre estrategias innovadoras para reducir el estrés laboral y mejorar tu bienestar en el entorno profesional.</p>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="" alt="">
+            <div class="news-content">
+                <div class="news-title"><a href="https://example.com/noticia2" target="_blank">Beneficios de la Meditación en la Salud Mental</a></div>
+                <p class="news-description">Explora los múltiples beneficios de la meditación y cómo puede ayudarte a mantener una mente saludable.</p>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="" alt="">
+            <div class="news-content">
+                <div class="news-title"><a href="https://example.com/noticia3" target="_blank">Tendencias en Terapias de Relajación para 2024</a></div>
+                <p class="news-description">Conoce las últimas tendencias en terapias de relajación y cómo integrarlas en tu rutina diaria.</p>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="" alt="">
+            <div class="news-content">
+                <div class="news-title"><a href="https://example.com/noticia4" target="_blank">El Impacto del Ejercicio en el Bienestar Mental</a></div>
+                <p class="news-description">Un análisis de cómo el ejercicio físico regular puede influir positivamente en tu salud mental.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección de Técnicas de Relajación -->
+    <div class="relaxation-techniques">
+        <h2>Noticias Nacionales</h2>
+        <div class="technique-list">
+            <div class="technique-item">
+                <img src=" " alt="">
+                <div class="news-title"><a href="https://example.com/noticia1" target="_blank">Caso de depresion en Cali</a></div>
+                <p>Aprende cómo una respiración controlada puede ayudarte a reducir el estrés.</p>
+            </div>
+            <div class="technique-item">
+                <img src="" alt="">
+                <div class="news-title"><a href="https://example.com/noticia1" target="_blank">Caso de depresion en Cali</a></div>
+                <p>Relaja tu cuerpo al ser consciente de cada parte de él.</p>
+            </div>
+            <div class="technique-item">
+                <img src="" alt="">
+                <div class="news-title"><a href="https://example.com/noticia1" target="_blank">Caso de depresion en Cali</a></div>
+                <p>Usa tu imaginación para crear un entorno mental de paz y relajación.</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sección de Libros que te pueden Ayudar -->
+    <div class="book-list">
+        <h2>Noticias Departamentales</h2>
+        <div class="book-item">
+           <img src="" alt="">
+            <div class="book-details">
+                <div class="news-title"><a href="https://example.com/noticia1" target="_blank">Caso de depresion en Cali</a></div>
+                <p>Una obra maestra que introduce los principios básicos del Zen y la meditación.</p>
+            </div>
+        </div>
+        <div class="book-item">
+            <img src="" alt="">
+            <div class="book-details">
+                <div class="news-title"><a href="https://example.com/noticia1" target="_blank">Caso de depresion en Cali</a></div>
+                <p>Guía para vivir en el presente y liberar la mente de cargas innecesarias.</p>
+            </div>
+        </div>
+        <div class="book-item">
+            <img src="" alt="">
+            <div class="book-details">
+                <div class="news-title"><a href="https://example.com/noticia1" target="_blank">Caso de depresion en Cali</a></div>
+                <p>Entiende cómo funciona tu cerebro en situaciones emocionales y aprende a gestionarlas mejor.</p>
+            </div>
+        </div>
+    
+        <div id="more-books">
+            <div class="book-item">
+                <img src="" alt="">
+                <div class="book-details">
+                    <div class="news-title"><a href="https://example.com/noticia1" target="_blank">Caso de depresion en Cali</a></div>
+                    <p>Una exploración profunda sobre cómo la atención plena puede transformar tu vida.</p>
+                </div>
+            </div>
+            <div class="book-item">
+                <img src="" alt="">
+                <div class="book-details">
+                    <div class="news-title"><a href="https://example.com/noticia1" target="_blank">Caso de depresion en Cali</a></div>
+                    <p>Reflexiones del Dalai Lama sobre cómo cultivar la paz interior y la felicidad.</p>
+                </div>
+            </div>
+        </div>
+        <button id="show-more" onclick="toggleMoreBooks()" class="button">Ver Más</button>
+    </div>
+
+    <script>
+        function toggleMoreBooks() {
+            const moreBooks = document.getElementById('more-books');
+            const showMoreButton = document.getElementById('show-more');
+            if (moreBooks.style.display === 'none' || moreBooks.style.display === '') {
+                moreBooks.style.display = 'flex';
+                showMoreButton.textContent = 'Ver Menos';
+            } else {
+                moreBooks.style.display = 'none';
+                showMoreButton.textContent = 'Ver Más';
+            }
+        }
+    </script>
+</body>
+<%- include('partials/footer') %>
+
+</html>

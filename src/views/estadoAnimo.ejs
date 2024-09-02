@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguimiento del Estado de Ánimo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 110px;
+        padding: 0;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+    }
+
+    header h1 {
+        font-size: 2em;
+        margin: 0;
+        color: black;
+    }
+
+    #history-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 10px;
+        padding: 10px 20px;
+        background-color: var(--first-color);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    #history-btn:hover {
+        background-color: var(--title-color);
+    }
+
+    .mood-tracker, .mood-history {
+        margin-bottom: 20px;
+    }
+
+    .mood-tracker h2, .mood-history h2 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mood-slider {
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .mood-slider label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    .slider-container {
+        position: relative;
+        width: 100%;
+    }
+
+    #mood-slider {
+        width: 100%;
+        -webkit-appearance: none;
+        background: transparent;
+    }
+
+    #mood-slider::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8px;
+        cursor: pointer;
+        background: var(--border-color);
+        border-radius: 5px;
+    }
+
+    #mood-slider::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background: var(--title-color);
+        border-radius: 50%;
+        border: 2px solid #fff;
+        -webkit-appearance: none;
+        margin-top: -6px;
+    }
+
+    #mood-slider::-moz-range-track {
+        width: 100%;
+        height: 8px;
+        cursor: pointer;
+        background: #ddd;
+        border-radius: 5px;
+    }
+
+    #mood-slider::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        background: #396afc;
+        border-radius: 50%;
+        border: 2px solid #fff;
+    }
+
+    .slider-ticks {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #333;
+        margin-top: 5px;
+    }
+
+    .emoji-container {
+        position: absolute;
+        top: -30px;
+        width: 100%;
+        text-align: center;
+        pointer-events: none;
+    }
+
+    #emoji {
+        font-size: 24px;
+    }
+
+    label {
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+
+    textarea {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        resize: vertical;
+    }
+
+    button {
+        background-color: var(--first-color);
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: var(--title-color);
+    }
+
+    .mood-history {
+        display: none;
+    }
+
+    .mood-history table {
+        width: 100%;
+        border-collapse: collapse;
+        font-weight: bold;
+    }
+
+    .mood-history th, .mood-history td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .mood-history th {
+        background-color: #f4f4f4;
+        font-weight: bold;
+        color: black;
+    }
+</style>
+<body>
+    <%- include('partials/navigation') %>
+    <div class="container">
+        <header>
+            <h1>Seguimiento del Estado de Ánimo</h1>
+            <button id="history-btn">Historial</button>
+        </header>
+
+        <section class="mood-tracker">
+            <h2>Registrar Estado de Ánimo</h2>
+            <form id="mood-form">
+                <div class="mood-slider">
+                    <label for="mood-slider">¿Como te sientes hoy?</label>
+                    <div class="slider-container">
+                        <input type="range" id="mood-slider" name="mood" min="-2" max="2" value="0">
+                        <div class="emoji-container">
+                            <span id="emoji">😐</span>
+                        </div>
+                    </div>
+                    <div class="slider-ticks">
+                        <span>Triste</span>
+                        <span>Enojado</span>
+                        <span>Ansioso</span>
+                        <span>Neutral</span>
+                        <span>Feliz</span>
+                    </div>
+                </div>
+
+                <label for="mood-comment">Descripción:</label>
+                <textarea id="mood-comment" name="comment" rows="4" placeholder="Porque te sientes asi el dia de hoy?"></textarea>
+
+                <button type="submit">Guardar</button>
+            </form>
+        </section>
+
+        <section class="mood-history" id="mood-history">
+            <h2>Historial de Estados de Ánimo</h2>
+            <table id="history-table">
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                        <th>Comentario</th>
+                    </tr>
+                </thead>
+                <tbody id="history-list">
+                    <!-- Las entradas se agregarán aquí dinámicamente -->
+                </tbody>
+            </table>
+        </section>
+    </div>
+
+    <script>
+        const moodSlider = document.getElementById('mood-slider');
+        const emoji = document.getElementById('emoji');
+        const sliderContainer = document.querySelector('.slider-container');
+        const historyBtn = document.getElementById('history-btn');
+        const moodHistory = document.getElementById('mood-history');
+        
+        // Alternar la visibilidad de la sección del historial
+        historyBtn.addEventListener('click', () => {
+            moodHistory.style.display = moodHistory.style.display === 'none' || moodHistory.style.display === '' ? 'block' : 'none';
+        });
+
+        // Update emoji based on slider value
+        moodSlider.addEventListener('input', () => {
+            const value = parseInt(moodSlider.value);
+            let emojiText;
+
+            switch (value) {
+                case -2:
+                    emojiText = '😢'; // Triste
+                    break;
+                case -1:
+                    emojiText = '😡'; // Enojado
+                    break;
+                case 0:
+                    emojiText = '😟'; // Ansioso
+                    break;
+                case 1:
+                    emojiText = '😐'; // Neutral
+                    break;
+                case 2:
+                    emojiText = '😊'; // Feliz
+                    break;
+                default:
+                    emojiText = '😐'; // Default
+            }
+            
+            emoji.textContent = emojiText;
+            updateEmojiPosition();
+        });
+
+        function updateEmojiPosition() {
+            const min = moodSlider.min;
+            const max = moodSlider.max;
+            const value = moodSlider.value;
+            const percentage = ((value - min) / (max - min)) * 100;
+            const sliderWidth = sliderContainer.offsetWidth;
+
+            emoji.style.left = `calc(${percentage}% - ${emoji.offsetWidth / 2}px)`;
+        }
+
+        document.getElementById('mood-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío del formulario
+
+            const moodValue = moodSlider.value;
+            const moodComment = document.getElementById('mood-comment').value;
+
+            if (moodComment.trim() === '') {
+                alert('Por favor, añade un comentario.');
+                return;
+            }
+
+            let mood;
+            switch (parseInt(moodValue)) {
+                case -2:
+                    mood = 'Triste';
+                    break;
+                case -1:
+                    mood = 'Enojado';
+                    break;
+                case 0:
+                    mood = 'Ansioso';
+                    break;
+                case 1:
+                    mood = 'Neutral';
+                    break;
+                case 2:
+                    mood = 'Feliz';
+                    break;
+                default:
+                    mood = 'Desconocido';
+            }
+
+            const historyList = document.getElementById('history-list');
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${new Date().toLocaleDateString()}</td>
+                <td>${mood}</td>
+                <td>${moodComment}</td>
+            `;
+
+            historyList.appendChild(row);
+
+            document.getElementById('mood-comment').value = ''; // Limpia el campo de comentario
+        });
+
+        // Inicializa la posición del emoji
+        updateEmojiPosition();
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/src/public/navbar.css">
+    <style>
+        /* Estilo general para la barra de navegación */
+        nav {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: #396afc;
+    background: -webkit-linear-gradient(to top, #2948ff, #396afc);
+    background: linear-gradient(to top, #2948ff, #396afc);
+    height: 80px; /* Ajusta la altura del navbar */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    border-radius: 2px;
+    padding: 0 20px; /* Padding a los lados */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-left img {
+    height: 60px; /* Ajusta la altura del logo para que se ajuste mejor */
+    width: auto; /* Mantiene la proporción del logo */
+    margin-right: 20px; /* Espacio a la derecha del logo */
+}
+
+        /* Estilo para la lista de navegación */
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilo para los elementos de la lista */
+        nav ul li {
+            margin: 0 20px;
+            position: relative;
+        }
+
+        /* Estilo para los enlaces */
+        nav ul li a {
+            font-style: bold;
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 20px;
+            display: block;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Estilo para el estado hover de los enlaces */
+        nav ul li a:hover {
+            color: #000000;
+        }
+
+        /* Estilo para el submenú */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Estilo para los elementos del submenú */
+        .dropdown-menu a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        /* Estilo para el estado hover de los enlaces del submenú */
+        .dropdown-menu a:hover {
+            background-color: #ddd;
+            color: #2d8cf0;
+        }
+
+        /* Mostrar el submenú al pasar el ratón sobre el elemento de la lista */
+        nav ul li:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Estilo para el contenedor de la derecha (icono de usuario) */
+        .navbar-right {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilo para el ícono de búsqueda */
+        .search-icon {
+            color: #fff;
+            cursor: pointer;
+            font-size: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Estilo para el input de búsqueda */
+        .search-input {
+            display: none;
+            padding: 5px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin-left: 10px;
+            width: 200px;
+        }
+
+        /* Mostrar el input de búsqueda al hacer clic en el ícono de búsqueda */
+        .search-icon.active .search-input {
+            display: block;
+        }
+
+        /* Estilo para el ícono de usuario */
+        .user-icon {
+            color: #fff;
+            cursor: pointer;
+            font-size: 20px;
+            position: relative;
+            margin-right: 30px;
+        }
+
+        /* Estilo para el submenú del usuario */
+        .user-dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Estilo para los elementos del submenú del usuario */
+        .user-dropdown-menu a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 16px;
+        }
+
+        /* Mostrar el submenú del usuario al hacer hover en el ícono */
+        .user-icon:hover .user-dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-left">
+            <!-- Logo del proyecto -->
+             <img src="/src/public/images/logo5.jpg" alt="logo">
+            <ul>
+                <li><a href="/">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#">Servicios</a>
+                    <div class="dropdown-menu">
+                        <a href="/estadoAnimo">Estado de Ánimo</a>
+                        <a href="/ejercicioCuidado">Ejercicios de Autocuidado</a>
+                        <a href="/exercise3">Ejercicio 3</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Recursos</a>
+                    <div class="dropdown-menu">
+                        <a href="/articulos">Artículos</a>
+                        <a href="/videos">Videos</a>
+                        <a href="/guias">Guías</a>
+                    </div>
+                </li>
+                <li><a href="/noticias">Noticias</a></li>
+                <li><a href="/testimonios">Testimonios</a></li>
+                <!-- Ícono de búsqueda -->
+                <li class="search-icon">
+                    🔎
+                    <input type="search" class="search-input" placeholder="Buscar...">
+                </li>
+            </ul>
+        </div>
+        <div class="navbar-right">
+            <!-- Ícono de usuario con submenú -->
+            <div class="user-icon">
+                👤
+                <div class="user-dropdown-menu">
+                    <a href="/perfil">Perfil</a>
+                    <a href="/ajustes">Ajustes</a>
+                    <a href="/logout">Cerrar sesión</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener('click', function(event) {
+            var searchIcon = document.querySelector('.search-icon');
+            var searchInput = document.querySelector('.search-input');
+            
+            if (searchIcon.contains(event.target)) {
+                searchIcon.classList.add('active');
+                searchInput.focus();
+            } else {
+                searchIcon.classList.remove('active');
+                searchInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
