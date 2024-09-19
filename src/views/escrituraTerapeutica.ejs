@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización Positiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
+</head>
+<style>
+    body {
+        margin-top: 120px;
+        background: linear-gradient(to bottom, #0d47a1, #e0e0e0);
+
+
+    }
+
+
+.container {
+    max-width: 1200px;
+    margin: 0;
+
+}
+
+.section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section img {
+    width: 300px;
+    height: 300px;
+    margin-left: 725px;
+    margin-top: -320px;
+}
+
+.section h2 {
+    color: var(--first-color);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.section h3 {
+    color: var(--first-color);
+    font-size: 22px;
+}
+
+.section ul {
+    margin: 15px 0;
+
+    font-size: 18px;
+}
+
+.ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    margin-left: 10px;
+}
+
+.ul li strong{
+    color: var(--title-color);
+    font-size: 19px;
+
+}
+
+section p {
+    line-height: 1.8;
+    font-size: 18px;
+    width: 650px;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .section h2 {
+        font-size: 1.5em;
+    }
+}
+
+li {
+    color: black;
+}
+
+.h2 {
+    color: black;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+
+.exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .exercise-item {
+            background-color: #ecebeb;
+            border: 1px dashed black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .exercise-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .exercise-item p {
+            color: black;
+        }
+
+        .contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .contenido1 {
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title1 {
+            text-align: center;
+            color: var(--first-color);
+        }
+
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none;
+            position: fixed;
+            color: black;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+
+        .modal h2 {
+            color: var(--first-color);
+            text-align: center;
+        }
+
+        .modal p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .modal-content ul {
+            margin-left: 20px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .contenido1 ul {
+            font-size: 18px;
+            color: black;
+        }
+
+        .contenido1 p {
+            font-size: 18px;
+            color: black;
+        }
+
+        .modal a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 240px;
+        }
+
+        h4 {
+            color: var(--title-color);
+            font-size: 18px;
+        }
+
+        strong {
+            color: var(--title-color);
+        }
+
+        .uno{
+            display: flex;
+        }
+</style>
+
+<body>
+<%- include('partials/navigation') %>
+    
+    <div class="container">
+        <section class="section">
+            <h2>Qué es la Escritura Terapéutica</h2>
+            <p>La escritura terapéutica es una técnica utilizada para mejorar el bienestar emocional y mental a través de la escritura. A menudo se emplea como una herramienta en terapias psicológicas o como una práctica personal para expresar pensamientos, emociones y experiencias. La escritura terapéutica permite a las personas reflexionar sobre sus sentimientos, identificar patrones de comportamiento y encontrar claridad en situaciones difíciles, lo que puede conducir a una mayor comprensión de sí mismos y de sus emociones.</p> <br>
+            <img src="/images/escritura.gif" alt="hola">
+
+            <h2>Beneficios de la escritura terapéutica</h2>
+            <h3><strong>1</strong> Mejora de la salud mental:</h3>
+            <ul class="ul">
+                <li><strong>◈ Reducción del estrés:</strong> La escritura expresiva ha demostrado ser efectiva para reducir la tensión emocional y mejorar el bienestar general.</li> <br>
+
+                <li><strong>◈ Alivio de la ansiedad:</strong> Poner en palabras preocupaciones y miedos puede disminuir su intensidad.</li> <br>
+
+                <li><strong>◈ AAutocomprensión:</strong> La práctica regular puede ayudar a una mayor claridad sobre uno mismo y la vida personal.</li> <br>
+
+                <li><strong>◈ Manejo de la depresión:</strong> La escritura ayuda a procesar emociones, lo que puede aliviar síntomas de depresión.</li>
+
+            </ul> <br>
+
+            <h3><strong>2</strong> Mejora de la salud física:</h3>
+            <ul class="ul">
+                <li><strong>◈ </strong> Algunos estudios sugieren que la escritura terapéutica puede incluso tener efectos positivos sobre la salud física. La reducción del estrés emocional puede fortalecer el sistema inmunológico y disminuir el riesgo de enfermedades relacionadas con el estrés.</li>
+
+            </ul> <br>
+
+            <h3><strong>3</strong> Fortalecimiento de la resiliencia:</h3>
+            <ul class="ul">
+                <li><strong>◈ </strong> La escritura sobre experiencias difíciles o traumáticas puede ayudar a las personas a desarrollar resiliencia, permitiéndoles recuperarse más rápidamente de situaciones adversas.</li>
+
+            </ul> <br>
+
+            <h3><strong>4</strong> Clarificación de pensamientos y emociones:</h3>
+            <ul class="ul">
+                <li><strong>◈ </strong> Escribir permite poner en palabras pensamientos y emociones abstractas, lo que facilita el proceso de comprensión y resolución.</li>
+
+            </ul> <br> <br>
+
+            
+            <h2>Formas de escritura terapéutica</h2>
+            <ul class="ul">
+                <li><strong>➥ Escritura expresiva:</strong> Implica escribir libremente sobre los sentimientos y experiencias personales, sin preocuparse por la gramática o la estructura. Este tipo de escritura se centra en la expresión emocional pura.</li> <br>
+
+                <li><strong>➥ Diarios personales:</strong> Mantener un diario personal permite a las personas llevar un registro diario de sus pensamientos, sentimientos y eventos de vida, lo que ayuda a identificar patrones y áreas de crecimiento personal.</li><br>
+
+                <li><strong>➥ Escritura de gratitud:</strong> Enfocarse en escribir sobre las cosas por las que una persona está agradecida ayuda a cambiar el enfoque de lo negativo a lo positivo, fomentando una actitud más optimista.</li><br>
+
+                <li><strong>➥ Escritura creativa:</strong> Utilizar la poesía, la ficción o relatos para expresar emociones de manera simbólica o indirecta puede ser otra forma terapéutica de escritura.</li>
+
+            </ul> <br> <br>
+
+            <h2 class="h21">Técnicas populares en la escritura terapéutica</h2>
+            <ul class="ul">
+                <li><strong>➥ El método de los tres días:</strong> <br>Durante tres días consecutivos, escribe durante 15-20 minutos sobre un evento estresante o traumático de tu vida. Este proceso ayuda a liberar la tensión emocional relacionada con el evento.</li> <br>
+
+                <li><strong>➥ Escribir para el perdón:</strong> <br>Escribe sobre un evento que involucre resentimiento o falta de perdón. Luego, escribe una carta (aunque no la envíes) a la persona involucrada, lo que puede ayudarte a procesar el dolor y avanzar hacia el perdón.</li><br>
+
+                <li><strong>➥ Escritura futura:</strong> <br>Escribe sobre cómo te ves dentro de unos años, en una versión ideal de ti mismo. Este ejercicio ayuda a visualizar metas y a trabajar hacia ellas con más claridad y motivación.</li>
+
+            </ul>
+        </section>
+
+    </div> <br>
+    <h2 class="h2">Ejercicios de Escritura Terapéutica</h2> <br>
+    <div class="exercise-grid">
+        <div class="exercise-item" onclick="openModal('modal1')">
+            <img src="/images/escrituraFlujo.png" alt="Ilustración 1">
+            <p>Escritura de Flujo de Conciencia.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal2')">
+            <img src="/images/situacionDificil.png" alt="Ilustración 2">
+            <p>Escribir sobre una Experiencia Difícil.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal3')">
+            <img src="/images/dialogoInterno.png" alt="Ilustración 3">
+            <p>Escribir un Diálogo Interno.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal4')">
+            <img src="/images/reescribir.png" alt="Ilustración 4">
+            <p>Reescribir una Historia Personal.</p>
+        </div>
+    </div> <br>
+</section>
+
+<!-- Ventanas Modales -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h2>Escritura de Flujo de Conciencia</h2> <br>
+        <h4>Objectivo:</h4>
+        <ul>
+        <li>Liberar pensamientos y emociones reprimidas.</li>
+        </ul> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Pon un temporizador de 10-15 minutos.
+            </li> <br>
+
+            <li><b>✤</b> Durante ese tiempo, escribe todo lo que se te pase por la mente, sin detenerte a corregir o juzgar.</li> <br>
+
+            <li><b>✤</b> No te preocupes por la estructura, ortografía o coherencia. El objetivo es permitir que tus pensamientos fluyan libremente.</li> 
+        </ul> <br>
+        <h4>Beneficio:</h4>
+        <ul>
+        <li>Este ejercicio ayuda a liberar tensiones y aclarar pensamientos desorganizados o caóticos.</li>
+        </ul> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>Escribir sobre una Experiencia Difícil</h2> <br>
+        <h4>Objectivo:</h4>
+        <ul>
+        <li>Procesar emociones asociadas con un evento estresante o traumático.</li>
+        </ul> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Elige una experiencia dolorosa o desafiante que hayas vivido.
+            </li> <br>
+
+            <li><b>✤</b> Escribe sobre ese evento durante 20 minutos, enfocándote en tus emociones y cómo te hizo sentir en ese momento.</li> <br>
+
+            <li><b>✤</b> Haz esto durante tres días consecutivos, profundizando en tus sentimientos cada día.</li> 
+        </ul> <br>
+        <h4>Beneficio:</h4>
+        <ul>
+        <li>Este ejercicio permite externalizar y procesar emociones intensas, reduciendo su impacto negativo a largo plazo.</li>
+        </ul> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <h2>Escribir un Diálogo Interno</h2> <br>
+        <h4>Objectivo:</h4>
+        <ul>
+        <li>Explorar los conflictos internos y mejorar la autocomprensión.</li>
+        </ul> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Imagina una conversación entre dos partes de ti mismo. Puede ser entre tu "yo actual" y tu "yo pasado" o entre tu "yo racional" y tu "yo emocional".
+            </li> <br>
+
+            <li><b>✤</b> Escribe el diálogo como si fuera una conversación real. Deja que ambas partes expresen sus puntos de vista sin juzgar.</li> 
+        </ul> <br>
+        <h4>Beneficio:</h4>
+        <ul>
+        <li>Este ejercicio facilita el entendimiento de los conflictos internos, permitiendo procesarlos de manera más efectiva.</li>
+        </ul> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+<div id="modal4" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <h2>Reescribir una Historia Personal</h2> <br>
+        <h4>Objectivo:</h4>
+        <ul>
+        <li>Cambiar la perspectiva sobre un evento pasado.</li>
+        </ul> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Piensa en una experiencia de tu vida que haya sido difícil o traumática.
+            </li> <br>
+
+            <li><b>✤</b> Escribe la historia desde una nueva perspectiva, como si fueras un observador externo o si pudieras ver los aspectos positivos que surgieron de esa experiencia.</li> 
+        </ul> <br>
+        <h4>Beneficio:</h4>
+        <ul>
+        <li>Al reescribir la narrativa de una experiencia dolorosa, puedes transformar cómo te afecta y encontrar un nuevo sentido de significado o propósito.</li>
+        </ul> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+</div>
+
+
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    }
+</script>
+</body>
+<%- include('partials/footer') %>
+
+</html>

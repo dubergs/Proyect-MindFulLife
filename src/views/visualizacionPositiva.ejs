@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización Positiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
+</head>
+<style>
+    body {
+        margin-top: 120px;
+        background: linear-gradient(to bottom, #0d47a1, #e0e0e0);
+
+
+    }
+
+
+.container {
+    max-width: 1200px;
+    margin: 0;
+
+}
+
+.section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section img {
+    width: 300px;
+    height: 300px;
+    margin-left: 725px;
+    margin-top: -320px;
+}
+
+.section h2 {
+    color: var(--first-color);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.section ul {
+    margin: 15px 0;
+
+    font-size: 18px;
+}
+
+.ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.ul li strong{
+    color: var(--title-color);
+    font-size: 19px;
+}
+
+section p {
+    line-height: 1.8;
+    font-size: 18px;
+    width: 650px;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .section h2 {
+        font-size: 1.5em;
+    }
+}
+
+li {
+    color: black;
+}
+
+.h2 {
+    color: black;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+
+.exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .exercise-item {
+            background-color: #ecebeb;
+            border: 1px dashed black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .exercise-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .exercise-item p {
+            color: black;
+        }
+
+        .contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .contenido1 {
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title1 {
+            text-align: center;
+            color: var(--first-color);
+        }
+
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none;
+            position: fixed;
+            color: black;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+
+        .modal h2 {
+            color: var(--first-color);
+            text-align: center;
+        }
+
+        .modal p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .contenido1 ul {
+            font-size: 18px;
+            color: black;
+        }
+
+        .contenido1 p {
+            font-size: 18px;
+            color: black;
+        }
+
+        .modal a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 240px;
+        }
+
+        h4 {
+            color: var(--title-color);
+            font-size: 18px;
+        }
+
+</style>
+
+<body>
+<%- include('partials/navigation') %>
+    
+    <div class="container">
+        <section class="section">
+            <h2>Que es la Visualización Positiva</h2>
+            <p>La visualización positiva es una técnica mental que implica imaginar resultados favorables y situaciones deseadas con la intención de influir en el estado mental y el desempeño en la vida real. Se utiliza en una variedad de campos, como el deporte, la terapia, el desarrollo personal y el ámbito profesional. La idea detrás de la visualización positiva es que al visualizar un escenario exitoso, puedes preparar tu mente y cuerpo para lograrlo, aumentando la confianza, reduciendo el estrés y mejorando el rendimiento.</p> <br>
+            <img src="/images/positivo.gif" alt="hola">
+
+            <h2>Beneficios de la visualización positiva</h2>
+            <ul class="ul">
+                <li><strong>◈ Mejora el enfoque y la concentración:</strong> Visualizar el éxito o un proceso específico ayuda a enfocar la mente en los detalles de una tarea. Esto puede hacer que te sientas más seguro y preparado.</li> <br>
+
+                <li><strong>◈ Reducción del estrés y la ansiedad:</strong> Imaginar situaciones exitosas puede ayudar a reducir el miedo o la ansiedad hacia eventos futuros, como entrevistas, presentaciones o competiciones. Al visualizar un desenlace positivo, se crea una sensación de calma y control.</li> <br>
+
+                <li><strong>◈ Fomento de la confianza:</strong> La práctica de visualizar logros genera un sentido de autoconfianza. Al verte a ti mismo teniendo éxito en un escenario, aumentas tu creencia de que puedes lograrlo en la realidad.</li> <br>
+
+                <li><strong>◈ Motivación y persistencia:</strong> Cuando te ves alcanzando tus metas, te mantienes más motivado para perseverar a través de los obstáculos que se presenten en el camino. Refuerzas el propósito de seguir trabajando hacia el resultado deseado.</li> <br>
+
+                <li><strong>◈ Optimización del rendimiento:</strong> Atletas, artistas y profesionales a menudo usan la visualización para mejorar su rendimiento. Visualizar una tarea o evento repetidamente entrena al cerebro, lo que puede hacer que la ejecución real sea más efectiva.</li><br>
+
+                <li><strong>◈ Aumento de la resiliencia:</strong> Al imaginar situaciones desafiantes y cómo superarlas con éxito, puedes prepararte mentalmente para lidiar con contratiempos en la vida real de una manera más resiliente.</li>
+
+            </ul> <br> <br>
+
+            <h2>Cómo practicar la visualización positiva</h2>
+            <ul class="ul">
+                <li><strong>➥ Encuentra un lugar tranquilo:</strong> Elige un lugar donde puedas estar relajado y concentrarte sin distracciones.</li> <br>
+
+                <li><strong>➥ Relájate:</strong> Antes de comenzar, asegúrate de estar en un estado mental calmado. La respiración profunda o una breve meditación pueden ayudarte a relajarte.</li><br>
+
+                <li><strong>➥ Imagina con detalle:</strong> Visualiza el objetivo o situación con el mayor detalle posible. No solo imagines el resultado final, sino también los pasos para llegar allí. Usa todos tus sentidos: cómo te sientes, qué ves, qué oyes, incluso qué hueles.</li><br>
+
+                <li><strong>➥ Sé realista y positivo:</strong> Asegúrate de que las imágenes mentales sean alcanzables. No te centres solo en el resultado, sino en el proceso, y ten siempre un enfoque positivo.</li><br>
+
+                <li><strong>➥ Incorpora emociones:</strong> Mientras visualizas, siente las emociones positivas asociadas con el éxito. Imagina la alegría, satisfacción y orgullo de alcanzar tus objetivos.</li><br>
+
+                <li><strong>➥ Practica con frecuencia:</strong> La visualización es más efectiva cuando se hace regularmente.</li>
+
+            </ul>
+        </section>
+
+    </div> <br>
+    <h2 class="h2">Ejercicios de la Visualización Positiva</h2> <br>
+    <div class="exercise-grid">
+        <div class="exercise-item" onclick="openModal('modal1')">
+            <img src="/images/metas.png" alt="Ilustración 1">
+            <p>Visualización de Metas a Largo Plazo.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal2')">
+            <img src="/images/eventos.png" alt="Ilustración 2">
+            <p>Preparación para Eventos Estresantes.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal3')">
+            <img src="/images/obstaculos.png" alt="Ilustración 3">
+            <p>Superar Desafíos y Obstáculos.</p>
+        </div>
+    </div> <br>
+</section>
+
+<!-- Ventanas Modales -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h2>Visualización de Metas a Largo Plazo</h2> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Encuentra un lugar tranquilo donde puedas relajarte sin interrupciones.
+            </li> <br>
+
+            <li><b>✤</b> Cierra los ojos y respira profundamente varias veces para relajarte.</li> <br>
+
+            <li><b>✤</b> Imagina un futuro en el que has alcanzado una meta importante (como obtener un nuevo trabajo, mejorar en un deporte, o aprender una habilidad).</li> <br>
+
+            <li><b>✤</b> Visualiza cómo te sentirás cuando alcances ese objetivo: qué emociones experimentas, cómo te verás, y cómo cambiará tu vida.</li> <br>
+
+            <li><b>✤</b> Ahora retrocede en el tiempo mentalmente. Imagina los pasos concretos que tuviste que tomar para llegar a esa meta: trabajo duro, pequeños logros, superación de obstáculos.</li> <br>
+
+            <li><b>✤</b> Repite esta visualización diariamente para mantenerte enfocado y motivado hacia tu meta.</li>
+        </ul> <br> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>Preparación para Eventos Estresantes</h2> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Relájate y respira profundamente para calmarte antes de comenzar.</li> <br>
+
+            <li><b>✤</b> Visualiza el evento específico que te causa estrés (una presentación, entrevista, o competición). Imagina que todo va perfectamente bien.</li> <br>
+
+            <li><b>✤</b> Usa tus sentidos: imagina lo que estarás viendo, oyendo, y sintiendo. Haz que la imagen mental sea lo más realista posible.</li> <br>
+
+            <li><b>✤</b> Visualiza cómo te desenvuelves con confianza y éxito, cómo controlas el escenario, comunicas con claridad y transmites seguridad.</li> <br>
+
+            <li><b>✤</b> Enfócate en los resultados positivos: la aprobación de los demás, el logro alcanzado o la recompensa final.</li> <br>
+
+            <li><b>✤</b> Repite el ejercicio varias veces antes del evento real para que cuando llegue el momento, te sientas más seguro y preparado.</li> <br>
+        </ul> <br> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <h2>Superar Desafíos y Obstáculos</h2> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Identifica un desafío actual que enfrentas en tu vida, ya sea personal o profesional.</li> <br>
+
+            <li><b>✤</b> Siéntate en un lugar cómodo, cierra los ojos y concéntrate en tu respiración.</li> <br>
+
+            <li><b>✤</b> Imagina el obstáculo con el que estás luchando: un proyecto difícil, un problema personal o una tarea desafiante.</li> <br>
+
+            <li><b>✤</b> Visualiza cómo enfrentas este desafío con éxito. Imagina cada paso que das, cómo resuelves problemas, cómo te mantienes tranquilo y enfocado.</li> <br>
+
+            <li><b>✤</b> Piensa en los recursos que tienes a tu disposición (habilidades, apoyos, experiencia) y cómo los utilizas para salir adelante.</li> <br>
+
+            <li><b>✤</b> Siente la satisfacción de haber superado ese obstáculo. Imagina cómo te sientes después de haberlo resuelto y lo que has aprendido en el proceso.</li> <br>
+
+            <li><b>✤</b> Haz este ejercicio regularmente para programar tu mente hacia una actitud positiva ante los desafíos.</li>
+        </ul> <br> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    }
+</script>
+</body>
+<%- include('partials/footer') %>
+
+</html>

@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <title>Recupera-Contraseña</title>
     <style>
         /* Contenedor principal que centrará el formulario */
@@ -122,7 +124,6 @@
         P {
             font-size: 13.5px;
         }
-
     </style>
 </head>
 <body> 
@@ -130,24 +131,73 @@
     <div class="center-wrapper">
         <div class="form-container">
             <div class="logo-container">
-                Forgot Password
+                ¿Olvidaste tu Contraseña?
                 <p>No te preocupes, estamos aquí para ayudarte. Ingresa tu dirección de correo electrónico a continuación y te enviaremos un enlace para restablecer tu contraseña.</p>
             </div>
 
-            <form class="form">
+            <form class="form" action="/forgot-password" method="post">
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email" placeholder="Enter your email" required="">
+                    <label for="correo"><i class="fa-solid fa-envelope"></i>   <b>Correo electrónico</b></label>
+                    <input type="email" id="correo" name="correo" placeholder="ejemplo@gmail.com" required="">
                 </div>
 
-                <button class="form-submit-btn" type="submit">Send Email</button>
+                <button class="form-submit-btn" type="submit"><i class="fa-solid fa-location-arrow"></i>   <b>Enviar Correo</b></button>
             </form>
 
             <p class="signup-link">
-                Don't have an account?
-                <a href="#" class="signup-link link"> Sign up now</a>
+                No tienes una Cuenta?
+                <a href="/register" class="signup-link link"> Registrar</a>
             </p>
         </div>
     </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formulario = document.getElementById('resetForm');
+            
+            if (formulario) {
+                formulario.addEventListener('submit', async (event) => {
+                    event.preventDefault(); // Previene el envío por defecto del formulario
+            
+                    const correo = document.getElementById('correo').value;
+            
+                    try {
+                        const response = await fetch('/forgot-password', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ correo })
+                        });
+            
+                        if (response.ok) {
+                            Swal.fire({
+                                title: 'Éxito',
+                                text: 'Se ha enviado un enlace para restablecer tu contraseña a tu correo electrónico.',
+                                icon: 'success'
+                            });
+                        } else {
+                            const error = await response.json();
+                            Swal.fire({
+                                title: 'Error',
+                                text: error.message || 'Hubo un problema al enviar el correo electrónico.',
+                                icon: 'error'
+                            });
+                        }
+                    } catch (error) {
+                        Swal.fire({
+                            title: 'Error',
+                            text: 'No se pudo conectar con el servidor.',
+                            icon: 'error'
+                        });
+                    }
+                });
+            } else {
+                console.error('Formulario no encontrado');
+            }
+        });
+    </script>
 </body>
 </html>

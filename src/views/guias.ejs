@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<style>
-    .container {
+    <title>Recursos de Salud Mental - MindfulLife</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            width: 100%;
+            background-color: #0277bd;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container-guia{
             background-color: #ffffff;
             border-radius: 16px;
             padding: 40px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            width: 100%;
+            max-width: 600px;
             text-align: center;
         }
 
@@ -39,8 +65,8 @@
             margin-bottom: 20px;
         }
 
- /* Estilos del scroll */
- .scroll-container::-webkit-scrollbar {
+        /* Estilos del scroll */
+        .scroll-container::-webkit-scrollbar {
             width: 12px; /* Ancho del scroll */
         }
 
@@ -82,10 +108,40 @@
             box-shadow: 0 8px 20px rgba(0, 128, 255, 0.2);
         }
 
-</style>
-  
+        footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #888;
+        }
+    </style>
+</head>
 <body>
-    <%- include('partials/navigation') %> 
-    
+    <header>
+        <%- include('partials/navigation') %>
+    </header><br><br><br><br>
+
+    <main>
+        <div class="container-guia">
+            <h1>Recursos Externos de Salud Mental</h1>
+            <p>Explora nuestras recomendaciones de guías confiables para mejorar tu bienestar mental. ¡Haz clic en los enlaces para obtener más información!</p>
+
+            <div class="scroll-container">
+                <ul class="guide-links">
+                    <li><a href="https://www.nami.org/Your-Journey/Individuals-with-Mental-Illness" target="_blank">Guía para Individuos con Enfermedades Mentales - NAMI</a></li>
+                    <li><a href="https://www.mentalhealth.gov/get-help" target="_blank">Guía para Obtener Ayuda - MentalHealth.gov</a></li>
+                    <li><a href="https://www.headspace.com/meditation" target="_blank">Meditación para Principiantes - Headspace</a></li>
+                    <li><a href="https://www.mind.org.uk/information-support/types-of-mental-health-problems/" target="_blank">Tipos de Problemas de Salud Mental - Mind UK</a></li>
+                    <li><a href="https://www.who.int/news-room/fact-sheets/detail/mental-health-strengthening-our-response" target="_blank">Respuesta Global de Salud Mental - WHO</a></li>
+                    <li><a href="https://www.mayoclinic.org/healthy-lifestyle/stress-management/in-depth/mental-health/art-20046477" target="_blank">Consejos para el Manejo del Estrés - Mayo Clinic</a></li>
+                    <li><a href="https://www.verywellmind.com/self-care-strategies-overall-stress-reduction-3144729" target="_blank">Estrategias de Autocuidado - Verywell Mind</a></li>
+                    <li><a href="https://www.psycom.net/depression.central.html" target="_blank">Recursos sobre la Depresión - Psycom</a></li>
+                    <li><a href="https://www.samhsa.gov/find-help/national-helpline" target="_blank">Línea Nacional de Ayuda - SAMHSA</a></li>
+                    <li><a href="https://www.cdc.gov/mentalhealth/stress-coping/" target="_blank">Manejo del Estrés y COVID-19 - CDC</a></li>
+                </ul>
+            </div>            
+        </div>
+    </main>
+    <%- include('partials/footer') %>
+
 </body>
 </html>

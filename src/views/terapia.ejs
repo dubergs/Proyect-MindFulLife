@@ -3,169 +3,527 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foro de Terapias en Línea</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
+    <title>Terapias en Línea</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<style>
+    /* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: black;
+    font-size: 35px;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('/images/banner_principal.jpg'); /* Ruta a la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 50px;
+    color: white;
+    margin-top: 87px;
+}
+
+.content {
+    max-width: 500px;
+}
+
+.content p{
+    color: black;
+    font-size: 20px;
+}
+
+.icons {
+    display: flex;
+    margin-top: 20px;
+}
+
+.icons a {
+    margin-right: 15px;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.icons h2 {
+    text-align: center;
+}
+
+.icons img {
+    width: 40px;
+    height: 40px;
+}
+
+/* Sección de Servicios */
+.services-section {
+    padding: 50px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.service-steps {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.step {
+    max-width: 200px;
+}
+
+.step h3 {
+    color: var(--title-color);
+    font-size: 25px;
+}
+
+.services-section h2 {
+    color: var(--first-color);
+    font-size: 35px;
+}
+
+.professionals-section h2 {
+    color: var(--first-color);
+    font-size: 25px;
+}
+
+/* Sección de Profesionales */
+.professionals-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.professionals {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.professional {
+    max-width: 200px;
+    margin: 20px;
+}
+
+.professional img {
+    width: 100%;
+    height: 65%;
+    border-radius: 50%;
+}
+
+.professional h3 {
+    margin-top: 10px;
+    color: #333;
+}
+
+.professional p {
+    color: #777;
+}
+
+.whatsapp {
+    margin-left: 90px;
+}
+
+.whatsapp img {
+    margin-left: 25px;
+}
+
+.chat {
+    margin-left: 65px;
+}
+
+.chat img {
+    margin-left: 20px;
+}
+
+
+
+/* Sección de testimonios */
+.testimonials-section {
+    padding: 50px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.testimonials-section h2 {
+    color: var(--title-color);
+}
+
+.slider {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.slides-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+    border: dashed 1px black;
+}
+
+.slide p {
+    font-size: 18px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.slide h4 {
+    font-size: 16px;
+    color: var(--first-color);
+}
+
+/* Botones de navegación */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    margin-left: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: var(--title-color);
+    color: white;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+        h1 {
+            font-size: 28px;
+            margin-left: 10px;
         }
 
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-align: center;
+        .content p {
+            font-size: 18px;
+            width: 330px;
         }
 
-        .container {
-            width: 80%;
-            margin: 20px auto;
+        .icons img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
         }
 
-        .post {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
+        .hero-section {
+            height: 40vh;
+            padding-left: 20px;
+        }
+
+        .services-section h2 {
+            font-size: 28px;
+        }
+
+        .service-steps {
+            flex-direction: column;
+        }
+
+        .step {
+            max-width: 100%;
             margin-bottom: 20px;
         }
 
-        .post h2 {
-            margin-top: 0;
-            color: #333;
+        .professionals {
+            flex-direction: column;
+            align-items: center;
         }
 
-        .post p {
-            margin: 10px 0;
+        .professional {
+            max-width: 100%;
+            margin-bottom: 20px;
         }
 
-        .post .meta {
-            font-size: 0.9rem;
-            color: #888;
+        .professional img {
+            width: 70%;
+            height: 50%;
+            border-radius: 50%;
         }
 
-        .comment-section {
-            background-color: #e9ecef;
-            padding: 20px;
-            border-radius: 8px;
+        .testimonials-section h2 {
+            font-size: 28px;
         }
 
-        .comment {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-            padding: 15px;
-            margin-bottom: 10px;
+        .slider {
+            max-width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 22px;
         }
 
-        .comment h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
-            color: #4CAF50;
+        .content p {
+            font-size: 16px;
         }
 
-        .comment p {
-            margin: 10px 0;
+        .icons img {
+            width: 25px;
+            height: 25px;
         }
 
-        .comment .meta {
-            font-size: 0.8rem;
-            color: #666;
+        .hero-section {
+            height: 30vh;
+            padding-left: 10px;
         }
 
-        .new-comment {
-            margin-top: 20px;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        .service-steps {
+            flex-direction: column;
         }
 
-        .new-comment h2 {
-            margin-top: 0;
+        .professionals {
+            flex-direction: column;
+            align-items: center;
         }
 
-        .new-comment textarea {
-            width: 100%;
-            height: 100px;
-            padding: 10px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            margin-bottom: 10px;
+        .testimonials-section h2 {
+            font-size: 22px;
         }
+    }
 
-        .new-comment button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-        }
+    .contact h2 {
+        text-align: center;
+        color: var(--first-color);
+    }
 
-        .new-comment button:hover {
-            background-color: #45a049;
-        }
+    .contact p {
+        text-align: center;
+        margin-bottom: 10px;
+    }
 
-        @media (max-width: 768px) {
-            .container {
-                width: 95%;
-            }
-        }
-    </style>
-</head>
+    
+
+</style>
+<%- include('partials/navigation') %>
+
 <body>
-
-    <header>
-        <h1>Foro de Terapias en Línea para la Salud Mental</h1>
-    </header>
-
-    <div class="container">
-        <div class="post">
-            <h2>¿Cómo te ha ayudado la Terapia Cognitivo-Conductual?</h2>
-            <p>
-                He encontrado que la Terapia Cognitivo-Conductual (TCC) es increíblemente útil para manejar mi ansiedad. Me ha enseñado a identificar y desafiar pensamientos negativos y a reemplazarlos con pensamientos más realistas.
-            </p>
-            <div class="meta">Publicado por Usuario123 el 1 de Septiembre de 2024</div>
-        </div>
-
-        <div class="post">
-            <h2>Experiencias con la Meditación Guiada</h2>
-            <p>
-                La meditación guiada ha sido una herramienta valiosa para mí. Me ayuda a relajarme antes de dormir y a manejar el estrés del día a día. La guía paso a paso hace que sea más fácil mantenerme concentrado.
-            </p>
-            <div class="meta">Publicado por Usuario456 el 2 de Septiembre de 2024</div>
-        </div>
-
-        <div class="comment-section">
-            <h2>Comentarios</h2>
-
-            <div class="comment">
-                <h3>Re: ¿Cómo te ha ayudado la Terapia Cognitivo-Conductual?</h3>
-                <p>
-                    Estoy de acuerdo, la TCC me ha cambiado la vida. La habilidad para cambiar mi forma de pensar ha tenido un impacto positivo en mi vida diaria.
-                </p>
-                <div class="meta">Comentario de Usuario789 el 2 de Septiembre de 2024</div>
+    <!-- Sección de imagen de fondo con contenido e iconos -->
+    <section class="hero-section">
+        <div class="content">
+            <h1>Psicólogos en línea gratis</h1> <br>
+            <p>Si necesitas apoyo emocional, accede a nuestro servicio de psicólogos en línea gratis y de forma anónima las 24/7.
+                ¡No estás solo, te escuchamos!</p> <br>
+            <div class="icons">
+                <div>
+                <a href="tel:+1234567890" class="icon-phone">
+                    <img src="/images/telefono.png" alt="Teléfono">
+                </a>
+                <h3>Llamanos</h3>
+                <h2>304 369 6454</h2>
             </div>
-
-            <div class="comment">
-                <h3>Re: Experiencias con la Meditación Guiada</h3>
-                <p>
-                    Me encantaría saber más sobre las aplicaciones que usas para la meditación guiada. Estoy buscando algo que sea fácil de usar y que ofrezca buenas sesiones guiadas.
-                </p>
-                <div class="meta">Comentario de Usuario321 el 3 de Septiembre de 2024</div>
+            <div class="whatsapp">
+                <a href="https://wa.me/1234567890" class="icon-whatsapp">
+                    <img src="/images/whatsapp.png" alt="WhatsApp">
+                </a>
+                <h3>Escribenos</h3>
+                <h2>WhatsApp</h2>
+            </div>
+            <div class="chat">
+                <a href="/chat" class="icon-whatsapp">
+                    <img src="/images/chat.png" alt="WhatsApp">
+                </a>
+                <h3>Chatea en nuestro sitio</h3>
+            </div>
             </div>
         </div>
+    </section>
 
-        <div class="new-comment">
-            <h2>Deja tu Comentario</h2>
-            <textarea placeholder="Escribe tu comentario aquí..."></textarea>
-            <button>Enviar Comentario</button>
+    <!-- Sección de cómo funcionan los servicios -->
+    <section class="services-section">
+        <h2>¿Cómo funcionan nuestros servicios?</h2>
+        <div class="service-steps">
+            <div class="step">
+                <h3>1. Solicita información</h3><br>
+                <p>Conoce más sobre nuestras terapias en línea y cómo podemos ayudarte.</p>
+            </div>
+            <div class="step">
+                <h3>2. Infórmate</h3> <br>
+                <p>Recibe toda la información que necesitas para empezar tu terapia.</p>
+            </div>
+            <div class="step">
+                <h3>3. Identifica y acepta</h3> <br>
+                <p>Reconoce tus necesidades y acepta el apoyo de nuestros profesionales.</p>
+            </div>
+            <div class="step">
+                <h3>4. Cuídate</h3> <br>
+                <p>Inicia tu proceso de cuidado emocional con nuestras terapias personalizadas.</p>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <!-- Sección de profesionales -->
+    <section class="professionals-section">
+        <h2>Nuestros Profesionales</h2> <br>
+        <p>Nuestros psicólogos son expertos de la Fundación MindFulLife, quienes están dispuestos a <br>brindarte asesoría gratuita de forma confidencial y anónima, siete días a la semana, 24 horas al día.</p> <br>
+        <div class="professionals">
+            <div class="professional">
+                <img src="/images/psicologo1.jpeg" alt="Nombre del Profesional">
+                <h3>Dr. Juan Pérez</h3>
+                <p>Psicoterapeuta</p>
+            </div>
+            <div class="professional">
+                <img src="/images/psicologa5.jpg" alt="Nombre del Profesional">
+                <h3>Dra. María López</h3>
+                <p>Terapeuta Familiar</p>
+            </div>
+            <div class="professional">
+                <img src="/images/psicologo2.jpg" alt="Nombre del Profesional">
+                <h3>Lic. Pedro González</h3>
+                <p>Psicólogo Clínico</p>
+            </div>
+            <div class="professional">
+                <img src="/images/psicologa3.jpeg" alt="Nombre del Profesional">
+                <h3>Lic. Marta Posada</h3>
+                <p>Psiquiatra</p>
+            </div>
+            <div class="professional">
+                <img src="/images/psicologa4.jpeg" alt="Nombre del Profesional">
+                <h3>Lic. Maria Rogríguez</h3>
+                <p>Psicóloga</p>
+            </div>
+            <!-- Agregar más profesionales según sea necesario -->
+        </div>
+    </section>
+
+    <!-- Sección de Contacto -->
+    <section id="contact" class="contact">
+        <h2>Separa tu cita</h2>
+        <p>Si deseas concertar una cita con nuestros profesionales. Complete este formulario de cita para vernos lo mas pronto posible.</p> <br>
+        <form action="/citas" method="post" class="login__form" id="form">
+            <div class="login__group">
+                <div>
+                    <label for="nombre" class="login__label">Nombre</label>
+                    <input type="text" placeholder="Nombre Completo" id="nombre" name="nombre" class="login__input" required>
+                </div>
+                
+                <div>
+                    <label for="documento" class="login__label">Nro Documento</label>
+                    <input type="text" placeholder="Numero de documento" id="documento" name="documento" class="login__input" required>
+                </div>
+                <div>
+                    <label for="telefono" class="login__label">Telefono</label>
+                    <input type="text" placeholder="Numero de Telefono" id="telefono" name="telefono" class="login__input" required>
+                </div>
+                <div>
+                    <label for="fecha_hora" class="login__label">Fecha y Hora</label>
+                    <input type="datetime-local" placeholder="Fecha y Hora" id="fecha_hora" name="fecha_hora" class="login__input" required>
+                </div>
+                <div>
+                    <label for="sede_principal" class="login__label" id="sede">Sede Preferida</label>
+            <select id="sede" name="sede_principal" class="login__input" required>
+                <option value="" disabled selected>Selecciona tu sede preferida</option>
+                <option value="sede_1">Clínica Salud Mental Norte</option>
+                <option value="sede_2">Centro Psicológico Oriente</option>
+                <option value="sede_3">Consultorio Psicoterapéutico Sur</option>
+                <option value="sede_4">Clínica Bienestar Oeste</option>
+            </select>
+                </div>
+            </div>
+            <div>   
+                <button type="submit" class="login__button"><i class="fa-solid fa-calendar-check"></i>  Separar Cita</button>
+            </div>
+        </form>
+    </section>
+
+    <!-- Sección del slider de opiniones -->
+    <section class="testimonials-section">
+        <h2>Lo que dicen nuestros clientes</h2> <br>
+        <div class="slider">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="slides-container">
+                <div class="slide">
+                    <p>"El servicio de terapias en línea me ha ayudado muchísimo. Es fácil y conveniente."</p>
+                    <h4>- Ana Martínez</h4>
+                </div>
+                <div class="slide">
+                    <p>"Mis sesiones con los profesionales han sido increíbles. Muy recomendados."</p>
+                    <h4>- Luis Gómez</h4>
+                </div>
+                <div class="slide">
+                    <p>"Gracias a las terapias en línea, ahora me siento mucho más seguro y tranquilo."</p>
+                    <h4>- Carla Rodríguez</h4>
+                </div>
+                <div class="slide">
+                    <p>"Nunca pensé que la terapia en línea pudiera ser tan efectiva. Me siento más en paz conmigo mismo."</p>
+                    <h4>- José Hernández</h4>
+                </div>
+                <div class="slide">
+                    <p>"El acompañamiento que recibí fue increíble. Me dieron las herramientas necesarias para mejorar mi bienestar."</p>
+                    <h4>- Laura Ramírez</h4>
+                </div>
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    </section>
 </body>
+<%- include('partials/footer') %>
+
+<script>
+
+
+
+
+
+
+
+
+    let currentSlide = 0;
+
+function moveSlide(direction) {
+    const slidesContainer = document.querySelector('.slides-container');
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    // Actualiza el índice de la diapositiva actual
+    currentSlide += direction;
+
+    // Si la diapositiva actual es mayor que el total, regresa al inicio
+    if (currentSlide >= totalSlides) {
+        currentSlide = 0;
+    }
+
+    // Si la diapositiva actual es menor que 0, ve a la última diapositiva
+    if (currentSlide < 0) {
+        currentSlide = totalSlides - 1;
+    }
+
+    // Mueve el contenedor de diapositivas
+    const offset = -currentSlide * 100;
+    slidesContainer.style.transform = `translateX(${offset}%)`;
+}
+
+
+</script>
 </html>

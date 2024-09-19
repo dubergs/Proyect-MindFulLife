@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Respiración Profunda</title>
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
 </head>
 <style>
+
+    body {
+        background: linear-gradient(to bottom, #0d47a1, #e0e0e0);
+    }
+
 h1 {
     margin-top: 120px;
     text-align: center;
-    color: var(--title-color);
+    color: white;
 }
 
 h2 {
     font-size: 30px;
-    color: var(--first-color);
+    color: black;
 }
 
 
@@ -46,6 +52,7 @@ h2 {
 }
 
 .contenido {
+    font-size: 18px;
     width: 90%;
     background-color: white;
     border-radius: 10px;
@@ -56,6 +63,7 @@ h2 {
 
 .contenido p {
     color: black;
+    font-size: 18px;
 }
 
 .contenido1 {
@@ -143,7 +151,6 @@ ul {
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 10px;
-            width: calc(33.333% - 40px);
             padding: 20px;
             text-align: center;
             cursor: pointer;
@@ -151,7 +158,7 @@ ul {
 
         .exercise-item img {
             width: 100%;
-            height: 150px;
+            height: 250px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 10px;
@@ -165,6 +172,7 @@ ul {
             display: none;
             position: fixed;
             z-index: 1;
+            color: black;
             left: 0;
             top: 0;
             width: 100%;
@@ -231,6 +239,11 @@ ul {
             margin-left: 240px;
         }
 
+        h4 {
+            color: var(--title-color);
+            font-size: 18px;
+        }
+
 </style>
 <body>
     <%- include('partials/navigation') %>
@@ -291,26 +304,26 @@ ul {
         </div>
     </div>
 
-    <h2 class="title1">Ejercicios de Respiración Profunda</h2>
+    <h2 class="title1">Ejercicios de Respiración Profunda</h2> <br>
     <div class="exercise-grid">
         <div class="exercise-item" onclick="openModal('modal1')">
             <img src="/images/meditacion.png" alt="Ilustración 1">
             <p>Respiración Kapalabhati.</p>
         </div>
         <div class="exercise-item" onclick="openModal('modal2')">
-            <img src="/images/escaneo.png" alt="Ilustración 2">
+            <img src="/images/abeja.png" alt="Ilustración 2">
             <p>Respiración de la Abeja.</p>
         </div>
         <div class="exercise-item" onclick="openModal('modal3')">
-            <img src="/images/visualizacion.png" alt="Ilustración 3">
+            <img src="/images/sentado.png" alt="Ilustración 3">
             <p>Respiración Samavritti.</p>
         </div>
         <div class="exercise-item" onclick="openModal('modal4')">
-            <img src="/images/aceptacion.png" alt="Ilustración 4">
+            <img src="/images/urbano.png" alt="Ilustración 4">
             <p>Respiración de Suspiro.</p>
         </div>
         <div class="exercise-item" onclick="openModal('modal5')">
-            <img src="/images/sendero.png" alt="Ilustración 5">
+            <img src="/images/contemplando.png" alt="Ilustración 5">
             <p>Respiración de Coherencia Cardíaca.</p>
         </div>
     </div>
@@ -321,6 +334,7 @@ ul {
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal1')">&times;</span> 
         <h2>Respiración Kapalabhati</h2> <br>
+        <h4>Instrucciones:</h4> <br>
         <ul>
             <li>✤ Siéntate en una posición cómoda con la espalda recta.
             </li> <br>
@@ -334,7 +348,7 @@ ul {
 
             <li>✤ Descansa y repite 2-3 veces.</li>
         </ul> <br> <br>
-        <a href="">Ver video</a>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
     </div>
 </div>
 
@@ -342,6 +356,7 @@ ul {
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal2')">&times;</span>
         <h2>Respiración de la Abeja</h2> <br>
+        <h4>Instrucciones:</h4> <br>
         <ul>
             <li>✤ Siéntate con la espalda recta en una posición cómoda.</li> <br>
 
@@ -355,7 +370,7 @@ ul {
 
             <li>✤ Repite el ejercicio 5-10 veces.</li> <br>
         </ul> <br> <br>
-        <a href="">Ver video</a>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
     </div>
 </div>
 
@@ -363,6 +378,7 @@ ul {
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal3')">&times;</span>
         <h2>Respiración Samavritti</h2> <br>
+        <h4>Instrucciones:</h4> <br>
         <ul>
             <li>✤ Siéntate en una posición cómoda con la espalda recta.</li> <br>
 
@@ -376,7 +392,7 @@ ul {
 
             <li>✤ Practica durante 5-10 minutos.</li>
         </ul> <br> <br>
-        <a href="">Ver video</a>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
     </div>
 </div>
 
@@ -384,6 +400,7 @@ ul {
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal4')">&times;</span>
         <h2>Respiración de Suspiro</h2> <br>
+        <h4>Instrucciones:</h4> <br>
         <ul>
             <li>✤ Siéntate o acuéstate en una posición cómoda.</li> <br>
 
@@ -395,7 +412,7 @@ ul {
 
             <li>✤ Repite 5-10 veces, permitiendo que tu cuerpo se relaje con cada exhalación.</li> <br>
         </ul> <br> <br>
-        <a href="">Ver video</a>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
     </div>
 </div>
 
@@ -403,6 +420,7 @@ ul {
     <div class="modal-content">
         <span class="close" onclick="closeModal('modal5')">&times;</span>
         <h2>Respiración de Coherencia Cardíaca</h2> <br>
+        <h4>Instrucciones:</h4> <br>
         <ul>
             <li>✤ Siéntate cómodamente con la espalda recta.</li> <br>
 
@@ -414,7 +432,7 @@ ul {
 
             <li>✤ Practica durante 5 minutos, idealmente 2-3 veces al día.</li> <br>
         </ul> <br> <br>
-        <a href="">Ver video</a>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
     </div>
 </div>
     </div> <br>

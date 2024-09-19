@@ -62,7 +62,7 @@ footer {
 
 .footer-section .social-media a {
     text-decoration: none;
-    color: grey;
+    color: black;
     margin: 10px;
     font-size: 40px;
 }
@@ -130,6 +130,29 @@ footer {
     }
 }
 
+.facebook1 {
+    color: var(--first-color);
+    font-size: 20px;
+}
+
+.twitter1 {
+    color: white;
+    font-size: 20px;
+}
+
+.instagram1 {
+    color: red;
+    font-size: 20px;
+}
+
+.linkedin1 {
+    color: blue;
+    font-size: 20px;
+}
+
+.correo {
+    color: var(--first-color);
+}
     </style>
 </head>
 <body>
@@ -141,7 +164,7 @@ footer {
                     <li><a href="#">Inicio</a></li>
                     <li><a href="#services">Servicios</a></li>
                     <li><a href="#resources">Recursos</a></li>
-                    <li><a href="#">Noticias</a></li>
+                    <li><a href="/noticias">Noticias</a></li>
                     <li><a href="/contact">Contacto</a></li>
                     <li><a href="/about">Sobre Nosotros</a></li>
                 </ul>
@@ -149,24 +172,24 @@ footer {
     
             <div class="footer-section contact-info">
                 <h3>Información de Contacto</h3>
-                <p>Correo: <a href="mailto:info@mindfullife.com">info@mindfullife.com</a></p>
+                <p>Correo: <a href="mailto:info@mindfullife.com" class="correo">mindfullife179@gmail.com</a></p>
                 <p>Teléfono: +57 123 456 7890</p>
                 <p>Dirección: Calle 71, Medellin, Colombia</p>
             </div>
     
             <div class="footer-section social-media">
                 <h3>Síguenos</h3>
-                <a href=""><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="" class="facebook1"><i class="fab fa-facebook-f"></i></a> <br>
+                <a href="#" class="twitter1"><i class="fab fa-twitter"></i></a> <br>
+                <a href="https://www.instagram.com/" class="instagram1"><i class="fab fa-instagram"></i></a> <br>
+                <a href="#" class="linkedin1"><i class="fab fa-linkedin-in"></i></a> <br>
             </div>
     
             <div class="footer-section newsletter">
                 <h3>Suscríbete</h3>
                 <form>
                     <input type="email" placeholder="Tu correo electrónico" required> 
-                    <button type="submit">Suscribirse</button>
+                    <button type="submit"><i class="fa-solid fa-dollar-sign"></i>   Suscribirse</button>
                 </form>
             </div>
         </div>

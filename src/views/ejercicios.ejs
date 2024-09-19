@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios de Meditación</title>
+    <title>Ejercicios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
 </head>
 <style>
     /* Estilos Generales */
@@ -13,8 +15,15 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
-    background-color: #f4f4f9;
+    background: #5D4157;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #A8CABA, #5D4157);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #A8CABA, #5D4157); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
 }
+
+
 
 h1, h2, h3 {
     margin: 0;
@@ -42,12 +51,13 @@ h1, h2, h3 {
 .exercises h4 {
     margin-top: -40px;
     margin-bottom: 30px;
+    color: black;
 }
 
 .exercises h2 {
     font-size: 2rem;
     margin-bottom: 40px;
-    color: #333;
+    color: white;
 }
 
 .exercise-grid {
@@ -92,7 +102,9 @@ h1, h2, h3 {
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
-    background-color: var(--first-color);
+    background: #314755;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #26a0da, #314755);  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -101,7 +113,9 @@ h1, h2, h3 {
 }
 
 .btn:hover {
-    background-color: var(--title-color);
+    background: #314755;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #26a0da, #314755);
 }
 
 /* Sección de Beneficios */
@@ -114,8 +128,10 @@ h1, h2, h3 {
 }
 
 .benefits h2 {
+    margin-top: -10px;
     font-size: 2rem;
     margin-bottom: 40px;
+    color: var(--title-color);
 }
 
 .benefit-grid {
@@ -155,56 +171,56 @@ h1, h2, h3 {
                 <img src="/images/meditacion.gif" alt="Meditación Guiada">
                 <h3>Meditación Plena</h3>
                 <p>La meditación de atención plena consiste en enfocarse en el momento presente, observando los pensamientos y emociones sin juzgarlos. </p>
-                <a href="/meditacion" class="btn">Iniciar</a>
+                <a href="/meditacion" class="btn"><i class="fa-solid fa-eye"></i>   Ver</a>
             </div>
             <div class="exercise-card">
                 <img src="/images/respiracion.gif" alt="Respiración Consciente">
                 <h3>Respiración Profunda</h3>
                 <p>La respiración profunda, como la respiración diafragmática, ayuda a reducir el estrés y la ansiedad.</p>
-                <a href="/respiracion" class="btn">Iniciar</a>
+                <a href="/respiracion" class="btn"><i class="fa-solid fa-eye"></i>   Ver</a>
             </div>
             <div class="exercise-card">
                 <img src="/images/quehaceres.gif" alt="Escaneo Corporal">
                 <h3>Practica de Gratitud</h3>
                 <p>Hacer una lista diaria de cosas por las que estás agradecido puede mejorar tu estado de ánimo y fomentar una mentalidad positiva.</p>
-                <a href="#" class="btn">Iniciar</a>
+                <a href="/gratitud" class="btn"><i class="fa-solid fa-eye"></i>   Ver</a>
             </div>
             <div class="exercise-card">
                 <img src="/images/evolucion.gif" alt="Visualización Positiva">
                 <h3>Visualización Positiva</h3>
                 <p>La visualización positiva implica imaginar situaciones tranquilas para reducir el estrés y mejorar el bienestar de tu salud.</p>
-                <a href="#" class="btn">Iniciar</a>
+                <a href="/visualizacionPositiva" class="btn"><i class="fa-solid fa-eye"></i>   Ver</a>
             </div>
         </div>
-    </section>
 
-    <section class="exercises">
-        <div class="exercise-grid">
-            <div class="exercise-card">
-                <img src="/images/levantamiento-de-pesas.gif" alt="Meditación Guiada">
-                <h3>Ejercicio Físico</h3>
-                <p>El ejercicio, como correr, caminar, nadar o practicar yoga, libera endorfinas, las hormonas que mejoran el estado de ánimo.</p>
-                <a href="#" class="btn">Iniciar</a>
-            </div>
-            <div class="exercise-card">
-                <img src="/images/amigo.gif" alt="Respiración Consciente">
-                <h3>Conexión Social</h3>
-                <p>Mantener relaciones sociales es crucial para la salud mental. Pasar tiempo con amigos, familiares o participar en reuniones. </p>
-                <a href="#" class="btn">Iniciar</a>
-            </div>
-            <div class="exercise-card">
-                <img src="/images/notas.gif" alt="Escaneo Corporal">
-                <h3>Escritura Terapéutica</h3>
-                <p>Escribir sobre tus pensamientos y emociones puede ayudarte a procesar sentimientos difíciles y ganar claridad. </p>
-                <a href="#" class="btn">Iniciar</a>
-            </div>
-            <div class="exercise-card">
-                <img src="/images/relajado.gif" alt="Visualización Positiva">
-                <h3>Relajación Muscular</h3>
-                <p>Este ejercicio implica tensar y luego relajar cada grupo muscular del cuerpo, comenzando por los pies y subiendo hasta la cabeza.</p>
-                <a href="#" class="btn">Iniciar</a>
-            </div>
-        </div>
+        <section class="exercises">
+            <div class="exercise-grid">
+                <div class="exercise-card">
+                    <img src="/images/levantamiento-de-pesas.gif" alt="Meditación Guiada">
+                    <h3>Ejercicio Físico</h3>
+                    <p>El ejercicio, como correr, caminar, nadar o practicar yoga, libera endorfinas, las hormonas que mejoran el estado de ánimo.</p>
+                    <a href="/ejercicioFisico" class="btn"><i class="fa-solid fa-eye"></i>   Ver</a>
+                </div>
+                <div class="exercise-card">
+                    <img src="/images/amigo.gif" alt="Respiración Consciente">
+                    <h3>Conexión Social</h3>
+                    <p>Mantener relaciones sociales es crucial para la salud mental. Pasar tiempo con amigos, familiares o participar en reuniones. </p>
+                    <a href="/conexionSocial" class="btn"><i class="fa-solid fa-eye"></i>   Ver</a>
+                </div>
+                <div class="exercise-card">
+                    <img src="/images/notas.gif" alt="Escaneo Corporal">
+                    <h3>Escritura Terapéutica</h3>
+                    <p>Escribir sobre tus pensamientos y emociones puede ayudarte a procesar sentimientos difíciles y ganar claridad. </p>
+                    <a href="/escrituraTerapeutica" class="btn"><i class="fa-solid fa-eye"></i>   Ver</a>
+                </div>
+                <div class="exercise-card">
+                    <img src="/images/relajado.gif" alt="Visualización Positiva">
+                    <h3>Relajación Muscular</h3>
+                    <p>Este ejercicio implica tensar y luego relajar cada grupo muscular del cuerpo, comenzando por los pies y subiendo hasta la cabeza.</p>
+                    <a href="/relajacionMuscular" class="btn"><i class="fa-solid fa-eye"></i>   Ver</a>
+                </div>
+            </div> <br>
+        </section> 
     </section>
 
     <!-- Sección de Beneficios -->
@@ -225,7 +241,7 @@ h1, h2, h3 {
             </div>
             <div class="benefit-card">
                 <img src="/src/public/images/libro.png" alt="">
-                <h3>Aumento de la Autoestima y la Confianza</h3>
+                <h3>Aumento de la Autoestima</h3>
                 <p>La práctica regular de ejercicio puede mejorar la imagen corporal, aumentar la autoestima y generar una mayor confianza en uno mismo.</p>
             </div>
         </div>

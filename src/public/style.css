@@ -44,11 +44,16 @@ body {
     border: none;
     border-radius: 5px;
     text-decoration: none;
-    background-color: var(--first-color);
+    background: #373B44;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4286f4, #373B44);
 }
 
 .btn-primary:hover{
-    background-color: var(--title-color);
+    background: #314755;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 /* Sección Sobre Nosotros */
@@ -78,14 +83,20 @@ body {
     padding: 15px 30px;
     font-size: 1rem;
     color: #fff;
-    background-color: var(--first-color);
+    background: #373B44;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4286f4, #373B44);
     border: none;
     border-radius: 5px;
     text-decoration: none;
 }
 
 .btn-secondary:hover {
-    background-color: var(--title-color);
+    background: #314755;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 /* Sección de Recursos */
@@ -131,6 +142,7 @@ body {
 }
 
 .resource-card a {
+    margin-top: 10px;
     color: #3498db;
     text-decoration: none;
     font-weight: bold;
@@ -178,6 +190,7 @@ body {
 }
 
 .service-card a {
+    margin-top: 10px;
     color: #3498db;
     text-decoration: none;
     font-weight: bold;
@@ -198,6 +211,7 @@ body {
 .contact p {
     font-size: 1.1rem;
     margin-bottom: 30px;
+    color: black;
 }
 
 form {
@@ -303,7 +317,9 @@ form button {
 }
 
 .accept-btn {
-    background-color: var(--first-color);
+    background: #314755;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #26a0da, #314755); 
     border: none;
     color: white;
     padding: 10px 20px;
@@ -313,5 +329,81 @@ form button {
 }
 
 .accept-btn:hover {
-    background-color: var(--title-color);
+    background: #314755;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #26a0da, #314755);
 }
+
+
+
+
+
+
+
+
+.login__form {
+    background-color: var(--container-color);
+    padding: 2rem 1.5rem 2.5rem;
+    box-shadow: 0 8px 32px hsla(230, 75%, 15%, .2);
+    border-radius: 1rem;
+    row-gap: 1.25rem;
+    text-align: center;
+    transform: translateY(-1rem);
+    transition: transform .4s;
+  }
+  
+  .login__title {
+    font-size: var(--h2-font-size);
+    color: var(--title-color);
+  }
+  
+  .login__group {
+    row-gap: 1rem;
+  }
+  
+  .login__label {
+    display: block;
+    text-align: initial;
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    margin-bottom: .25rem;
+  }
+  
+  .login__input {
+    width: 100%;
+    background-color: var(--container-color);
+    border: 2px solid var(--border-color);
+    padding: 1rem;
+    border-radius: .5rem;
+    color: var(--text-color);
+  }
+  
+  .login__input::placeholder {
+    color: var(--text-color);
+  }
+  
+  .login__signup {
+    margin-bottom: .5rem;
+  }
+  
+  .login__signup a {
+    color: var(--first-color);
+  }
+  
+  .login__forgot {
+    display: inline-block;
+    color: var(--first-color);
+    margin-bottom: 1.25rem;
+  }
+  
+  .login__button {
+    display: inline-block;
+    background-color: var(--first-color);
+    width: 100%;
+    color: #fff;
+    font-weight: var(--font-semi-bold);
+    padding: 1rem;
+    border-radius: .5rem;
+    cursor: pointer;
+    transition: box-shadow .4s;
+  }

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización Positiva</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
+</head>
+<style>
+    body {
+        margin-top: 120px;
+        background: linear-gradient(to bottom, #0d47a1, #e0e0e0);
+    }
+
+
+.container {
+    max-width: 1200px;
+    margin: 0;
+
+}
+
+.section {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section img {
+    width: 300px;
+    height: 300px;
+    margin-left: 725px;
+    margin-top: -320px;
+}
+
+.section h2 {
+    color: var(--first-color);
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.section ul {
+    margin: 15px 0;
+
+    font-size: 18px;
+}
+
+.ul li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.ul li strong{
+    color: var(--title-color);
+    font-size: 19px;
+}
+
+section p {
+    line-height: 1.8;
+    font-size: 18px;
+    width: 650px;
+    color: black;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .section h2 {
+        font-size: 1.5em;
+    }
+}
+
+li {
+    color: black;
+}
+
+.h2 {
+    color: black;
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+
+
+.exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .exercise-item {
+            background-color: #ecebeb;
+            border: 1px dashed black;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .exercise-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .exercise-item p {
+            color: black;
+        }
+
+        .contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .contenido1 {
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title1 {
+            text-align: center;
+            color: var(--first-color);
+        }
+
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none;
+            position: fixed;
+            color: black;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+
+        .modal h2 {
+            color: var(--first-color);
+            text-align: center;
+        }
+
+        .modal p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .modal-content ul {
+            margin-left: 20px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .contenido1 ul {
+            font-size: 18px;
+            color: black;
+        }
+
+        .contenido1 p {
+            font-size: 18px;
+            color: black;
+        }
+
+        .modal a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 240px;
+        }
+
+        h4 {
+            color: var(--title-color);
+            font-size: 18px;
+        }
+
+</style>
+
+<body>
+<%- include('partials/navigation') %>
+    
+    <div class="container">
+        <section class="section">
+            <h2>Qué es la Conexión Social</h2>
+            <p>La conexión social se refiere a los lazos o relaciones que una persona mantiene con otros individuos. Implica una interacción significativa que va más allá del contacto superficial, y puede incluir relaciones familiares, amistades, vínculos románticos, conexiones laborales, o incluso relaciones virtuales. Estas conexiones son esenciales para el bienestar emocional, mental y físico de las personas. A través de ellas, las personas encuentran apoyo, compañía, sentido de pertenencia y oportunidades para el crecimiento personal. Las relaciones sociales satisfactorias pueden reducir el estrés, aumentar la autoestima y promover una mejor calidad de vida.</p> <br>
+            <img src="/images/amistad.gif" alt="hola">
+
+            <h2>Importancia de la conexión social</h2>
+            <ul class="ul">
+                <li><strong>◈ Salud Mental:</strong> Las relaciones interpersonales son fundamentales para reducir el estrés, la ansiedad y los síntomas de depresión. Tener una red de apoyo social puede proporcionar consuelo en momentos difíciles y mejorar la autoestima.</li> <br>
+
+                <li><strong>◈ Salud Física:</strong> Estudios han demostrado que las personas con conexiones sociales fuertes tienden a tener menos problemas de salud, como enfermedades cardíacas y presión arterial alta. El apoyo emocional y físico puede aumentar la longevidad.</li> <br>
+
+                <li><strong>◈ Desarrollo Personal:</strong> A través de la interacción con otras personas, aprendemos nuevas habilidades sociales, nos exponemos a nuevas ideas y crecemos a nivel emocional.</li>
+
+            </ul> <br> <br>
+
+            <h2>Factores que influyen en la conexión social</h2>
+            <ul class="ul">
+                <li><strong>➥ Comunicación Efectiva:</strong> Una comunicación clara, honesta y empática es esencial para mantener y fortalecer las relaciones.</li> <br>
+
+                <li><strong>➥ Empatía:</strong> La capacidad de comprender y compartir los sentimientos de los demás facilita relaciones más profundas.</li><br>
+
+                <li><strong>➥ Disponibilidad Emocional:</strong> Estar presente para los demás, tanto física como emocionalmente, aumenta la calidad de las relaciones.</li><br>
+
+                <li><strong>➥ Confianza y Respeto:</strong> Sin confianza mutua y respeto, las relaciones sociales tienden a ser superficiales y más propensas a conflictos.</li>
+
+            </ul> <br> <br>
+
+            <h2>Cómo mejorar la conexión social</h2>
+            <ul class="ul">
+                <li><strong>➥ Involucrarse en Actividades Grupales:</strong> Participar en clubes, deportes, voluntariado o grupos de interés común puede facilitar la creación de nuevas relaciones.</li> <br>
+
+                <li><strong>➥ Mantener Contacto Regular:</strong> Invertir tiempo en mantener las relaciones existentes es esencial para fortalecer los lazos.</li><br>
+
+                <li><strong>➥ Desarrollar Habilidades Sociales:</strong> Mejorar la capacidad de comunicarse de manera efectiva, escuchar activamente y ser empático ayuda a formar vínculos más sólidos.</li>
+
+            </ul>
+        </section>
+
+    </div> <br>
+    <h2 class="h2">Ejercicios de la Visualización Positiva</h2> <br>
+    <div class="exercise-grid">
+        <div class="exercise-item" onclick="openModal('modal1')">
+            <img src="/images/contemplando.png" alt="Ilustración 1">
+            <p>Ejercicio de Escucha Activa.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal2')">
+            <img src="/images/desconocido.png" alt="Ilustración 2">
+            <p>Iniciar una Conversación con un Desconocido.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal3')">
+            <img src="/images/espejeo.png" alt="Ilustración 3">
+            <p>Desarrollar la Empatía a Través del Espejeo.</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal4')">
+            <img src="/images/socializar.png" alt="Ilustración 4">
+            <p>Reto de Salir a Socializar Regularmente.</p>
+        </div>
+    </div> <br>
+</section>
+
+<!-- Ventanas Modales -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h2>Ejercicio de Escucha Activa</h2> <br>
+        <h4>Objectivo:</h4>
+        <ul>
+        <li>Mejorar la capacidad de atención y comprensión durante una conversación.</li>
+        </ul> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Elige una persona con la que te gustaría conectar mejor. Durante la conversación, concéntrate únicamente en lo que esa persona está diciendo.
+            </li> <br>
+
+            <li><b>✤</b> No interrumpas, evita pensar en cómo responderás mientras la otra persona habla.</li> <br>
+
+            <li><b>✤</b> Haz preguntas abiertas para profundizar en lo que la persona está compartiendo y demuestra interés genuino.</li> 
+        </ul> <br>
+        <h4>Beneficio:</h4>
+        <ul>
+        <li>Este ejercicio te ayudará a ser un mejor oyente, lo que reforzará tus relaciones al hacer que las personas se sientan escuchadas y valoradas.</li>
+        </ul> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>Iniciar una Conversación con un Desconocido</h2> <br>
+        <h4>Objectivo:</h4>
+        <ul>
+        <li>Superar el miedo a hablar con personas nuevas.</li>
+        </ul> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Sal de tu zona de confort al iniciar una conversación con una persona que no conoces. Esto puede ser en el transporte público, una cafetería o un evento social.
+            </li> <br>
+
+            <li><b>✤</b> Haz un comentario sobre algo en común, como el lugar en el que se encuentran o la situación en la que están.</li> <br>
+
+            <li><b>✤</b> Mantén una actitud abierta y amistosa, y escucha lo que la otra persona tiene que decir.</li> 
+        </ul> <br>
+        <h4>Beneficio:</h4>
+        <ul>
+        <li>Al hablar con desconocidos, puedes desarrollar habilidades sociales y aumentar tu red de contactos.</li>
+        </ul> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <h2>Desarrollar la Empatía a Través del Espejeo</h2> <br>
+        <h4>Objectivo:</h4>
+        <ul>
+        <li>Aumentar la comprensión emocional hacia los demás.</li>
+        </ul> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Durante una conversación, intenta reflejar (espejear) el lenguaje corporal y tono de voz de la otra persona.
+            </li> <br>
+
+            <li><b>✤</b> No se trata de imitar, sino de alinearte de forma sutil con la energía de la persona. Esto crea una sensación de sintonía emocional.</li> <br>
+
+            <li><b>✤</b> Además, intenta ponerte en su lugar, preguntándote cómo se siente la otra persona.</li> 
+        </ul> <br>
+        <h4>Beneficio:</h4>
+        <ul>
+        <li>El "espejeo" crea una conexión emocional más fuerte y hace que las personas se sientan comprendidas y apoyadas.</li>
+        </ul> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+<div id="modal4" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal4')">&times;</span>
+        <h2>Reto de Salir a Socializar Regularmente</h2> <br>
+        <h4>Objectivo:</h4>
+        <ul>
+        <li>Crear el hábito de socializar y mantener relaciones activas.</li>
+        </ul> <br>
+        <h4>Instrucciones:</h4> <br>
+        <ul>
+            <li><b>✤</b> Establece una meta para salir a socializar al menos una vez por semana. Esto puede ser quedar con un amigo, asistir a un evento, o participar en una actividad grupal.
+            </li> <br>
+
+            <li><b>✤</b> Intenta planificar encuentros con diferentes personas de tu red social para ampliar y diversificar tus conexiones.</li> 
+        </ul> <br>
+        <h4>Beneficio:</h4>
+        <ul>
+        <li>La socialización regular es clave para mantener relaciones activas y no aislarse.</li>
+        </ul> <br>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+</div>
+
+
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    }
+</script>
+</body>
+<%- include('partials/footer') %>
+
+</html>

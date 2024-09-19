@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container-hola {
+            max-width: 900px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow-y: auto;
+            max-height: 90vh;
+            position: relative;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 80px;
+        }
+        .profile-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .profile-picture {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .profile-info {
+            text-align: center;
+        }
+        .profile-info h1 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 24px;
+            color: #333;
+        }
+        .profile-info p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #777;
+        }
+        .floating-form-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .floating-form-btn:hover {
+            background-color: #2980b9;
+        }
+        .floating-form {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+        .form-container {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            width: 500px;
+            position: relative;
+        }
+        .form-container h2 {
+            margin-top: 0;
+            font-size: 22px;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            color: #333;
+        }
+        .form-submit-btn {
+            padding: 10px 20px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-submit-btn:hover {
+            background-color: #2980b9;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .profile-header {
+                flex-direction: column;
+            }
+            .profile-picture {
+                width: 80px;
+                height: 80px;
+            }
+            .profile-info h1 {
+                font-size: 20px;
+            }
+            .profile-info p {
+                font-size: 12px;
+            }
+            .form-container {
+                width: 90%;
+            }
+            .form-container h2 {
+                font-size: 20px;
+            }
+            .form-group label, .form-group select {
+                font-size: 12px;
+            }
+            .form-submit-btn {
+                font-size: 14px;
+            }
+        }
+
+        .floating-form-btn:disabled {
+            cursor: not-allowed;
+            color: black;
+}
+
+.evaluation-info h2 {
+    margin-top: 20px;
+    text-align: center;
+    color: var(--first-color);
+}
+
+.evaluation-info strong {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.evaluation-details {
+    display: flex;
+    flex-wrap: wrap; /* Asegura que los elementos se envuelvan si no caben en una línea */
+    gap: 20px; /* Espacio entre los elementos */
+}
+
+.evaluation-item {
+    flex: 1; /* Permite que los elementos crezcan y se ajusten */
+    min-width: 200px; /* Ancho mínimo para cada item */
+    padding: 10px;
+    border-radius: 5px; /* Opcional: agregar bordes redondeados */
+    background-color: #f9f9f9; /* Opcional: agregar color de fondo */
+    text-align: center;
+}
+
+.evaluation-item i {
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.evaluation-item strong {
+    display: block;
+    margin-bottom: 5px; /* Espacio debajo del texto fuerte */
+}
+
+#ansiedad {
+    color: #FF6F61;
+}
+
+#depresion {
+    color: #4A4A4A;
+}
+
+#tratamiento {
+    color: #1E90FF;
+}
+
+#actividadfisica {
+    color: #32CD32;
+}
+
+#calidadsueño {
+    color: #8A2BE2;
+}
+
+
+    </style>
+</head>
+<body>
+    <%- include('partials/navigation') %>
+
+    <div class="container-hola">
+        <div class="profile-header">
+
+            <div class="profile-info">
+                <h1><i class="fa-solid fa-user-tie"></i>: <%= usuario.nombre %> <%= usuario.apellido %></h1>
+                <p><i class="fa-solid fa-at"></i>: <%= usuario.correo %></p>
+                <p><i class="fa-solid fa-venus-mars"></i>: Género: <%= usuario.genero %></p>
+                <p><i class="fa-solid fa-ankh"></i>: Edad: <%= usuario.edad %>  19</p>
+            </div>
+            
+            <% if (evaluacionRealizada) { %>
+                <div class="evaluation-info">
+                    <h2>Detalles de la Evaluación</h2> <br>
+                    <div class="evaluation-details">
+                        <div class="evaluation-item">
+                            <i class="fa-solid fa-face-sad-tear" id="ansiedad"></i>
+                            <strong>Ansiedad:</strong> <%= evaluacion.ansiedad %>
+                        </div>
+                        <div class="evaluation-item">
+                            <i class="fa-solid fa-person-dots-from-line" id="depresion"></i>
+                            <strong>Depresión:</strong> <%= evaluacion.depresion %>
+                        </div>
+                        <div class="evaluation-item">
+                            <i class="fa-solid fa-hand-holding-medical" id="tratamiento"></i>
+                            <strong>Tratamiento Profesional:</strong> <%= evaluacion.tratamiento_profesional %>
+                        </div>
+                        <div class="evaluation-item">
+                            <i class="fa-solid fa-person-running" id="actividadfisica"></i>
+                            <strong>Actividad Física:</strong> <%= evaluacion.actividad_fisica %>
+                        </div>
+                        <div class="evaluation-item">
+                            <i class="fa-solid fa-bed" id="calidadsueño"></i>
+                            <strong>Calidad del Sueño:</strong> <%= evaluacion.calidad_sueno %>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+
+        <!-- Floating Form Button -->
+        <button class="floating-form-btn" onclick="toggleForm()" <% if (evaluacionRealizada) { %> disabled <% } %>>
+            <% if (evaluacionRealizada) { %> Evaluación Realizada <% } else { %> Llenar Evaluación Inicial <% } %>
+        </button>
+        
+
+        <!-- Floating Form -->
+        <div class="floating-form" id="floatingForm">
+            <div class="form-container" id="formContainer">
+                <span class="close-btn" onclick="toggleForm()">&times;</span>
+                <h2>Evaluación Inicial</h2>
+                <form action="/submit-evaluacion" method="POST" id="evaluationForm">
+                    <div class="form-group">
+                        <label>¿Has sentido ansiedad?</label>
+                        <select name="ansiedad">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Te has sentido deprimido?</label>
+                        <select name="depresion">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Has intentado tratarte con un profesional?</label>
+                        <select name="tratamiento_profesional">
+                            <option value="si">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Cuánta actividad física haces?</label>
+                        <select name="actividad_fisica">
+                            <option value="nada">Nada</option>
+                            <option value="poca">Poca</option>
+                            <option value="moderada">Moderada</option>
+                            <option value="mucha">Mucha</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>¿Cómo es tu calidad de sueño?</label>
+                        <select name="calidad_sueno">
+                            <option value="muy_buena">Muy buena</option>
+                            <option value="buena">Buena</option>
+                            <option value="regular">Regular</option>
+                            <option value="mala">Mala</option>
+                        </select>
+                    </div>
+                    <button class="floating-form-btn" onclick="toggleForm()">
+                        <%= evaluacionRealizada ? 'Evaluación realizada' : 'Llenar Evaluación Inicial' %>
+                    </button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const form = document.getElementById('floatingForm');
+            form.style.display = (form.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        document.addEventListener('click', function(event) {
+            const form = document.getElementById('floatingForm');
+            const formContainer = document.getElementById('formContainer');
+
+            if (form.style.display === 'flex' && !formContainer.contains(event.target) && !event.target.closest('.floating-form-btn')) {
+                toggleForm();
+            }
+        });
+    </script>
+</body>
+</html>

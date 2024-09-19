@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros</title>
+    <title>Trastornos Mentales</title>
     <link rel="stylesheet" href="/src/public/about.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
     <style>
-        body{
+        body {
             margin-top: 110px;
             margin-bottom: 10px;
         }
@@ -19,14 +20,14 @@
         /* Centro el contenedor principal */
         .container {
             display: flex;
-            justify-content: center; /* Centra horizontalmente */
-            align-items: center; /* Centra verticalmente si hay altura definida */
+            justify-content: center;
+            align-items: flex-start;
             padding: 20px;
         }
 
         .accordion-wrapper {
             width: 40%;
-            max-width: 800px; /* Ajusta el ancho máximo según tus necesidades */
+            max-width: 800px;
             margin: 0 auto;
             margin-left: 10px;
         }
@@ -36,11 +37,13 @@
             border: none;
             border-radius: 5px;
             overflow: hidden;
+            margin-bottom: 10px;
+            box-shadow: 1px 1px 2px 2px var(--title-color);
         }
 
         .accordion-button {
             background-color: white;
-            color: black;
+            color: var(--title-color);
             font-weight: bold;
             cursor: pointer;
             padding: 15px;
@@ -50,8 +53,9 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
             width: 100%;
-            border-bottom: 1px solid #ddd; /* Línea de separación entre botones */
+            border-bottom: 1px solid #ddd;
         }
+        
 
         .accordion-button:hover {
             background-color: rgb(239, 237, 237);
@@ -59,7 +63,7 @@
 
         .accordion-content {
             padding: 0 15px;
-            background-color: white;
+            background-color: #f6f5f5;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s ease;
@@ -72,11 +76,11 @@
         }
 
         .active .accordion-content {
-            max-height: 1000px; /* A large value to ensure it is always visible */
+            max-height: 1000px;
         }
 
         .active .accordion-button {
-            border-bottom: none; /* Remove the bottom border for the active button */
+            border-bottom: none;
         }
 
         span {
@@ -85,107 +89,338 @@
             font-weight: bold;
         }
 
+        /* Para los subtítulos de los trastornos específicos */
+        .sub-accordion {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 10px;
+
+        }
+
+        .sub-accordion-button {
+            background-color: #e2e2e2;
+            color: var(--title-color);
+            font-weight: normal;
+            cursor: pointer;
+            padding: 10px;
+            text-align: left;
+            border: none;
+            outline: none;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .sub-accordion-button:hover {
+            background-color: #e2e2e2;
+        }
+
+        .sub-accordion-content {
+            padding: 10px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--title-color);
+        }
+
+        .sub-accordion-content p {
+            color: black;
+        }
+
+        .active .sub-accordion-content {
+            max-height: 500px;
+        }
+
+        .active .sub-accordion-button {
+            border-bottom: none;
+        }
+
+
+
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .accordion-wrapper {
+                max-width: 90%;
+                padding: 15px;
+            }
+
+            .accordion-button {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .accordion-button {
+                padding: 10px;
+                
+            }
+
+            .accordion-wrapper {
+                width: 100%;
+                display: flexbox;
+            }
+
+            .sub-accordion-button {
+                padding: 8px;
+                font-size: 12px;
+                width: 400px;
+            }
+        }
     </style>
 </head>
 <body>
     <%- include('partials/navigation') %>
     <h1>Trastornos Mentales</h1>
     <div class="container">
+        <!-- Primera columna -->
         <div class="accordion-wrapper">
+            <!-- Sección: Trastornos de Ansiedad -->
             <div class="accordion">
-                <button class="accordion-button"><span>+</span>¿Quiénes somos?</button>
+                <button class="accordion-button"><span>+</span>Trastornos de Ansiedad</button>
                 <div class="accordion-content">
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-            </div>
-            </div>
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno de Ansiedad Generalizada (TAG)</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno de Ansiedad Generalizada (TAG) se caracteriza por una preocupación excesiva por diversas situaciones cotidianas. Los síntomas incluyen inquietud, fatiga, dificultad para concentrarse, irritabilidad, tensión muscular y problemas para dormir.</p>
+                        </div>
+                    </div>
 
-            <div class="accordion">
-                <button class="accordion-button"><span>+</span>Nuestros Servicios</button>
-                <div class="accordion-content">
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno de Pánico</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno de Pánico se caracteriza por ataques de pánico repentinos y recurrentes que incluyen síntomas como taquicardia, dificultad para respirar, sudoración y miedo intenso a perder el control.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Fobias Específicas</button>
+                        <div class="sub-accordion-content">
+                            <p>Las fobias específicas implican un miedo extremo e irracional a objetos o situaciones particulares, como alturas, animales o volar. Este miedo puede provocar evitación y afectar significativamente la vida diaria.</p>
+                        </div>
+                    </div> <br>
                 </div>
             </div>
 
+            <!-- Sección: Trastornos del Estado de Ánimo -->
             <div class="accordion">
-                <button class="accordion-button"><span>+</span>Nuestro Equipo</button>
+                <button class="accordion-button"><span>+</span>Trastornos del Estado de Ánimo</button>
                 <div class="accordion-content">
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno Depresivo Mayor</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno Depresivo Mayor implica episodios prolongados de tristeza intensa, pérdida de interés en actividades cotidianas, cambios en el apetito y sueño, y sentimientos de inutilidad o culpa.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno Bipolar</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno Bipolar se caracteriza por cambios extremos en el estado de ánimo, desde episodios de euforia y alta energía (manía) hasta episodios de depresión profunda.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno Depresivo Persistente</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno Depresivo Persistente es una forma crónica de depresión que puede durar al menos dos años, caracterizada por síntomas menos severos pero duraderos.</p>
+                        </div>
+                    </div><br>
                 </div>
             </div>
 
+            <!-- Sección: Trastornos Obsesivo-Compulsivos -->
             <div class="accordion">
-                <button class="accordion-button"><span>+</span>Contáctanos</button>
+                <button class="accordion-button"><span>+</span>Trastornos Obsesivo-Compulsivos</button>
                 <div class="accordion-content">
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno Obsesivo-Compulsivo (TOC)</button>
+                        <div class="sub-accordion-content">
+                            <p>El TOC se caracteriza por pensamientos repetitivos no deseados (obsesiones) que llevan a comportamientos repetitivos (compulsiones) como una forma de reducir la ansiedad.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno Dismórfico Corporal</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno Dismórfico Corporal implica una preocupación excesiva por defectos percibidos en la apariencia física, que suelen ser mínimos o inexistentes para los demás.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Tricotilomanía</button>
+                        <div class="sub-accordion-content">
+                            <p>La Tricotilomanía se caracteriza por el impulso irresistible de arrancarse el cabello, lo que lleva a pérdida de cabello y problemas emocionales asociados.</p>
+                        </div>
+                    </div><br>
                 </div>
+            </div>
+
+            <!-- Sección: Trastornos por Estrés y Trauma -->
+            <div class="accordion">
+                <button class="accordion-button"><span>+</span>Trastornos por Estrés y Trauma</button>
+                <div class="accordion-content">
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno de Estrés Postraumático (TEPT)</button>
+                        <div class="sub-accordion-content">
+                            <p>El TEPT ocurre después de experimentar o presenciar un evento traumático, y los síntomas incluyen recuerdos intrusivos, pesadillas, evitación de situaciones, y reactividad aumentada.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno de Estrés Agudo</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno de Estrés Agudo es una respuesta inmediata a un trauma grave, con síntomas similares al TEPT pero de duración más corta.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno de Adaptación</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno de Adaptación implica dificultades emocionales o conductuales en respuesta a eventos estresantes, que afectan el rendimiento diario.</p>
+                        </div> 
+                    </div><br> 
+                </div> 
             </div>
         </div>
 
+        <!-- Segunda columna -->
         <div class="accordion-wrapper">
+            <!-- Sección: Trastornos Neurocognitivos -->
             <div class="accordion">
-                <button class="accordion-button"><span>+</span>¿Quiénes somos?</button>
+                <button class="accordion-button"><span>+</span>Trastornos Neurocognitivos</button>
                 <div class="accordion-content">
-                   <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                   <a href=""><p>Trastorno Depresivo Persistente</p></a>
-                   <a href=""><p>Trastorno Bipolar</p></a>
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Demencia</button>
+                        <div class="sub-accordion-content">
+                            <p>La demencia es un trastorno neurodegenerativo que afecta la memoria, el pensamiento y el comportamiento. La enfermedad de Alzheimer es su forma más común.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Delirium</button>
+                        <div class="sub-accordion-content">
+                            <p>El delirium es un estado de confusión mental súbita y grave, con fluctuaciones en la conciencia, que a menudo es causado por una condición médica subyacente.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno Amnésico</button>
+                        <div class="sub-accordion-content">
+                            <p>El trastorno amnésico implica una pérdida significativa de la memoria a corto o largo plazo, generalmente debido a daño cerebral.</p>
+                        </div>
+                    </div><br>
                 </div>
             </div>
 
+            <!-- Sección: Trastornos de la Personalidad -->
             <div class="accordion">
-                <button class="accordion-button"><span>+</span>Nuestros Servicios</button>
+                <button class="accordion-button"><span>+</span>Trastornos de la Personalidad</button>
                 <div class="accordion-content">
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno Límite de la Personalidad (TLP)</button>
+                        <div class="sub-accordion-content">
+                            <p>El TLP se caracteriza por inestabilidad emocional, relaciones interpersonales caóticas, impulsividad y un miedo intenso al abandono.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno Antisocial de la Personalidad</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno Antisocial de la Personalidad implica un patrón persistente de desprecio por los derechos de los demás, manipulación, y conducta delictiva.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno Narcisista de la Personalidad</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno Narcisista de la Personalidad se caracteriza por una necesidad excesiva de admiración, falta de empatía y un sentido exagerado de importancia personal.</p>
+                        </div>
+                    </div><br>
                 </div>
             </div>
 
+            <!-- Sección: Trastornos Alimentarios -->
             <div class="accordion">
-                <button class="accordion-button"><span>+</span>Nuestro Equipo</button>
+                <button class="accordion-button"><span>+</span>Trastornos Alimentarios</button>
                 <div class="accordion-content">
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Anorexia Nerviosa</button>
+                        <div class="sub-accordion-content">
+                            <p>La Anorexia Nerviosa es un trastorno alimentario caracterizado por la restricción extrema de alimentos, miedo intenso a aumentar de peso y una imagen corporal distorsionada.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Bulimia Nerviosa</button>
+                        <div class="sub-accordion-content">
+                            <p>La Bulimia Nerviosa implica episodios de atracones seguidos de comportamientos compensatorios como vómitos autoinducidos o uso excesivo de laxantes.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastorno por Atracón</button>
+                        <div class="sub-accordion-content">
+                            <p>El Trastorno por Atracón se caracteriza por episodios recurrentes de consumo excesivo de alimentos en un corto periodo, sin conductas compensatorias regulares.</p>
+                        </div>
+                    </div><br>
                 </div>
             </div>
 
+            <!-- Sección: Trastornos del Sueño -->
             <div class="accordion">
-                <button class="accordion-button"><span>+</span>Contáctanos</button>
+                <button class="accordion-button"><span>+</span>Trastornos del Sueño</button>
                 <div class="accordion-content">
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                    <a href=""><p>Trastorno Depresivo Mayor</p></a>
-                </div>
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Insomnio</button>
+                        <div class="sub-accordion-content">
+                            <p>El Insomnio es la dificultad persistente para conciliar el sueño, mantenerse dormido o despertarse demasiado temprano, lo que afecta el funcionamiento diario.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Narcolepsia</button>
+                        <div class="sub-accordion-content">
+                            <p>La Narcolepsia es un trastorno crónico del sueño que se caracteriza por una somnolencia excesiva durante el día y ataques repentinos de sueño.</p>
+                        </div>
+                    </div>
+
+                    <div class="sub-accordion">
+                        <button class="sub-accordion-button">Trastornos del Sueño por Apnea</button>
+                        <div class="sub-accordion-content">
+                            <p>Los trastornos del sueño por apnea se caracterizan por interrupciones repetidas de la respiración durante el sueño, lo que resulta en fatiga diurna y otros problemas de salud.</p>
+                        </div>
+                    </div><br>
+                </div> 
             </div>
         </div>
     </div>
-
-    <%- include('partials/footer') %>
-
-    <script>
-        // Script para manejar el comportamiento del acordeón
-        document.querySelectorAll('.accordion-button').forEach(button => {
-            button.addEventListener('click', () => {
-                // Toggle active class on the parent accordion
-                const accordion = button.parentElement;
-                accordion.classList.toggle('active');
-
-                // Close other accordions
-                document.querySelectorAll('.accordion').forEach(item => {
-                    if (item !== accordion) {
-                        item.classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
 </body>
+
+<%- include('partials/footer') %>
+
+<script>
+    // Script para manejar el comportamiento del acordeón principal
+    document.querySelectorAll('.accordion-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const accordion = button.parentElement;
+            accordion.classList.toggle('active');
+        });
+    });
+
+    // Script para manejar el comportamiento de los sub-acordeones
+    document.querySelectorAll('.sub-accordion-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const subAccordion = button.parentElement;
+            subAccordion.classList.toggle('active');
+        });
+    });
+</script>
 </html>

@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seguimiento del Estado de Ánimo</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
 </head>
 <style>
     body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background: linear-gradient(to bottom, #0d47a1, #e0e0e0);
+
         margin: 110px;
         padding: 0;
     }
@@ -20,10 +22,12 @@
         position: relative;
     }
 
-    header h1 {
+ header h1 {
+    
         font-size: 2em;
         margin: 0;
-        color: black;
+        color: var(--first-color);
+        text-align: center;
     }
 
     #history-btn {
@@ -32,7 +36,10 @@
         right: 0;
         margin: 10px;
         padding: 10px 20px;
-        background-color: var(--first-color);
+        background: #314755;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
         color: white;
         border: none;
         border-radius: 4px;
@@ -40,7 +47,10 @@
     }
 
     #history-btn:hover {
-        background-color: var(--title-color);
+        background: #314755;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     }
 
     .mood-tracker, .mood-history {
@@ -83,7 +93,9 @@
         width: 100%;
         height: 8px;
         cursor: pointer;
-        background: var(--border-color);
+        background: #b92b27;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #1565C0, #b92b27);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #1565C0, #b92b27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         border-radius: 5px;
     }
 
@@ -91,9 +103,9 @@
         width: 20px;
         height: 20px;
         cursor: pointer;
-        background: var(--title-color);
+        background: white;
         border-radius: 50%;
-        border: 2px solid #fff;
+        border: 5px solid black;
         -webkit-appearance: none;
         margin-top: -6px;
     }
@@ -138,19 +150,22 @@
     label {
         margin-bottom: 5px;
         font-weight: bold;
+        color: black;
     }
 
     textarea {
         margin-bottom: 10px;
         padding: 10px;
-        border: 1px solid #ddd;
+        border: 1px solid var(--title-color);
         border-radius: 4px;
         font-size: 16px;
         resize: vertical;
     }
 
     button {
-        background-color: var(--first-color);
+        background: #373B44;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4286f4, #373B44);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4286f4, #373B44);
         color: #fff;
         border: none;
         padding: 10px;
@@ -160,7 +175,9 @@
     }
 
     button:hover {
-        background-color: var(--title-color);
+        background: #314755;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to left, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to left, #26a0da, #314755);
     }
 
     .mood-history {
@@ -174,34 +191,122 @@
     }
 
     .mood-history th, .mood-history td {
-        border: 1px solid #ddd;
         padding: 10px;
         text-align: left;
+        color: black;
     }
 
     .mood-history th {
-        background-color: #f4f4f4;
+        background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to bottom, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to bottom, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         font-weight: bold;
+        color: white;
+    }
+
+    .principal {
+        background-color: white;
+        border-radius: 20px;
+    }
+
+    h2 {
+        color: var(--title-color);
+    }
+
+    #emoji {
+        font-size: 40px;
+        text-shadow: 3px 3px 3px black;
+    }
+
+    .container1 p {
         color: black;
+        font-size: 19px;
+    }
+
+    h3 {
+        color: var(--first-color);
+        font-size: 21px;
+    }
+
+    #toggle-info-btn {
+        background: #314755;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to bottom, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #26a0da, #314755);  
+    }
+
+    #toggle-info-btn:hover {
+        background: #314755;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #26a0da, #314755);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to top, #26a0da, #314755); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+
+
+
+    /*estilos moviles*/
+    @media (max-width: 768px) {
+        body {
+            margin: 20px;
+        }
+
+
+        header h1 {
+            font-size: 1.5em;
+            margin-top: 70px;
+        }
+
+        #history-btn {
+            padding: 8px 16px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        .mood-tracker h2, .mood-history h2 {
+            font-size: 1.2em;
+        }
+
+        textarea {
+            font-size: 14px;
+            padding: 8px;
+        }
+
+        button {
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        #emoji {
+            font-size: 30px;
+            margin-top: 30px;
+        }
+
+        .container1 p {
+            font-size: 16px;
+        }
     }
 </style>
 <body>
     <%- include('partials/navigation') %>
+    <div class="principal">
+    
     <div class="container">
         <header>
             <h1>Seguimiento del Estado de Ánimo</h1>
-            <button id="history-btn">Historial</button>
+            <% if (usuario) { %>
+            <button id="history-btn"><i class="fa-solid fa-clock-rotate-left"></i>  Historial</button>
+            <% } else { %>
+                <% } %>
         </header>
 
         <section class="mood-tracker">
             <h2>Registrar Estado de Ánimo</h2>
-            <form id="mood-form">
+            <form id="mood-form" action="/save-mood" method="post">
                 <div class="mood-slider">
-                    <label for="mood-slider">¿Como te sientes hoy?</label>
-                    <div class="slider-container">
-                        <input type="range" id="mood-slider" name="mood" min="-2" max="2" value="0">
+                    <label for="mood-slider">¿Como te sientes hoy?</label> <br>
+                    <div class="slider-container"> <br> <br>
+                        <input type="range" id="mood-slider" name="mood" min="-2" max="2" value="0"> 
                         <div class="emoji-container">
-                            <span id="emoji">😐</span>
+                            <span id="emoji">❓</span>
                         </div>
                     </div>
                     <div class="slider-ticks">
@@ -216,12 +321,12 @@
                 <label for="mood-comment">Descripción:</label>
                 <textarea id="mood-comment" name="comment" rows="4" placeholder="Porque te sientes asi el dia de hoy?"></textarea>
 
-                <button type="submit">Guardar</button>
+                <button type="submit"><i class="fa-solid fa-floppy-disk"></i>   Guardar</button> <br>
             </form>
         </section>
 
         <section class="mood-history" id="mood-history">
-            <h2>Historial de Estados de Ánimo</h2>
+            <h2>Historial del Estado de Ánimo</h2>
             <table id="history-table">
                 <thead>
                     <tr>
@@ -233,23 +338,158 @@
                 <tbody id="history-list">
                     <!-- Las entradas se agregarán aquí dinámicamente -->
                 </tbody>
-            </table>
+            </table> <br>
         </section>
-    </div>
+        <div>
+             <p>-----------------------------------------------------------------------------------------------------------------------------------------------------------</p>
+        </div> <br>
+        <div class="toggle-container">
+            <button id="toggle-info-btn"><i class="fa-solid fa-seedling"></i>   Ocultar Beneficios</button>
+        </div> <br>
 
-    <script>
+        <div class="container1">
+            <!-- Sección izquierda con la información -->
+             <h3>Beneficios</h3> <br>
+            <h2>¿Por qué es importante registrar tu estado de ánimo?</h2>
+            <p>Registrar tu estado de ánimo diariamente te ayuda a identificar patrones emocionales,<br> lo que puede ser útil para comprender mejor cómo ciertos factores externos e internos afectan tu bienestar.</p> <br>
+
+            <h2>Beneficios del registro del estado de ánimo</h2>
+            <p>El seguimiento regular de tu estado de ánimo te permite tener una mayor autoconciencia,<br> lo que puede llevar a mejores decisiones de salud mental y bienestar general.</p> <br> 
+
+            <h2>Mejora la comunicación con los profesionales de la salud</h2>
+            <p>Al tener un historial detallado de cómo te has sentido, puedes comunicarte de manera más efectiva con los <br>terapeutas o médicos, permitiéndoles ofrecerte un tratamiento más adecuado y personalizado.</p> <br>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
         const moodSlider = document.getElementById('mood-slider');
         const emoji = document.getElementById('emoji');
         const sliderContainer = document.querySelector('.slider-container');
         const historyBtn = document.getElementById('history-btn');
         const moodHistory = document.getElementById('mood-history');
-        
-        // Alternar la visibilidad de la sección del historial
-        historyBtn.addEventListener('click', () => {
-            moodHistory.style.display = moodHistory.style.display === 'none' || moodHistory.style.display === '' ? 'block' : 'none';
+        const form = document.getElementById('mood-form');
+
+        function updateEmojiPosition() {
+            const min = moodSlider.min;
+            const max = moodSlider.max;
+            const value = moodSlider.value;
+            const percentage = ((value - min) / (max - min)) * 100;
+            const sliderWidth = sliderContainer.offsetWidth;
+            emoji.style.left = `calc(${percentage}% - ${emoji.offsetWidth / 2}px)`;
+        }
+
+        form.addEventListener('submit', async function(event) {
+            event.preventDefault(); // Evita el envío del formulario
+
+            const moodValue = moodSlider.value;
+            const moodComment = document.getElementById('mood-comment').value;
+
+            if (moodComment.trim() === '') {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Comentario vacío',
+                    text: 'Por favor, añade un comentario.',
+                    confirmButtonText: 'Aceptar'
+                });
+                return;
+            }
+
+            const mood = {
+                mood: moodValue,
+                comment: moodComment
+            };
+
+            try {
+                const response = await fetch('/save-mood', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(mood)
+                });
+
+                const result = await response.json();
+                if (response.ok) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: '¡Éxito!',
+                        text: result.message,
+                        confirmButtonText: 'Aceptar'
+                    });
+                    document.getElementById('mood-comment').value = ''; // Limpia el campo de comentario
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: result.error,
+                        confirmButtonText: 'Aceptar'
+                    });
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Error al guardar el estado de ánimo.',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
         });
 
-        // Update emoji based on slider value
+        historyBtn.addEventListener('click', async () => {
+            try {
+                const response = await fetch('/mood-history');
+                const data = await response.json();
+
+                if (response.ok) {
+                    const historyList = document.getElementById('history-list');
+                    historyList.innerHTML = ''; // Limpia la tabla antes de llenarla
+
+                    data.forEach(entry => {
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
+                            <td>${new Date(entry.fecha).toLocaleDateString()}</td>
+                            <td>${getMoodDescription(entry.estado)}</td>
+                            <td>${entry.comentario}</td>
+                        `;
+                        historyList.appendChild(row);
+                    });
+
+                    moodHistory.style.display = 'block';
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Error',
+                        text: 'Error al obtener el historial.',
+                        confirmButtonText: 'Aceptar'
+                    });
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Error al obtener el historial.',
+                    confirmButtonText: 'Aceptar'
+                });
+            }
+        });
+
+        document.getElementById('toggle-info-btn').addEventListener('click', function() {
+            var container = document.querySelector('.container1');
+            if (container.style.display === 'none' || container.style.display === '') {
+                container.style.display = 'block';
+                this.textContent = 'Ocultar Beneficios';
+            } else {
+                container.style.display = 'none';
+                this.textContent = 'Beneficios';
+            }
+        });
+
         moodSlider.addEventListener('input', () => {
             const value = parseInt(moodSlider.value);
             let emojiText;
@@ -271,70 +511,33 @@
                     emojiText = '😊'; // Feliz
                     break;
                 default:
-                    emojiText = '😐'; // Default
+                    emojiText = '❓'; // Default
             }
             
             emoji.textContent = emojiText;
             updateEmojiPosition();
         });
 
-        function updateEmojiPosition() {
-            const min = moodSlider.min;
-            const max = moodSlider.max;
-            const value = moodSlider.value;
-            const percentage = ((value - min) / (max - min)) * 100;
-            const sliderWidth = sliderContainer.offsetWidth;
-
-            emoji.style.left = `calc(${percentage}% - ${emoji.offsetWidth / 2}px)`;
-        }
-
-        document.getElementById('mood-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Evita el envío del formulario
-
-            const moodValue = moodSlider.value;
-            const moodComment = document.getElementById('mood-comment').value;
-
-            if (moodComment.trim() === '') {
-                alert('Por favor, añade un comentario.');
-                return;
-            }
-
-            let mood;
-            switch (parseInt(moodValue)) {
-                case -2:
-                    mood = 'Triste';
-                    break;
-                case -1:
-                    mood = 'Enojado';
-                    break;
-                case 0:
-                    mood = 'Ansioso';
-                    break;
-                case 1:
-                    mood = 'Neutral';
-                    break;
-                case 2:
-                    mood = 'Feliz';
-                    break;
-                default:
-                    mood = 'Desconocido';
-            }
-
-            const historyList = document.getElementById('history-list');
-            const row = document.createElement('tr');
-            row.innerHTML = `
-                <td>${new Date().toLocaleDateString()}</td>
-                <td>${mood}</td>
-                <td>${moodComment}</td>
-            `;
-
-            historyList.appendChild(row);
-
-            document.getElementById('mood-comment').value = ''; // Limpia el campo de comentario
-        });
-
-        // Inicializa la posición del emoji
         updateEmojiPosition();
-    </script>
+    });
+
+    function getMoodDescription(value) {
+        switch (parseInt(value)) {
+            case -2:
+                return 'Triste';
+            case -1:
+                return 'Enojado';
+            case 0:
+                return 'Ansioso';
+            case 1:
+                return 'Neutral';
+            case 2:
+                return 'Feliz';
+            default:
+                return 'Desconocido';
+        }
+    }
+</script>
+
 </body>
 </html>

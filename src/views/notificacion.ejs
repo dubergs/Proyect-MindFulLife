@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Tus Notificaciones</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .notification {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .icon {
+            font-size: 24px;
+            margin-right: 15px;
+            min-width: 30px;
+            margin-top: 17px;
+            margin-left: 5px;
+            color: #007bff;
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+
+        .name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .message {
+            margin-bottom: 5px;
+        }
+
+        .date {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .no-leido {
+            color: #666;
+            font-weight: bold;
+        }
+
+        .leido {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .chat {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 10px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                max-width: 90%;
+                margin-left: -3px;
+            }
+
+            .notification {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .icon {
+                margin-bottom: 10px;
+                margin-top: 0;
+                margin-left: 0;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="chat">
+        <h1>Tus Notificaciones</h1>
+
+        <% notifications.forEach(notification => { %>
+        <div class="notification" data-id="<%= notification.id %>">
+            <div class="icon"><i class="fa-regular fa-bell"></i></div>
+            <div class="content">
+                <div class="name"><%= notification.nombre %></div>
+                <div class="message"><%= notification.contenido %></div>
+                <div class="date">
+                    <%= notification.fecha %>
+                    <span class="<%= notification.estado ? 'leido' : 'no-leido' %>" id="status-<%= notification.id %>">
+                        <%= notification.estado ? 'Leído' : 'No leído' %>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+
+    <script>
+        // Función para marcar la notificación como leída
+        const markNotificationAsRead = async (notificationId) => {
+            try {
+                await fetch(`/notifications/${notificationId}/read`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                });
+                const statusElement = document.getElementById(`status-${notificationId}`);
+                if (statusElement) {
+                    statusElement.textContent = 'Leído';  // Cambia el texto a "Leído"
+                    statusElement.classList.remove('no-leido');
+                    statusElement.classList.add('leido');  // Aplica el estilo para "Leído"
+                }
+            } catch (error) {
+                console.error('Error al marcar la notificación como leída:', error);
+            }
+        };
+
+        // Agrega el evento de clic a cada notificación
+        document.querySelectorAll('.notification').forEach(notification => {
+            notification.addEventListener('click', () => {
+                const notificationId = notification.getAttribute('data-id');
+                const statusElement = document.getElementById(`status-${notificationId}`);
+                if (statusElement && statusElement.classList.contains('no-leido')) {
+                    markNotificationAsRead(notificationId);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -3,26 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meditación y Ejercicios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Meditación Plena</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
+            background: linear-gradient(to bottom, #0d47a1, #e0e0e0);
             color: #333;
         }
 
         h1 {
             margin-top: 120px;
             text-align: center;
-            color: black;
+            color: white;
         }
 
         .introduction {
+            font-size: 20px;
             padding: 20px;
             text-align: center;
+            color: black;
         }
 
         .exercises {
@@ -51,7 +55,6 @@
             background-color: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 10px;
-            width: calc(33.333% - 40px);
             padding: 20px;
             text-align: center;
             cursor: pointer;
@@ -59,7 +62,7 @@
 
         .exercise-item img {
             width: 100%;
-            height: 150px;
+            height: 250px;
             object-fit: cover;
             border-radius: 10px;
             margin-bottom: 10px;
@@ -87,13 +90,14 @@
 
         .title1 {
             text-align: center;
-            color: var(--title-color);
+            color: var(--first-color);
         }
 
         /* Estilos para la ventana modal */
         .modal {
             display: none;
             position: fixed;
+            color: black;
             z-index: 1;
             left: 0;
             top: 0;
@@ -140,11 +144,13 @@
         }
 
         .contenido1 ul {
-            font-size: 20px;
+            font-size: 18px;
+            color: black;
         }
 
         .contenido1 p {
-            font-size: 20px;
+            font-size: 18px;
+            color: black;
         }
 
         .modal a {
@@ -152,6 +158,11 @@
             text-decoration: none;
             font-weight: bold;
             margin-left: 240px;
+        }
+
+        h4 {
+            color: var(--title-color);
+            font-size: 18px;
         }
     </style>
 </head>
@@ -221,6 +232,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal1')">&times;</span>
             <h2>Ejercicio de Respiración Profunda</h2> <br>
+            <h4>Instrucciones:</h4> <br>
             <ul>
                 <li><b>✤ Encuenta una posicion cómoda: </b>Siéntate o acuéstate en una posición cómoda. Asegúrate de que tu espalda esté recta y tus hombros relajados.
                 </li> <br>
@@ -233,7 +245,7 @@
 
                 <li><b>✤ Repite el proceso</b></li>
             </ul> <br> <br>
-            <a href="">Ver video</a>
+            <a href="/videos"><i class="fas fa-video icon-example"></i>  Ver video</a>
         </div>
     </div>
 
@@ -241,6 +253,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal2')">&times;</span>
             <h2>Escaneo Corporal</h2> <br>
+            <h4>Instrucciones:</h4> <br>
             <ul>
                 <li><b>✤ Encuenta una posicion cómoda: </b>Siéntate con la espalda recta y los pies apoyados en el suelo, cierra los ojos y relaja los brazos.</li> <br>
 
@@ -258,7 +271,7 @@
 
                 <li><b>✤ Vuelve lentamente a la realidad</b></li>
             </ul> <br> <br>
-            <a href="">Ver video</a>
+            <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
         </div>
     </div>
 
@@ -266,6 +279,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal3')">&times;</span>
             <h2>Visualización Guiada</h2> <br>
+            <h4>Instrucciones:</h4> <br>
             <ul>
                 <li><b>✤ Encuentra un lugar tranquilo: </b>Siéntate o acuéstate en un lugar donde no serás interrumpido, asegúrate de estar en una posición cómoda.</li> <br>
 
@@ -279,7 +293,7 @@
 
                 <li><b>✤ Finaliza suavemente </b></li>
             </ul> <br> <br>
-            <a href="">Ver video</a>
+            <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
         </div>
     </div>
 
@@ -287,6 +301,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal4')">&times;</span>
             <h2>Mantras y Afirmaciones</h2> <br>
+            <h4>Instrucciones:</h4> <br>
             <ul>
                 <li><b>✤ Elige una manta cómoda: </b>Selecciona una manta suave y confortable que te haga sentir cálido y seguro, puede ser una manta de tamaño estándar o una manta pesada.</li> <br>
 
@@ -304,7 +319,7 @@
 
                 <li><b>✤ Finaliza suavemente</b></li>
             </ul> <br> <br>
-            <a href="">Ver video</a>
+            <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
         </div>
     </div>
 
@@ -312,6 +327,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal('modal5')">&times;</span>
             <h2>Meditación Caminando</h2> <br>
+            <h4>Instrucciones:</h4> <br>
             <ul>
                 <li><b>✤ Elige un lugar tranquilo: </b>Busca un lugar donde puedas caminar sin interrupciones. Puede ser un parque, un jardín, un sendero.</li> <br>
 
@@ -331,7 +347,7 @@
 
                 <li><b>✤ Finaliza la práctica</b></li>
             </ul> <br> <br>
-            <a href="">Ver video</a>
+            <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
         </div>
     </div>
 

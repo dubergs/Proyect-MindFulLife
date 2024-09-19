@@ -5,16 +5,29 @@
   "main": "src/index.js",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-  "dev": "nodemon src/app.js"
+    "start": "nodemon src/config/conexionDb.js",
+    "dev": "node src/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.4.5",
     "ejs": "^3.1.10",
     "express": "^4.19.2",
-    "morgan": "^1.10.0"
+    "express-session": "^1.18.0",
+    "morgan": "^1.10.0",
+    "mssql": "^11.0.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.11.2",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.15",
+    "socket.io": "^4.7.5",
+    "socket.io-client": "^4.7.5",
+    "sweetalert2": "^11.14.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.4"

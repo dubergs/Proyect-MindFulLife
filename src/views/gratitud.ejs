@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica de Gratitud</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0d47a1, #e0e0e0);
+
+    color: #333;
+}
+
+h1 {
+    margin: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black;
+}
+
+section h2 {
+    color: var(--first-color);
+    margin-top: 0;
+}
+
+p, ul, ol {
+    margin: 20px 0;
+
+    font-size: 18px;
+}
+
+ul, ol {
+    padding-left: 20px;
+}
+
+ul ul, ol ul {
+    margin-top: 5px;
+    color: black;
+}
+
+
+
+main img {
+    margin-left: 750px;
+    margin-top: -240px;
+    width: 300px;
+    height: 300px;
+}
+
+.texto {
+    width: 650px;
+}
+
+strong {
+    color: var(--title-color);
+}
+
+
+.exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .exercise-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .exercise-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .exercise-item p {
+            color: black;
+        }
+
+        .contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .contenido1 {
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title1 {
+            text-align: center;
+            color: var(--first-color);
+        }
+
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none;
+            position: fixed;
+            color: black;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+
+        .modal h2 {
+            color: var(--first-color);
+            text-align: center;
+        }
+
+        .modal p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .contenido1 ul {
+            font-size: 18px;
+            color: black;
+        }
+
+        .contenido1 p {
+            font-size: 18px;
+            color: black;
+        }
+
+        .modal a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 240px;
+        }
+
+        .title {
+            color: black;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        h4 {
+            color: var(--title-color);
+            font-size: 18px;
+        }
+
+</style>
+<%- include('partials/navigation') %>
+<body> <br> <br> <br>
+
+    <main>
+        <section>
+            <h2>¿Qué es la Gratitud?</h2>
+            <p class="texto">
+                La gratitud es un sentimiento de aprecio o reconocimiento por lo que uno ha recibido, ya sea tangible o intangible. Implica reconocer el valor de las personas, experiencias o cosas en la vida de uno, y puede estar dirigida hacia otras personas, la vida en general, o hacia uno mismo. La gratitud puede ser momentánea, como una reacción a un evento específico, o puede cultivarse como una disposición habitual hacia la vida.
+            </p>
+            <img src="/images/caridad.gif" alt="hola" class="img2">
+        </section>
+        <div class="contenido">
+        <section>
+            <h2>Beneficios de la Práctica de Gratitud</h2>
+            <ul>
+                <li>
+                    <strong>Mejora del Bienestar Emocional:</strong>
+                    <ul>
+                        <li>◈ Reducción del Estrés y la Ansiedad</li>
+                        <li>◈ Aumento de la Felicidad</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Mejora de la Salud Física:</strong>
+                    <ul>
+                        <li>◈ Mejor Calidad de Sueño</li>
+                        <li>◈ Menor Incidencia de Dolencias</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Fortalecimiento de las Relaciones:</strong>
+                    <ul>
+                        <li>◈ Mayor Conexión Social</li>
+                        <li>◈ Mejora de la Comunicación</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Mejora del Desempeño en el Trabajo:</strong>
+                    <ul>
+                        <li>◈ Mayor Motivación y Productividad</li>
+                        <li>◈ Reducción del Burnout</li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </div>
+        
+        <section>
+            <h2>Cómo Practicar la Gratitud</h2>
+            <ul>
+                <li><strong>➥ Diario de Gratitud:</strong> Escribe 3-5 cosas por las que estás agradecido cada día.</li>
+                <li><strong>➥ Cartas de Gratitud:</strong> Escribe una carta a alguien que haya tenido un impacto positivo en tu vida.</li>
+                <li><strong>➥ Meditación de Gratitud:</strong> Dedica unos minutos al día para concentrarte en las cosas por las que te sientes agradecido.</li>
+                <li><strong>➥ Reflexión Diaria:</strong> Reflexiona sobre los eventos del día y destaca al menos una cosa positiva que haya ocurrido.</li>
+                <li><strong>➥ Gratitud en las Conversaciones:</strong> Incorpora expresiones de gratitud en tus interacciones diarias.</li>
+            </ul>
+        </section>
+        
+        <section>
+            <h2>Consideraciones Importantes</h2>
+            <ul>
+                <li><strong>Autenticidad:</strong> La gratitud debe ser genuina.</li>
+                <li><strong>Adaptación:</strong> Variar el enfoque de la gratitud para mantener su efecto.</li>
+                <li><strong>Gratitud en Dificultades:</strong> Encontrar aspectos positivos incluso en tiempos difíciles.</li>
+                <li><strong>Persistencia:</strong> Los beneficios de la gratitud se acumulan con la práctica regular.</li>
+            </ul>
+        </section>
+
+        <h3></h3>
+        
+    </main>
+
+    <h3 class="title">Ejercicios de Practica de Gratitud</h3> <br>
+    <div class="exercise-grid">
+        <div class="exercise-item" onclick="openModal('modal1')">
+            <img src="/images/diario.png" alt="Ilustración 1">
+            <p>Diario de Gratitud</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal2')">
+            <img src="/images/carta.png" alt="Ilustración 2">
+            <p>Carta de Gratitud</p>
+        </div>
+        <div class="exercise-item" onclick="openModal('modal3')">
+            <img src="/images/conciencia.png" alt="Ilustración 3">
+            <p>Meditación de Gratitud</p>
+        </div>
+    </div>
+</section>
+
+<!-- Ventanas Modales -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h2>Diario de Gratitud</h2> <br>
+        <h4>Instrucciones:</h4>
+        <ul>
+            <li>✤ Dedica unos minutos cada día para escribir en un cuaderno o diario tres cosas por las que estás agradecido.
+            </li> <br>
+
+            <li>✤ Pueden ser cosas grandes o pequeñas, como una conversación agradable, una comida deliciosa, o simplemente el hecho de haber tenido un día productivo.</li> <br>
+
+            <li>✤ Trata de hacerlo una rutina diaria, preferiblemente antes de dormir, para reflexionar sobre el día que has tenido.</li> <br>
+        </ul> 
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+<div id="modal2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h2>Carta de Gratitud</h2> <br>
+        <h4>Instrucciones:</h4>
+        <ul>
+            <li>✤ Escribe una carta a alguien que haya tenido un impacto positivo en tu vida.</li> <br>
+
+            <li>✤ Exprésale tu agradecimiento de manera detallada, mencionando las acciones o palabras que te hicieron sentir bien.</li> <br>
+
+            <li>✤ Si es posible, entrega la carta en persona o léela en voz alta a la persona. Este ejercicio puede fortalecer tu relación y provocar emociones positivas en ambos.</li> <br>
+
+        </ul> 
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div>
+
+<div id="modal3" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('modal3')">&times;</span>
+        <h2>Meditación de Gratitud</h2> <br>
+        <h4>Instrucciones:</h4>
+        <ul>
+            <li>✤ Encuentra un lugar tranquilo donde puedas sentarte cómodamente.</li> <br>
+
+            <li>✤ Cierra los ojos y respira profundamente varias veces para relajarte.</li> <br>
+
+            <li>✤ Comienza a pensar en las cosas por las que estás agradecido. Pueden ser personas, experiencias, cualidades personales o incluso situaciones difíciles que te han enseñado algo.</li> <br>
+
+            <li>✤ Dedica 5-10 minutos concentrándote en estos pensamientos y permitiendo que el sentimiento de gratitud inunde tu mente y cuerpo.</li> <br>
+        </ul>
+        <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+    </div>
+</div> <br>
+
+
+
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+            event.target.style.display = "none";
+        }
+    }
+</script>
+    
+</body>
+<%- include('partials/footer') %>
+</html>

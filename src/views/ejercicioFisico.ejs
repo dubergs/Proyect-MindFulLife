@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Físico</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="/images/favicon3.png" type="image/x-icon">
+</head>
+<style>
+
+    body {
+        background: linear-gradient(to bottom, #0d47a1, #e0e0e0);
+    }
+
+
+.container {
+    max-width: 1200px;
+    margin: 0;
+    padding: 20px;
+}
+
+
+.section {
+    background-color: white;
+    margin-top: 110px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.section img {
+    width: 300px;
+    height: 300px;
+    margin-left: 710px;
+    margin-top: -320px;
+}
+
+.section h2 {
+    font-size: 2em;
+    color: var(--first-color);
+    margin-bottom: 10px;
+}
+
+.section ul, .section ol {
+    margin: 15px 0;
+    padding-left: 20px;
+    font-size: 17px;
+}
+
+.section ul li, .section ol li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    font-size: 1.1em;
+    color: black;
+}
+
+.container p {
+    line-height: 1.8;
+    font-size: 1.1em;
+    font-size: 19px;
+    color: black;
+    width: 650px;
+}
+
+@media (max-width: 768px) {
+
+
+    .section h2 {
+        font-size: 1.7em;
+    }
+
+}
+
+strong {
+    color: var(--title-color);
+}
+
+.title {
+    color: black;
+    text-align: center;
+    font-size: 2em;
+}
+
+
+
+
+
+
+
+.exercise-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .exercise-item {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .exercise-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .exercise-item p {
+            color: black;
+        }
+
+        .contenido {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 90%;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .contenido1 {
+            color: var(--text-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .title1 {
+            text-align: center;
+            color: var(--first-color);
+        }
+
+        /* Estilos para la ventana modal */
+        .modal {
+            display: none;
+            position: fixed;
+            color: black;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+
+        .modal h2 {
+            color: var(--first-color);
+            text-align: center;
+        }
+
+        .modal p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .contenido1 ul {
+            font-size: 18px;
+            color: black;
+        }
+
+        .contenido1 p {
+            font-size: 18px;
+            color: black;
+        }
+
+        .modal a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 240px;
+        }
+
+        h4 {
+            color: var(--title-color);
+            font-size: 18px;
+        }
+
+</style>
+<body>
+    <%- include('partials/navigation') %>
+
+    <div class="container">
+        <section class="section">
+            <h2>¿Que es el Ejercicio Fisico?</h2>
+            <p>El ejercicio físico es cualquier actividad que requiere esfuerzo físico para mejorar o mantener la salud y el bienestar. Abarca una amplia gama de actividades, desde caminatas suaves hasta entrenamientos intensivos, y tiene múltiples beneficios tanto para el cuerpo como para la mente. El ejercicio físico es fundamental para un estilo de vida saludable y se asocia con una mejor calidad de vida a largo plazo.</p> <br>
+            <img src="/images/pesa.gif" alt="">
+
+            <h2>Beneficios del ejercicio físico</h2>
+            <ul>
+                <li><strong>◈ Mejora de la salud cardiovascular:</strong> El ejercicio regular fortalece el corazón y los vasos sanguíneos, ayudando a reducir la presión arterial, mejorar la circulación y disminuir el riesgo de enfermedades cardíacas.</li> <br>
+
+                <li><strong>◈ Fortalecimiento muscular y óseo:</strong> Actividades como levantar pesas, hacer yoga o practicar deportes mejoran la fuerza muscular y la densidad ósea, lo que es esencial para prevenir problemas como la osteoporosis.</li><br>
+
+                <li><strong>◈ Control del peso corporal:</strong> El ejercicio quema calorías y mejora el metabolismo, lo que contribuye al control o pérdida de peso. Además, regula los niveles de grasa corporal y ayuda a mantener un peso saludable.</li><br>
+
+                <li><strong>◈ Mejora de la flexibilidad y el equilibrio:</strong> Las actividades como el yoga, el pilates o los estiramientos aumentan la flexibilidad, mejoran el equilibrio y reducen el riesgo de caídas, especialmente en personas mayores.</li><br>
+
+                <li><strong>◈ Aumento de la energía y resistencia:</strong> El ejercicio físico regular mejora la capacidad aeróbica, lo que significa que puedes realizar actividades diarias con más energía y menos fatiga.</li>
+
+                <ul>
+                    <li><strong>◈ Beneficios mentales y emocionales:</strong></li> <br>
+
+                    <li><strong>‣ Reducción del estrés y la ansiedad:</strong> El ejercicio libera endorfinas, conocidas como las hormonas del bienestar, que promueven una sensación de felicidad y alivio del estrés.</li>
+
+                    <li><strong>‣ Mejora del estado de ánimo:</strong> Puede ayudar a combatir la depresión y la ansiedad, y mejorar el bienestar emocional general.</li>
+
+                    <li><strong>‣ Aumento de la autoestima:</strong> Sentirse más fuerte, en forma o cumplir metas personales puede tener un impacto positivo en la autoestima y la confianza..</li>
+                </ul> <br>
+
+                <li><strong>◈ Mejora del sueño:</strong> La actividad física regula el ciclo de sueño, ayudando a conciliar el sueño más fácilmente y a tener un descanso de mejor calidad.</li><br>
+                
+                <li><strong>◈ Mejor función cerebral y cognitiva:</strong> El ejercicio estimula la circulación sanguínea y oxigena el cerebro, lo que mejora la memoria, el aprendizaje y las capacidades cognitivas. También reduce el riesgo de enfermedades neurodegenerativas, como el Alzheimer.</li><br>
+
+                <li><strong>◈ Fortalecimiento del sistema inmunológico:</strong> El ejercicio moderado ayuda a mejorar las defensas del cuerpo, haciéndolo más resistente a infecciones y enfermedades.</li><br>
+
+            </ul><br>
+
+            <h2>Consejos para comenzar una rutina de ejercicio</h2> <br>
+            <ul>
+                <li><strong>➥ Comienza poco a poco:</strong> No te exijas demasiado al principio. Empieza con actividades de baja intensidad y ve aumentando progresivamente la duración y la intensidad.</li> <br>
+
+                <li><strong>➥ Elige actividades que disfrutes:</strong> Hacer ejercicios que te gusten (como bailar, nadar o caminar al aire libre) hará que te mantengas motivado y que el ejercicio se convierta en un hábito.</li><br>
+
+                <li><strong>➥ Hazlo parte de tu rutina diaria:</strong> Incluye el ejercicio en tu agenda como parte de tu día a día. Puede ser tan simple como caminar en lugar de tomar el coche, subir escaleras o hacer ejercicios en casa.</li><br>
+
+                <li><strong>➥ Varía las actividades:</strong> Combinar diferentes tipos de ejercicio (cardio, fuerza, flexibilidad) mantendrá tu rutina interesante y equilibrada.</li><br>
+
+                <li><strong>➥ Escucha a tu cuerpo:</strong> Es importante reconocer las señales de fatiga o dolor y evitar el sobreentrenamiento. El descanso es una parte clave para la recuperación y la mejora física.</li><br>
+
+                <li><strong>➥ Haz ejercicio en compañía:</strong> Hacer ejercicio con amigos, familiares o en un grupo puede aumentar la motivación y hacer la experiencia más divertida.</li><br>
+
+                <li><strong>➥ Consulta con un médico:</strong> Especialmente si tienes alguna condición médica o llevas un estilo de vida sedentario, es recomendable hacer una consulta médica antes de comenzar una rutina de ejercicio.</li>
+            </ul>
+        </section>
+    </div>
+    <h2 class="title">Ejercicios Fisicos Beneficiosos para la Salud Mental</h2> <br>
+        <div class="exercise-grid">
+            <div class="exercise-item" onclick="openModal('modal1')">
+                <img src="/images/airelibre.png" alt="Ilustración 1">
+                <p>Caminar al Aire Libre.</p>
+            </div>
+            <div class="exercise-item" onclick="openModal('modal2')">
+                <img src="/images/yoga.png" alt="Ilustración 2">
+                <p>Yoga.</p>
+            </div>
+            <div class="exercise-item" onclick="openModal('modal3')">
+                <img src="/images/cicla.png" alt="Ilustración 3">
+                <p>Ejercicio Cardiovascular Moderado.</p>
+            </div>
+            <div class="exercise-item" onclick="openModal('modal4')">
+                <img src="/images/taichi.png" alt="Ilustración 4">
+                <p>Tai Chi.</p>
+            </div>
+            <div class="exercise-item" onclick="openModal('modal5')">
+                <img src="/images/fuerza.png" alt="Ilustración 5">
+                <p>Entrenamiento de Fuerza.</p>
+            </div>
+        </div> <br>
+    </section>
+
+    <!-- Ventanas Modales -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal1')">&times;</span>
+            <h2>Caminar al Aire Libre</h2> <br>
+            <h4>Beneficios:</h4> <br>
+            <ul>
+                <li>✤ Reduce los niveles de ansiedad y mejora el estado de ánimo.
+                </li> <br>
+
+                <li>✤ Estar en la naturaleza tiene efectos calmantes y puede aliviar síntomas de depresión leve.</li> <br>
+
+                <li>✤ Promueve la creatividad y el pensamiento positivo.</li> <br>
+
+            </ul> <br>
+            <h4>Cómo realizarlo:</h4> <br>
+            <ul>
+                <li>✤ Camina a un ritmo moderado durante al menos 30 minutos en un parque o cualquier área verde.
+                </li> <br>
+
+                <li>✤ Concéntrate en tu respiración y en los sonidos de la naturaleza para potenciar el efecto relajante.</li> <br>
+
+            </ul> <br>
+            <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal2')">&times;</span>
+            <h2>Yoga</h2> <br>
+            <h4>Beneficios:</h4> <br>
+            <ul>
+                <li>✤ Mejora la flexibilidad y reduce la tensión muscular, que a menudo se asocia con el estrés.
+                </li> <br>
+
+                <li>✤ Fomenta la relajación a través de la respiración profunda y el enfoque mental.</li> <br>
+
+                <li>✤ Ayuda a equilibrar las emociones y reducir los síntomas de ansiedad y depresión.</li> <br>
+
+            </ul> <br>
+            <h4>Cómo realizarlo:</h4> <br>
+            <ul>
+                <li>✤ Practica una rutina de yoga de 20-30 minutos, centrándote en posturas suaves como la "postura del niño" (Balasana) o "la postura del perro hacia abajo" (Adho Mukha Svanasana).
+                </li> <br>
+
+                <li>✤ Combina las posturas con técnicas de respiración profunda para calmar la mente.</li> <br>
+
+            </ul> <br>
+            <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal3')">&times;</span>
+            <h2>Ejercicio Cardiovascular Moderado (Correr o Ciclismo)</h2> <br>
+            <h4>Beneficios:</h4> <br>
+            <ul>
+                <li>✤ Libera endorfinas, conocidas como las "hormonas de la felicidad", que mejoran el estado de ánimo.
+                </li> <br>
+
+                <li>✤ Mejora la calidad del sueño, lo que contribuye a una mayor salud mental.</li> <br>
+
+                <li>✤ Aumenta la autoconfianza y ayuda a combatir el estrés diario.</li> <br>
+
+            </ul> <br>
+            <h4>Cómo realizarlo:</h4> <br>
+            <ul>
+                <li>✤ Corre o monta en bicicleta a un ritmo moderado durante 20-40 minutos. Si eres principiante, comienza con sesiones más cortas e incrementa la duración gradualmente.
+                </li> <br>
+
+                <li>✤ Escucha música relajante o motivadora durante la actividad para maximizar los beneficios emocionales.</li> <br>
+
+            </ul> <br>
+            <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal4')">&times;</span>
+            <h2>Tai Chi</h2> <br>
+            <h4>Beneficios:</h4> <br>
+            <ul>
+                <li>✤ Mejora la concentración, promueve la calma mental y reduce el estrés.
+                </li> <br>
+
+                <li>✤ Al ser una práctica lenta y fluida, es ideal para reducir la ansiedad y promover el equilibrio emocional.</li> <br>
+
+                <li>✤ Mejora la conexión entre cuerpo y mente, lo que reduce la tensión acumulada.</li> <br>
+
+            </ul> <br>
+            <h4>Cómo realizarlo:</h4> <br>
+            <ul>
+                <li>✤ Dedica de 15 a 30 minutos al día para practicar los movimientos suaves y fluidos del Tai Chi, centrándote en tu respiración y postura.
+                </li> <br>
+
+                <li>✤ Se recomienda practicar al aire libre o en un espacio tranquilo para aumentar el enfoque y la relajación.</li> <br>
+
+            </ul> <br>
+            <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('modal5')">&times;</span>
+            <h2>Entrenamiento de Fuerza (Pesas o Peso Corporal)</h2> <br>
+            <h4>Beneficios:</h4> <br>
+            <ul>
+                <li>✤ Mejora la autoestima y la autopercepción, ya que te sientes físicamente más fuerte.
+                </li> <br>
+
+                <li>✤ Reduce los niveles de cortisol (hormona del estrés) y aumenta la producción de endorfinas.</li> <br>
+
+                <li>✤ Proporciona una sensación de logro y control, lo que ayuda a combatir la depresión.</li> <br>
+
+            </ul> <br>
+            <h4>Cómo realizarlo:</h4> <br>
+            <ul>
+                <li>✤ Realiza ejercicios de fuerza dos o tres veces por semana, como sentadillas, flexiones o levantamiento de pesas.
+                </li> <br>
+
+                <li>✤ Dedica de 20 a 40 minutos por sesión y asegúrate de descansar adecuadamente entre series.</li> <br>
+
+            </ul> <br>
+            <a href="/videos"><i class="fas fa-video icon-example"></i>    Ver video</a>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = "none";
+            }
+        }
+    </script>
+</body>
+<%- include('partials/footer') %>
+
+</html>

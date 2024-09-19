@@ -6,6 +6,7 @@
 
     <!--=============== REMIXICONS ===============-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
     <!--=============== CSS ===============-->
     <link rel="stylesheet" href="assets/css/styles.css">
@@ -221,6 +222,7 @@ a {
   position: absolute ;
   top: 100%;
   left: 0;
+  margin-left: -10px;
   background-color: var(--body-color);
   box-shadow: 0 8px 16px hsla(230, 89%, 43%, 0.15);
   width: 200px;
@@ -444,26 +446,38 @@ a {
     margin-inline: auto;
   }
 }
+
+
+
+/*navbar2*/
+
+
+#menu {
+    width: 50px;
+}
 </style>
 <body>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
-        <nav class="nav container">
-            <a href="/" class="nav__logo">MindFulLife</a>
+      
+        
+        
+          <nav class="nav container">
+            <a href="/index" class="nav__logo">MindFulLife</a>
 
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
                     <li class="nav__item">
-                        <a href="/" class="nav__link">Home</a>
+                        <a href="/index" class="nav__link">Inicio</a>
                     </li>
 
                     <li class="nav__item">
                         <a href="#" class="nav__link">Services</a>
                         <div class="nav__sub-menu">
                             <ul>
-                                <li><a href="/estadoAnimo">Estado de animo</a></li>
-                                <li><a href="/ejercicios">Ejercicios</a></li>
-                                <li><a href="/terapia">Chats</a></li>
+                                <li><a href="/estadoAnimo"><i class="fas fa-smile icon-example"></i>       Estado de animo</a></li>
+                                <li><a href="/ejercicios"><i class="fas fa-dumbbell icon-example"></i>  Ejercicios</a></li>
+                                <li><a href="/terapia"><i class="fas fa-mobile-alt icon-example"></i>   Terapia en Linea</a></li>
                             </ul>
                         </div>
                     </li>
@@ -472,9 +486,9 @@ a {
                         <a href="#" class="nav__link">Recursos</a>
                         <div class="nav__sub-menu">
                             <ul>
-                                <li><a href="/resource1">Articulos</a></li>
-                                <li><a href="/resource2">Videos</a></li>
-                                <li><a href="/guias">Guias</a></li>
+                                <li><a href="/articulos"><i class="fas fa-book icon-example"></i>   Articulos</a></li>
+                                <li><a href="/videos"><i class="fas fa-video icon-example"></i>   Videos</a></li>
+                                <li><a href="/guias"><i class="fas fa-map-signs icon-example"></i>   Guias</a></li>
                             </ul>
                         </div>
                     </li>
@@ -486,9 +500,6 @@ a {
                         <a href="/trastorno" class="nav__link">Trastornos</a>
                     </li>
 
-                    <li class="nav__item">
-                        <a href="/testimonios" class="nav__link">Testimonios</a>
-                    </li>
                 </ul>
 
                 <!-- Close button -->
@@ -499,17 +510,30 @@ a {
 
             <div class="nav__actions">
                 <!-- Search button -->
-                <i class="ri-search-line nav__search" id="search-btn"></i>
+                
 
                 <!-- Login button -->
-                <i class="ri-user-line nav__login" id="login-btn"></i>
+                
+                <ul class="nav__list">
+                <li class="nav__item">
+                  
+                <a href="/" ><i class="ri-user-line nav__login"></i></a>
+                <% if (!usuario) { %>
+                  <% } else { %>
+                <div class="nav__sub-menu" id="menu">
 
-                <!-- Toggle button -->
-                <div class="nav__toggle" id="nav-toggle">
-                    <i class="ri-menu-line"></i>
+                    <ul>
+
+                        <a href="/perfil"><i class="fas fa-user icon-example"></i></a>
+                        <a href="/notificacion"><i class="fa-solid fa-bell"></i></a>
+                        <a href="/logout" id="logout-link"><i class="fas fa-door-open icon-example"></i></a>
+                    </ul>
+                    <% } %>
                 </div>
+                </li>
             </div>
         </nav>
+          
     </header>
 
     <!--==================== SEARCH ====================-->
