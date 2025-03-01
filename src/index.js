@@ -54,7 +54,7 @@ app.use('/', routes);
 // Middleware para proteger la ruta /index
 app.use('/index', isAuthenticated, routes);
 
-const PORT = 3000;
+const PORT = 3001;
 server.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto: ${PORT}`);
 });
