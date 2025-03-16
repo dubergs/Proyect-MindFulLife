@@ -1,5 +1,5 @@
 import express from 'express';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 import crypto from 'crypto';
 import conexion from '../config/conexionDb.js';
 import nodemailer from 'nodemailer';
