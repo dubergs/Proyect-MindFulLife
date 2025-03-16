@@ -52,6 +52,10 @@
     --h2-font-size: 1.5rem;
     --normal-font-size: 1rem;
   }
+
+  #nav-toggle {
+    display: none;
+  }
 }
 
 /*=============== BASE ===============*/
@@ -416,6 +420,10 @@ a {
     max-width: 400px;
     margin-inline: auto;
   }
+
+  
+
+
 }
 
 /* For large devices */
@@ -446,6 +454,10 @@ a {
     margin-inline: auto;
   }
 }
+
+
+
+
 
 
 
@@ -509,6 +521,8 @@ a {
             </div>
 
             <div class="nav__actions">
+              <a href="/" ><i class="ri-user-line nav__login" style="margin-left: 85px"></i></a>
+              <i class="fa-solid fa-bars nav__toggle" id="nav-toggle" ></i>
                 <!-- Search button -->
                 
 
@@ -517,7 +531,7 @@ a {
                 <ul class="nav__list">
                 <li class="nav__item">
                   
-                <a href="/" ><i class="ri-user-line nav__login"></i></a>
+                
                 <% if (!usuario) { %>
                   <% } else { %>
                 <div class="nav__sub-menu" id="menu">
